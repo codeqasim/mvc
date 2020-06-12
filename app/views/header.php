@@ -1,16 +1,11 @@
 <?php
 
-$actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-
-        echo $actual_link;die;
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
-$path = $_SERVER['DOCUMENT_ROOT'];
-$path .= '/app/config.php';
-include($path);
-?>
+require_once('././config.php');
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">

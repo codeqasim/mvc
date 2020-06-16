@@ -1,5 +1,5 @@
 <footer>
-    <div class="apps">
+    <div class="apps"> 
         <div class="container">
             <div class="row row-rtl">
                 <div class="c3 o2-sm">
@@ -136,22 +136,19 @@ $(document).ready(function(){
 
   $("#hotels-api").submit(function() {
   event.preventDefault();
-  var $form = $('#hotels-api');
-  var data = $form.serialize();
-  var vars = [];
-  datasplit = data.split('&');
-  for (var i = 0; i < datasplit.length; i++) {
-   hash = datasplit[i].split('=');
-   vars.push(hash[1]);
-   // vars[hash[0]] = hash[1];
-  }
-  var trims = $.trim(vars);
-  var slug = trims.replace(/\/?,/g, '/').replace(/-+/g, '-').replace(/^-|-$/g, '').replace('%20', '-').replace('%20', '-').replace('%40', '@');
-  // alert(slug);
-
-    var actionURL = 'hotels/';
-  var finelURL = actionURL + slug;
-    // alert(finelURL);
+  var city = $('#city').val(); 
+  var checkin = $('#checkin').val(); 
+  var checkout = $('#checkout').val(); 
+  var language = $('#language').val(); 
+  var currceny = $('#currceny').val(); 
+  var pagination = $('#pagination').val(); 
+  var adults = $('#adults').val(); 
+  var child = $('#child').val(); 
+  var room = $('#room').val();
+  var city_trims = city.replace(/\/?,/g, '/').replace(/-+/g, '-').replace(/^-|-$/g, '').split(' ').join('-').replace('%40', '@');
+  var actionURL = 'hotels/';
+  var finelURL = actionURL +language+'/'+currceny+'/'+city_trims+'/'+ checkin+'/'+checkout+'/'+adults+'/'+child+'/'+pagination;
+  // alert(finelURL);
   window.location.href = finelURL;
 
  });

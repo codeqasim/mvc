@@ -1,3 +1,11 @@
+<!-- <?php
+// echo "<pre>";
+// print_r($listdata);
+foreach ($listdata->response as $list){
+  echo $list->company_name;
+}
+?> -->
+
 <div class="list-page">
   <div class="edit-search">
     <div class="container">
@@ -20,7 +28,7 @@
       <input id="edit" type="checkbox" hidden>
       <div class="panel">
         <div class="container">
-           <?php include $themeurl. 'views/modules/hotels/search.php';?>
+           <?php include 'modules/hotels/search.php';?>
         </div>
       </div>
     </div>
@@ -182,7 +190,8 @@
             </div>
           </div>
         </div>
-        <?php for ($i = 1; $i <= 9; $i++) { ?>
+        <?php foreach($listdata->response as $list){?>
+
         <div class="row row-rtl">
           <div class="c12">
             <div class="list-wrapper">
@@ -191,7 +200,7 @@
                   <a href="">
                   <img
                     class="main-img"
-                    src="<?php echo $theme_url;?>assets/img/hotel.jpg"
+                    src="<?= $list->image ;?>"
                     title="Holiday Inn Citystars"
                     alt="Holiday Inn Citystars"
                     />
@@ -212,7 +221,7 @@
                   <div class="row h-100 row-rtl">
                     <div class="c7 border-right rtl-align-right">
                       <div class="detail">
-                        <h6 class="title"><a target="_blank" href="#">Holiday Inn Citystars</a></h6>
+                        <h6 class="title"><a target="_blank" href="#"><?= $list->company_name ;?></a></h6>
                         <div class="rating mb-10">
                           <span>&#10029;</span>
                           <span>&#10029;</span>
@@ -220,7 +229,7 @@
                           <span>&#10029;</span>
                           <span>&#10029;</span>
                         </div>
-                        <small class="text-muted">Ali Rashed St.,Heliopolis</small>
+                        <small class="text-muted"><?= $list->address ;?></small>
                       </div>
                       <!--<div class="aminities mt-10 hide-m">
                         <span>&#10070;</span>
@@ -232,7 +241,7 @@
                     <div class="c5 p-10">
                       <div class="flex flex-content-between row-rtl">
                         <div class="trust-you">
-                          <p>4.5</p>
+                          <p><?= $list->rating ;?></p>
                           <div class="vrified">
                             <span>Fabulous</span>
                           </div>

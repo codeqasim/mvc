@@ -6,7 +6,7 @@
                 <div class="input-wrapper">
                     <span class="input-label"><i class="mdi mdi-hotel"></i> City Name</span>
                     <div class="input-items">
-                       <input autocomplete="off" type="search" placeholder="city" name="city" value="lahore" class=""/>
+                       <input autocomplete="off" type="search" placeholder="city" id="city" name="city" value="lahore" class=""/>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="c4 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
-                                        <span><i class="mdi mdi-directions-walk"></i> Children</span>
+                                        <span><i class="mdi mdi-directions-walk"></i> Children</span> 
                                         <span class="text-muted ml-5"><small>(+2/+11)</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
@@ -82,9 +82,12 @@
         </div>
     </div>
 
-    <input type="hidden" class="form-control" name="language" placeholder="language" value="en">
-    <input type="hidden" class="form-control" name="currceny" placeholder="currceny" value="usd">
-    <input type="hidden" class="form-control" name="city" placeholder="Pagination" value="1">
+    <input type="hidden" class="form-control" name="language" id="language" value="en">
+    <input type="hidden" class="form-control" name="currceny" id="currceny" value="usd">
+    <input type="hidden" class="form-control" name="pagination" id="pagination"value="1">
+    <input type="hidden" class="form-control" name="adults" id="adults" value="2">
+    <input type="hidden" class="form-control" name="child" id="child" value="0">
+    <input type="hidden" class="form-control" name="room" id="room" value="0">
 
     </form>
 </div>

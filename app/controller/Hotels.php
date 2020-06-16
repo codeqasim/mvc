@@ -1,6 +1,6 @@
 <?php
 
-
+ 
 class Hotels
 {
 	
@@ -26,6 +26,7 @@ class Hotels
 	    $title = 'Hotels';
 		$url = explode('/', $_GET['url']);
 
+
         $lang = $url[1];
         $currceny = $url[2];
         $city = $url[3];
@@ -33,6 +34,7 @@ class Hotels
         $checkout = $url[5];
         $adults = $url[6];
         $children = $url[7];
+        $pagination = $url[8];
 		$data = array(
 			'country'=>$city,
 			'checkin'=>$checkin,
@@ -65,8 +67,11 @@ class Hotels
 		// echo $response . PHP_EOL;
 
 		$arr = json_decode($response);
-		echo "<pre>";
-    	print_r ($arr);
+		// echo "<pre>";
+    	// dd($arr);
+		$listdata = $arr;
+    	include "app/views/modules/hotels/list.php";
+
 
 	}
 

@@ -6,7 +6,7 @@ $APPNAME = "Travel App";
 $API_ENDPOINT = "https://www.phptravels.net/api/";
 $API_KEYS = "phptravels";
 
-$servername = "localhost";
+$servername = "localhost:3307";
 $username = "root";
 $password = "";
 $database = "app";

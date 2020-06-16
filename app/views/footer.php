@@ -27,6 +27,22 @@ $(document).ready(function(){
 	});
 })
 
+$(document).ready(function(){
+  $('#checkindetail').datepicker({
+    dateFormat: "dd-mm-yy",
+    changeMonth: true,
+    changeYear: true
+  });
+})
+
+$(document).ready(function(){
+  $('#checkoutdetail').datepicker({
+    dateFormat: 'dd-mm-yy',
+    changeMonth: true,
+    changeYear: true
+  });
+})
+
   $("#hotels-api").submit(function() {
   event.preventDefault();
   var $form = $('#hotels-api');
@@ -48,6 +64,29 @@ $(document).ready(function(){
   window.location.href = finelURL;
 
  });
+
+  $("#detail-button").click(function() {
+
+  var form = $('#title').val().toLowerCase();
+  var id = $('#id').val();
+  var checkindetail = $('#checkindetail').val();
+  var checkoutdetail = $('#checkoutdetail').val();
+  var children = $('#dchildren').val();
+  var dadults = $('#dadults').val();
+  var dcurrceny = $('#dcurrceny').val();
+  var dlanguage = $('#dlanguage').val();
+
+  var slug = form.replace(/\/?,/g, '/').replace(/-+/g, '-').replace(/^-|-$/g, '').split(' ').join('-').replace('%40', '@');
+  var actionURL = 'hotel/';
+  var finelURL = actionURL +dlanguage+'/'+dcurrceny+'/'+id+'/'+ slug+'/'+checkindetail+'/'+checkoutdetail+'/'+dadults+'/'+children;
+  // alert(finelURL);
+   formsubmit(finelURL);
+
+ });
+
+  function formsubmit(finelURL){
+document.getElementById("detail-button").formAction = finelURL;
+ }
 </script>
 
 	</body>

@@ -37,6 +37,10 @@ if (isset($_GET['url'])) {
             /*Controller object/function*/
             $flights->index();
 
+        elseif ($url[0] == 'hotel')
+            /*Controller object/function*/
+            $Hotels->hotel_detail();
+
         else
             page404();
     

@@ -1,4 +1,4 @@
-<div class="list-page">
+<div class="list-page" id="#listing-page">
   <div class="edit-search">
     <div class="container">
       <div class="row mb-20 row-rtl">
@@ -46,7 +46,7 @@
               <button id="clear-filters">Clear Filter</button>
             </div>
           </div>
-          <input type="text" placeholder="Search for hotel name" />
+          <input type="text" placeholder="Search for hotel name" class="scroll"/>
           <div class="filter-section mt-30 pb-10">
             <div class="filter-header">
               <h5>Price</h5>
@@ -442,4 +442,12 @@
             goToPage(1);
         });
 
+</script>
+
+<script>
+$(".scroll").click(function() {
+ $('html, body').animate({
+  scrollTop: $("#listing-page").offset().top
+ }, 1);
+});
 </script>

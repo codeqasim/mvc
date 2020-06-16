@@ -38,6 +38,15 @@
         </div>
     </section>
 </div>
+
+<script>
+$(".hero,input").click(function() {
+ $('html, body').animate({
+  scrollTop: $("#search").offset().top
+ }, 1);
+});
+</script>
+
 </div>
 <!-- hero section end -->
 <!-- main start -->

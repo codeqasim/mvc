@@ -1,3 +1,4 @@
+<div class="container">
 <div class="main_search">
     <div class="row hide-m text-center" style="height:100px">
         <div class="c8 mx-auto hero-content">
@@ -36,6 +37,7 @@
             </div>
         </div>
     </section>
+</div>
 </div>
 <!-- hero section end -->
 <!-- main start -->

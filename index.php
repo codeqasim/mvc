@@ -5,7 +5,6 @@
 
     include "app/views/header.php";
     include "config.php";
-    echo "<div class='container'>";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
 
@@ -35,5 +34,4 @@ if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
 else
 { home(); }
 
-echo "</div>";
 include "app/views/footer.php";

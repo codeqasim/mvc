@@ -19,8 +19,8 @@
       </div>
       <input id="edit" type="checkbox" hidden>
       <div class="panel">
-        <div class="container">
-           <?php include 'modules/hotels/search.php';?>
+        <div class="search-form">
+           <?php include 'search.php';?>
         </div>
       </div>
     </div>

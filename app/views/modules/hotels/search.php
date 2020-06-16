@@ -5,7 +5,7 @@
                 <div class="input-wrapper">
                     <span class="input-label"><i class="mdi mdi-flight-takeoff"></i> From Origin</span>
                     <div class="input-items">
-                        <input autocomplete="off" type="text" placeholder="Origin" onfocus="this.value=''" name="from" id="autocomplete" class="autocomplete-airport"/>
+                       <input autocomplete="off" type="search" placeholder="Destination" name="destination" value="Dubai - United Arab Emarates" class=""/>
                     </div>
                 </div>
             </div>
@@ -109,7 +109,7 @@
 
 
 
-<div class="tab fade">
+<!--<div class="tab fade">
 <div class="row no-gutters list row-rtl">
 <div class="c4 data-input">
     <div class="input-wrapper">
@@ -196,4 +196,4 @@
     </div>
   </div>
 </div>
-</div>
+</div>-->

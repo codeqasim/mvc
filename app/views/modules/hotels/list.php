@@ -133,7 +133,7 @@
               <h5>Chain</h5>
             </div>
             <div class="mt-30 row-rtl">
-            <?php for ($i = 1; $i <= 19; $i++) { ?>
+            <?php for ($i = 1; $i <= 5; $i++) { ?>
             <label for="<?= $i; ?>"> <input type="checkbox" id="<?= $i; ?>" /> Content <strong>4</strong></label>
             <div class="clear"></div>
             <?php } ?>
@@ -147,7 +147,7 @@
             </div>
 
             <div class="mt-30 row-rtl">
-            <?php for ($l = 1; $l <= 19; $l++) { ?>
+            <?php for ($l = 1; $l <= 5; $l++) { ?>
             <label for="<?= $l; ?>"> <input type="checkbox" id="<?= $l; ?>" /> Content <strong>4</strong></label>
             <div class="clear"></div>
             <?php } ?>
@@ -161,7 +161,7 @@
               <h5>Rooms Amenities</h5>
             </div>
             <div class="mt-30 row-rtl">
-            <?php for ($k = 1; $k <= 19; $k++) { ?>
+            <?php for ($k = 1; $k <= 5; $k++) { ?>
             <label for="<?= $k; ?>"> <input type="checkbox" id="<?= $k; ?>" /> Content <strong>4</strong></label>
             <div class="clear"></div>
             <?php } ?>
@@ -288,7 +288,9 @@
                         </h5>
                       </div>
                       <div class="text-center mt-10">
-                        <a class="btn prime-o hide-m w100" href="hotels/details">Details </a>
+                      <form method="GET" action="<?=root;?>hotel/en/usd/<?= $list->id ;?>/<?php echo (str_replace(' ', '-', strtolower($list->company_name))); ?>/06/21/2020/06/28/2020/2/1">
+                      <button class="btn prime-o hide-m w100" href="hotels/details">Details </button>
+                      </form>
                       </div>
                     </div>
                   </div>
@@ -303,10 +305,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 
 <script>
 
@@ -462,5 +460,13 @@
             goToPage(1);
         });
 
+</script>
+
+<script>
+$(".filter-item,.pager").click(function() {
+ $('html, body').animate({
+  scrollTop: $("#listing").offset().top
+ }, 1);
+});
 </script>
 

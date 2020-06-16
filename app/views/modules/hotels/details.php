@@ -1,33 +1,15 @@
-<?php
-
-echo "<pre>";
-print_r ($arr);
-
-?>
-
-<?php foreach($hoteldata->response as $list){?>
-
-<?php } ?>
-
 <div class="hotels-detail-page pt-20">
   <div class="container">
     <div class>
       <div class="sticky">
         <div class="list-wrapper">
           <div class="row row-rtl">
-            <div class="c2 p-10">
-              <a href="">
-              <img
-                class="main-img"
-                src="<?php echo $theme_url;?>assets/img/hotel.jpg"
-                title="Holiday Inn Citystars"
-                alt="Holiday Inn Citystars"
-                />
-              </a>
+            <div class="c1 p-10">
+              <img class="main-img" src="<?php echo $hotel->response->thumb; ?>" alt="<?php echo $hotel->response->company_name; ?>" />
             </div>
-            <div class="c10">
+            <div class="c11">
               <div class="row h-100 row-rtl">
-                <div class="c9 border-right">
+                <div class="c8 border-right">
                   <div class="detail rtl-align-right">
                     <div class="flex flex-content-between row-rtl">
                       <div class="trust-you">
@@ -41,7 +23,7 @@ print_r ($arr);
                       </div>
                     </div>
                     <h6 class="title flex row-rtl">
-                      <a target="_blank" href="#">Holiday Inn Citystars</a>
+                      <?php echo $hotel->response->company_name; ?>
                       <div class="rating ml-10">
                         <span>&#10029;</span>
                         <span>&#10029;</span>
@@ -50,19 +32,23 @@ print_r ($arr);
                         <span>&#10029;</span>
                       </div>
                     </h6>
-                    <small class="text-muted">Ali Rashed St.,Heliopolis</small>
+                    <small class="text-muted"><?php echo $hotel->response->address; ?></small>
                   </div>
                 </div>
-                <div class="c3 p-10">
+                <div class="c2 p-10">
                   <div class="total-price">
                     <span>starts from</span>
-                    <span>390</span>
-                    <span> SAR </span>
-                  </div>
-                  <div class="text-center mt-10">
-                    <a class="book-room hide-m" href="#available-room">Available Rooms </a>
+                    <span><strong>390</strong></span>
+                    <span> USD </span>
                   </div>
                 </div>
+
+                <div class="c2 p-10">
+                  <div class="text-center mt-10">
+                    <a class="book-room hide-m" href="#available-room">View Rooms </a>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -85,7 +71,7 @@ print_r ($arr);
       <div class="row row-rtl" id="hotel">
         <div class="c3">
           <div style="overflow:hidden;max-width:100%;width:500px;height:300px;">
-            <div id="embeddedmap-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=tecfare+lahore&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div>
+            <div id="embeddedmap-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://maps.google.com/maps?q=<?php echo $hotel->response->latitude; ?>,<?php echo $hotel->response->longitude; ?>&hl=es;z=14&amp;output=embed"></iframe></div>
             <a class="embedded-maphtml" href="https://www.embed-map.com" id="enable-mapdata">https://www.embed-map.com</a>
             <style>#embeddedmap-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style>
           </div>
@@ -95,25 +81,19 @@ print_r ($arr);
             <div class="row">
               <div class="c8 pr-0">
                 <img class="main-img"
-                  src="<?php echo $theme_url;?>assets/img/hotel.jpg"
+                  src="<?php echo $hotel->response->thumb; ?>"
                   title="Holiday Inn Citystars"
                   alt="Holiday Inn Citystars"
                   />
               </div>
               <div class="c4">
                 <ul class="other-img">
-                  <li>
-                    <img src="<?php echo $theme_url;?>assets/img/hotel.jpg"title="Holiday Inn Citystars"alt="Holiday Inn Citystars"
-                      />
-                  </li>
-                  <li>
-                    <img src="<?php echo $theme_url;?>assets/img/hotel.jpg"title="Holiday Inn Citystars"alt="Holiday Inn Citystars"
-                      />
-                  </li>
-                  <li>
-                    <img src="<?php echo $theme_url;?>assets/img/hotel.jpg"title="Holiday Inn Citystars"alt="Holiday Inn Citystars"
-                      />
-                  </li>
+                <?php
+                $i = 1;
+                foreach($hotel->response->images as $img){ ?>
+                <li><img src="<?=$img;?>" alt="<?php echo $hotel->response->company_name; ?>" /></li>
+                <?php if ($i++ == 3) break; ?>
+                <?php } ?>
                 </ul>
               </div>
             </div>
@@ -129,7 +109,7 @@ print_r ($arr);
               </span>
             </div>
             <div class="p-10">
-                <?php include $themeurl. 'views/modules/hotels/search.php';?>
+                <?php // include 'search.php';?>
             </div>
             <div class="room-wrapper p-10">
               <div class="row row-rtl">
@@ -200,10 +180,15 @@ print_r ($arr);
                   </div>
                 </div>
                 <div class="c9">
-                  <?php for ($i = 1; $i <= 5; $i++) { ?>
+
+
+
+                <?php
+                foreach($hotel->response->rooms as $room){ ?>
+
                   <div class="room-cart">
                     <div class="room-header rtl-align-right">
-                      <h3>Standard 
+                      <h3><?=$room->room_name;?>
                         <span> 1  nights ,  Rooms </span>
                       </h3>
                     </div>
@@ -224,11 +209,11 @@ print_r ($arr);
                             <h6 >Total stay for <span><span> 1 </span>nights </span></h6>
                             <!--<small><h4 class="price-before-discount"><span>433</span><span class="currency"> SAR</span></h4></small>-->
                             <h3  class="price">
-                              <span>200</span>
+                              <span><?=$room->price;?></span>
                               <span  class="currency">USD</span>
                             </h3>
                             <!--<h6 class="text-success mt-10">(incl.tax)</h6>-->
-                            <a  class="btn success" href="<?php echo base_url(); ?>hotels/booking">Book now</a>
+                            <a  class="btn success" href="hotels/booking">Book now</a>
                           </div>
                         </div>
                       </div>
@@ -236,6 +221,12 @@ print_r ($arr);
                     </div>
                   </div>
                   <?php } ?>
+
+
+
+
+
+
                 </div>
               </div>
             </div>
@@ -358,10 +349,8 @@ print_r ($arr);
             <div class="row row-rtl">
               <div class="c9">
                 <div class="extra-hotel-info  p-10">
-                  <h3 class="rtl-align-right">Hotel Details</h3>
-                  <p class="rtl-align-right">The Holiday Inn Cairo City Stars hotel is located 7 km from Cairo International Airport and 12 km from the city centre and The Egyptian Museum.</p>
-                  <p class="rtl-align-right">Hotel facilitoes include restaurant, bar, gym, WiFi access and swimming pool.The guest rooms are equipped with bathroom/shower, air conditioning, safe, internet access, mini bar, hair dryer, cable TV and telephone.** Please note that some of the above facilities may be closed due to weather / seasonal conditions.**Address: Sharia Ali Rashid St. 11757 Cairo, Egypt</p>
-                  <p class="rtl-align-right">Don't miss out on recreational opportunities including an outdoor pool and a fitness center. This hotel also features complimentary wireless Internet access, concierge services, and babysitting/childcare (surcharge).</p>
+                 <h3 class="rtl-align-right">Hotel Details</h3>
+                 <p><?php echo $hotel->response->description; ?></p>
                 </div>
               </div>
               <div class="c3">
@@ -369,11 +358,10 @@ print_r ($arr);
                   <div>
                     <span class="amenities-header rtl-align-right">amenities</span>
                     <ul>
-                      <li><i class="mr-10">&#10003;</i>Air conditioning</li>
-                      <li><i class="mr-10">&#10003;</i>ifts</li>
-                      <li><i class="mr-10">&#10003;</i>Outdoor pool</li>
-                      <li><i class="mr-10">&#10003;</i>TV</li>
-                      <li><i class="mr-10">&#10003;</i>Barber/Beauty Salon</li>
+                    <?php
+                    foreach($hotel->response->amenities as $amenity){ ?>
+                    <li><i class="mr-10">&#10003;</i><?=$amenity->title;?></li>
+                    <?php } ?>
                     </ul>
                   </div>
                 </div>
@@ -393,8 +381,5 @@ tabs.addEventListener('click',function(e){
     activeTab[i].classList.remove("active");
   }
   e.target.classList.add("active");
-  
-  
 })
-
 </script>

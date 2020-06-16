@@ -90,7 +90,7 @@ class Hotels
 
 		$arrs = json_encode($listrating);
 		$arrsdecode = json_decode($arrs);
-		$obj_merged = (object) array_merge( 
+		$obj_merged = (object) array_merge(
         (array) $arrsdecode, (array) $arr);
 
 		$listdata = $obj_merged;
@@ -166,8 +166,11 @@ class Hotels
 		curl_close($curl);
 		// echo $response . PHP_EOL;
 		$arr = json_decode($response);
-		echo "<pre>";
-    	print_r ($arr);
+	   //	echo "<pre>";
+       //	print_r ($arr);
+        $hotel = $arr;
+
+        include "app/views/modules/hotels/details.php";
 
 	}
  

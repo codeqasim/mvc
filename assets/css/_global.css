@@ -4,7 +4,7 @@
 }
 
 /*
-theme primary color : #194ec0;
+theme primary color : #0058e6;
 */
 
 @font-face { font-family: 'Muli Regular'; font-style: normal; font-weight: normal; src: local('Muli Regular'), url('../fonts/muli/Muli-Regular.woff') format('woff'); } 
@@ -230,7 +230,7 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 .btn:disabled::before{opacity:0}
 .btn:disabled::after{opacity:0}
 
-.btn.prime { background: #194ec0; color: #fff; } .btn.prime-o { border-color: #194ec0; color: #194ec0; } 
+.btn.prime { background: #0058e6; color: #fff; } .btn.prime-o { border-color: #0058e6; color: #0058e6; } 
 .btn.success { background: #4ea05a; color: #fff; } .btn.success-o { border-color: #4ea05a; color: #4ea05a; } 
 .btn.danger { border-color: #ff002d; color: #fff; } .danger-o { border-color: #ff002d; color: #ff002d; }
 
@@ -242,7 +242,7 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 
 .breadcrumb-bg{ margin-bottom: 20px;  width: 100%; box-shadow: 0 2px 10px 0 rgba(0,0,0,.07); background-color: #fff; height: 50px; }
 .breadcrumb-bg ul{display: flex; align-items: center;height: 100%;}
-.breadcrumb-bg ul li{color: #194ec0;text-transform: capitalize;font-size: 14px}
+.breadcrumb-bg ul li{color: #0058e6;text-transform: capitalize;font-size: 14px}
 .breadcrumb-bg ul li a{color: #6c757d;}
 .breadcrumb-item+.breadcrumb-item{padding-left: .5rem;}
 .breadcrumb-item+.breadcrumb-item:before{content: ">";display: inline-block;padding-right: .5rem;color: #6c757d;}
@@ -256,7 +256,7 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 .wrapper-shared h4{margin-bottom: 19px; text-transform: capitalize; font-size: 18px;}
 .wrapper-shared .btn-succes{font-size: 17px; padding: 10px 51px;}
 .wrapper-shared ul li.tab-btn{cursor: pointer; box-shadow: none; border: 1px solid #d8d8d8; border-radius: 50px; background-color: transparent; font-size: 14px; outline: 0; padding: 10px 37px;}
-.wrapper-shared ul li.active{background-color: #194ec0;color: #fff;}
+.wrapper-shared ul li.active{background-color: #0058e6;color: #fff;}
 .wrapper-shared .credit-card-content,.wrapper-shared .stc-content{display: none;}
 .wrapper-shared input#Credit-Card:checked + .credit-card-content{display: block;}
 .wrapper-shared input#STC-pay:checked + .stc-content{display: block;}
@@ -345,14 +345,14 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 .account{padding-top:100px;padding-bottom:132px}
 .account h1{font-size:45px;font-weight:700;margin-bottom:24px;color:#2b2a58}
 .account .list-info li{font-size:16px;position:relative;line-height:25px;padding:5px 0 5px 5px;font-weight:600;display:flex;align-items:center;}
-.account .list-info li i {font-size:23px;color:#194ec0;margin-right:16px}
+.account .list-info li i {font-size:23px;color:#0058e6;margin-right:16px}
 .account .desc-img{margin-top:63px}
 .account .account-tab{width:437px;margin:0 auto;border-radius:4px;background-color:#fff;padding:30px}
 .account .account-tab .tabs-btn li{width:128px;text-align:center}
 .account .account-tab .tabs-btn li label{display:block;width:100%;text-align:center;border-radius:4px;background-color:#f1efef;color:#424242;font-size:16px;font-weight:400;padding:10px 0;cursor: pointer;}
 .account .account-tab .tabs-btn li:first-child label{border-top-right-radius:0;border-bottom-right-radius:0}
 .account .account-tab .tabs-btn li:last-child label{border-top-left-radius:0;border-bottom-left-radius:0}
-.account .account-tab .tabs-btn li label.active{background-color:#194ec0;transition:all .5s;-webkit-transition:.5s;-moz-transition:.5s;-o-transition:.5s;color:#fff}
+.account .account-tab .tabs-btn li label.active{background-color:#0058e6;transition:all .5s;-webkit-transition:.5s;-moz-transition:.5s;-o-transition:.5s;color:#fff}
 .account .account-tab h3{font-size:14px;color:#363636;margin-bottom:20px}
 .account .account-tab .btn-facebook{background-color:#507cc0;margin-right:5px;border:none;color:#fff;line-height:35px}
 .account .account-tab .btn-google{background-color:#fff;border:1px solid rgba(151,151,151,0.37);color:#000;margin-left:5px}
@@ -363,4 +363,4 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 .account .account-tab input:checked + .signup{display: block;}
 .account .account-tab .login .remember-sec{display:flex;justify-content:space-between;margin-top:15px;align-items:center}
 .account .account-tab .login .remember-sec label{font-size:15px;color:#000}
-.account .account-tab .login .remember-sec .forgetPassword{text-decoration:underline;font-size:15px;color:#194ec0}
+.account .account-tab .login .remember-sec .forgetPassword{text-decoration:underline;font-size:15px;color:#0058e6}

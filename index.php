@@ -11,7 +11,7 @@
     function home()
     {
     $title='Homepage';
-    echo "Hotels Listing Page";
+    include "app/views/home.php";
 
     }
 

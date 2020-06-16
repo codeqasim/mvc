@@ -70,7 +70,7 @@
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
-              <strong>28</strong>
+              <strong><?php echo count($listdata->response) ?></strong>
             </label>
             <div class="clear"></div>
 
@@ -176,7 +176,7 @@
                 <div class="flex items-center">
                   <div>
                     <strong>
-                    179 Hotels in Cairo
+                    <?php echo count($listdata->response) ?> Hotels in Cairo
                     </strong>
                   </div>
                   <!--<div class="ml-30">

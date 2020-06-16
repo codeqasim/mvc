@@ -9,10 +9,10 @@ $APPNAME = "Travel App";
 $API_ENDPOINT = "https://www.phptravels.net/api/";
 $API_KEYS = "phptravels";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "app";
+// $servername = "localhost:3307";
+// $username = "root";
+// $password = "";
+// $database = "app";
 
 define('API_ENDPOINT', "https://www.phptravels.net/api/");
 define('API_KEYS', "phptravels");

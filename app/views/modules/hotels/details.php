@@ -1,6 +1,8 @@
 <div class="hotels-detail-page pt-20">
   <div class="container">
-    <div class>
+    <div class="crumb">
+     <a href="<?=root?>">Home</a> <i class="icon mdi mdi-chevron-right"></i> Hotels <i class="icon mdi mdi-chevron-right"></i> Lahore <i class="icon mdi mdi-chevron-right"></i> <strong><?php echo $hotel->response->company_name; ?></strong> <i class="icon mdi mdi-chevron-right"></i> Booking <i class="icon mdi mdi-chevron-right"></i> Payment
+    </div>
       <div class="sticky">
         <div class="list-wrapper">
           <div class="row row-rtl">
@@ -376,7 +378,6 @@
           </section>
         </div>
       </div>
-    </div>
   </div>
 </div>
 <script>

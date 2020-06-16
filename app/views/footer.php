@@ -138,7 +138,7 @@ $(".hero,input").click(function() {
         var re_turn = partss[0] + '-' + partss[1] + '-' + partss[2];
 
         /* finally url*/
-        var base_url = "<?php echo base_url() ?>";
+        var base_url = "<?=root;?>";
 
         var url = base_url+"flights/"+origin_res1.toLowerCase()+"/"+destination_res1.toLowerCase()+"/"+flight_type+"/"+departur+"/"+re_turn+"/"+adult+"/"+children+"/"+infant;
 

@@ -1,3 +1,14 @@
+<?php
+
+echo "<pre>";
+print_r ($arr);
+
+?>
+
+<?php foreach($hoteldata->response as $list){?>
+
+<?php } ?>
+
 <div class="hotels-detail-page pt-20">
   <div class="container">
     <div class>

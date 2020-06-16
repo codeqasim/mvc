@@ -25,12 +25,15 @@
       </div>
     </div>
   </div>
-  <div class="container">
+
+
+
+  <div class="container" id="wrapper">
     <div class="row row-rtl">
       <div class="c3">
 
         <aside>
-        <section class="scroll-box">
+        <section class="scroll-box" id="stuff-filters">
           <!--<button id="show-map-data" class="map-view" style="background-image:url('<?php echo $theme_url;?>assets/img/map-filter.png');">
           <span>Map View</span>
           </button>-->
@@ -40,7 +43,7 @@
             </div>
             <div class="flex flex-content-between items-center pb-10 row-rtl">
               <span>Make search easier</span>
-              <button>Clear Filter</button>
+              <button id="clear-filters">Clear Filter</button>
             </div>
           </div>
           <input type="text" placeholder="Search for hotel name" />
@@ -54,6 +57,16 @@
             <div class="filter-header">
               <h5>Star Rating</h5>
             </div>
+
+
+
+    <?php foreach($listdata->response as $list){?>
+
+    <label><input type="checkbox" value="<?= $list->rating ;?>" class="filter-item" /> <?= $list->rating ;?></label>&nbsp;&nbsp;
+
+    <?php } ?>
+
+
 
             <div class="mt-30 row-rtl">
 
@@ -76,7 +89,7 @@
             </label>
             <div class="clear"></div>
 
-            <label for="s3"> <input type="checkbox" id="s3" name="stars" value="3"/>
+            <label for="s3"> <input type="checkbox" id="s3" name="stars" value="3" class="filter-item"/>
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
@@ -182,9 +195,12 @@
             </div>
           </div>
         </div>
+
+        <div id="products">
+
         <?php foreach($listdata->response as $list){?>
 
-        <div class="row row-rtl">
+        <div class="row row-rtl <?= $list->rating ;?> product-block item">
           <div class="c12">
             <div class="list-wrapper">
               <div class="row row-rtl">
@@ -264,69 +280,12 @@
         </div>
         <?php } ?>
       </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div id="wrapper">
-  <!-- Checkboxes: targeted in the JS by class and value set to the class on item you want to filter for -->
-  <div id="stuff-filters">
-    <span id="clear-filters"><span class="fas fa-times-circle"></span>&nbsp;Reset</span>
-    <label><input type="checkbox" value="pink" class="filter-item" /> Pink</label>&nbsp;&nbsp;
-    <label><input type="checkbox" value="green" class="filter-item" /> Green</label>&nbsp;&nbsp;
-    <label><input type="checkbox" value="brown" class="filter-item" /> Brown</label>&nbsp;&nbsp;||&nbsp;&nbsp;
-    <label><input type="checkbox" value="corncob" class="filter-item" /> Corncob</label>&nbsp;&nbsp;
-    <label><input type="checkbox" value="rebar" class="filter-item" /> Rebar</label><br />
-  </div>
-  <!-- Targeted collection: identified by 'item' class and filterable attributes (4 chars of longer) set as classes -->
-  <div id="products">
-    <div class="pink corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="pink corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="green rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-    <div class="pink corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="brown rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-    <div class="green corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="green corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="green rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-    <div class="pink corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="green rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-    <div class="green rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-    <div class="green corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="brown rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-    <div class="pink corncob product-block item" >
-          <p>Corncob</p>
-    </div>
-    <div class="pink rebar product-block item" >
-          <p>&nbsp;Rebar&nbsp;</p>
-    </div>
-  </div>
-</div>
+
 
 
 
@@ -338,7 +297,7 @@
 
         //Ascending order
         var responsiveIsotope = [ [480, 4] , [720, 6] ];
-        var itemsPerPageDefault = 5;
+        var itemsPerPageDefault = 10;
         var itemsPerPage = defineItemsPerPage();
         var currentNumberPages = 1;
         var currentPage = 1;

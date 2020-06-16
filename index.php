@@ -23,37 +23,17 @@
     include "app/views/404.php";
     }
 
-
-if (isset($_GET['url'])) {  
-        
-        $url = explode('/', $_GET['url']);
-        /*Route*/
-        if ($url[0] == 'search')
-            /*Controller object/function*/
-            $Hotels->search();
-
-        elseif ($url[0] == 'hotels')
-            /*Controller object/function*/
-            $Hotels->hotel_data();
-
-        elseif ($url[0] == 'flights')
-            /*Controller object/function*/
-            $flights->index();
-
-        elseif ($url[0] == 'hotel')
-            /*Controller object/function*/
-            $Hotels->hotel_detail();
-
-        else
-            page404();
-    
+if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
+    /* routes */
+    if     ($url[0] == 'search') $Hotels->search();
+    elseif ($url[0] == 'hotels') $Hotels->hotel_data();
+    elseif ($url[0] == 'flights') $flights->index();
+    elseif ($url[0] == 'hotel') $Hotels->hotel_detail();
+    else page404();
 }
-/*********default function*/
-
 
 else
-{
-    home();
-}
+{ home(); }
+
 echo "</div>";
 include "app/views/footer.php";

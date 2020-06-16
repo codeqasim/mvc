@@ -195,13 +195,8 @@
               <div class="list-wrapper">
                 <div class="row row-rtl">
                   <div class="c-sm-5 c3 p-10">
-                    <a href="">
-                    <img
-                      class="main-img"
-                      src="<?= $list->image ;?>"
-                      title="Holiday Inn Citystars"
-                      alt="Holiday Inn Citystars"
-                      />
+                    <a href="#">
+                    <img  class="main-img lazy" data-src="<?= $list->image ;?>" />
                     </a>
                     <!--<div class="gallery flex-content-between hide-m">
                       <div class="gallery_img">

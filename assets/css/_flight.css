@@ -149,7 +149,7 @@
 .flight-detail-page .details-header {background-color: #3491e7; border-radius: 4px; height: 40px; padding: 0px 13.5px 0 20px;}
 .flight-detail-page .details-header h2{font-size: 14px; color: #fff; margin: 0; font-weight: 400}
 .flight-detail-page .wrapper-shared .else{margin-top:4px;display:inline-block;color: #4ea1e2; font-size: 14px; text-transform: capitalize;}
-aside{position: -webkit-sticky; position: sticky;top: 0;margin-bottom: 20px}
+/*aside{position: -webkit-sticky; position: sticky;top: 0;margin-bottom: 20px}*/
 aside .booking-right{border-radius: 5px; margin-bottom: 20px; box-shadow: 0 2px 10px 0 rgba(0,0,0,.07); -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.07); -ms-box-shadow: 0 2px 10px 0 rgba(0,0,0,.07); -moz-box-shadow: 0 2px 10px 0 rgba(0,0,0,.07); -o-box-shadow: 0 2px 10px 0 rgba(0,0,0,.07); background-color: #fff;}
 aside .booking-title { padding: 16px 0; background-color: #194ec0; color: #fff; text-transform: capitalize; font-weight: 700; border-top-right-radius: 5px; border-top-left-radius: 5px; }
 aside .summary-card{padding:20px;}

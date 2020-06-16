@@ -33,7 +33,7 @@
       <div class="c3">
 
         <aside>
-        <section class="scroll-box" id="stuff-filters">
+        <section class="" id="stuff-filters">
           <!--<button id="show-map-data" class="map-view" style="background-image:url('<?php echo $theme_url;?>assets/img/map-filter.png');">
           <span>Map View</span>
           </button>-->
@@ -58,19 +58,13 @@
               <h5>Star Rating</h5>
             </div>
 
-
-
-    <?php foreach($listdata->response as $list){?>
-
-    <label><input type="checkbox" value="<?= $list->rating ;?>" class="filter-item" /> <?= $list->rating ;?></label>&nbsp;&nbsp;
-
-    <?php } ?>
-
-
+            <!--<?php foreach($listdata->response as $list){?>
+            <label><input type="checkbox" value="<?= $list->rating ;?>" class="filter-item" /> <?= $list->rating ;?></label>&nbsp;&nbsp;
+            <?php } ?>-->
 
             <div class="mt-30 row-rtl">
 
-            <label for="s5"> <input type="checkbox" id="s5" name="stars" value="5"/>
+            <label for="s5"> <input type="radio" id="s5" name="stars" value="s5" class="filter-item"/>
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
@@ -80,7 +74,7 @@
             </label>
             <div class="clear"></div>
 
-            <label for="s4"> <input type="checkbox" id="s4" name="stars" value="4"/>
+            <label for="s4"> <input type="radio" id="s4" name="stars" value="s4" class="filter-item"/>
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
@@ -89,7 +83,7 @@
             </label>
             <div class="clear"></div>
 
-            <label for="s3"> <input type="checkbox" id="s3" name="stars" value="3" class="filter-item"/>
+            <label for="s3"> <input type="radio" id="s3" name="stars" value="s3" class="filter-item"/>
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
@@ -97,14 +91,14 @@
             </label>
             <div class="clear"></div>
 
-            <label for="s2"> <input type="checkbox" id="s2" name="stars" value="2"/>
+            <label for="s2"> <input type="radio" id="s2" name="stars" value="s2" class="filter-item"/>
               <span>&#10029;</span>
               <span>&#10029;</span>
               <strong>15</strong>
             </label>
             <div class="clear"></div>
 
-            <label for="s1"> <input type="checkbox" id="s1" name="stars" value="1"/>
+            <label for="s1"> <input type="radio" id="s1" name="stars" value="s1" class="filter-item"/>
               <span>&#10029;</span>
               <strong>5</strong>
             </label>
@@ -200,7 +194,12 @@
 
         <?php foreach($listdata->response as $list){?>
 
-        <div class="row row-rtl <?= $list->rating ;?> product-block item">
+        <?php
+        $y = $list->rating;
+        $x = (int)$y;
+        ?>
+
+        <div class="row row-rtl s<?= $x ;?> product-block item">
           <div class="c12">
             <div class="list-wrapper">
               <div class="row row-rtl">

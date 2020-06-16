@@ -24,20 +24,20 @@
                     <div class="row links row-rtl">
                         <div class="c4">
                             <ul>
-                                <li><a href="<?php echo base_url(); ?>about">about us</a></li>
-                                <li><a  href="<?php echo base_url(); ?>careers">careers</a></li>
+                                <li><a href="<?=$root;?>about">about us</a></li>
+                                <li><a  href="<?=$root;?>careers">careers</a></li>
                             </ul>
                         </div>
                         <div class="c4">
                             <ul>
-                                <li><a href="<?php echo base_url(); ?>policy">privacy policy</a></li>
-                                <li><a href="<?php echo base_url(); ?>faq">FAQs</a></li>
+                                <li><a href="<?=$root;?>policy">privacy policy</a></li>
+                                <li><a href="<?=$root;?>faq">FAQs</a></li>
                             </ul>
                         </div>
                         <div class="c4">
                             <ul>
-                                <li><a href="<?php echo base_url(); ?>contact">contact us</a></li>
-                                <li><a  href="<?php echo base_url(); ?>account"><span >register </span></a></li>
+                                <li><a href="<?=$root;?>contact">contact us</a></li>
+                                <li><a  href="<?=$root;?>account"><span >register </span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -66,8 +66,8 @@
     <div class="contain">
         <div class="sub-footer">
             <div class="flex items-center row-rtl">
-                <a  href="<?php echo base_url(); ?>" class="mr-10 d-block">
-                <img alt="" width="100px" src="<?php echo base_url(); ?>assets/img/logo.png">
+                <a  href="<?=$root;?>" class="mr-10 d-block">
+                <img alt="" width="100px" src="<?=$root;?>assets/img/logo.png">
                 </a>
                 <p class="coy_right">
                     <span>&copy; 2020 Appname</span>

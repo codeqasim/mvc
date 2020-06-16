@@ -14,6 +14,7 @@ $database = "app";
 
 define('API_ENDPOINT', "https://www.phptravels.net/api/");
 define('API_KEYS', "phptravels");
+define('root', "http://localhost/mvc/");
 
 define('views', "app/views/");
 

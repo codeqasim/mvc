@@ -1,9 +1,3 @@
-<?php
-$root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
-$root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-require_once('././config.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="#rtl">
 <head>
@@ -12,7 +6,7 @@ require_once('././config.php');
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>Booknow</title>
 <link rel="stylesheet" href="<?=$root;?>assets/css/_style.css" />
-<!--<link rel="stylesheet" href="<?php echo $theme_url;?>assets/css/_rtl.css" />-->
+<!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
 <script> var baseurl = "<?=$root;?>"; </script>
 <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 <meta property="og:type" content="website">

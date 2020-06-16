@@ -1,6 +1,10 @@
 <?php
 
+    $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
+    $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+
     include "app/views/header.php";
+    include "config.php";
     echo "<div class='container'>";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
@@ -12,7 +16,6 @@
     {
     $title='Homepage';
     include "app/views/home.php";
-
     }
 
     function page404()

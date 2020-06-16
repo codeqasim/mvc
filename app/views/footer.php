@@ -93,6 +93,14 @@ threshold: 0
 });
 </script>
 
+<script>
+$(".filter-item").click(function() {
+ $('html, body').animate({
+  scrollTop: $("#listing").offset().top
+ }, 1);
+});
+</script>
+
 </body>
 </html>
 

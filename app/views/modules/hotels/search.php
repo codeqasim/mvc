@@ -86,9 +86,6 @@
     <input type="hidden" class="form-control" name="currceny" id="currceny" value="usd">
     <input type="hidden" class="form-control" name="pagination" id="pagination"value="1">
 
-    <input type="hidden" class="form-control" name="child" id="child" value="0">
-    <input type="hidden" class="form-control" name="room" id="room" value="0">
-
     </form>
 </div>
 

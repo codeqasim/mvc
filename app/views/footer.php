@@ -143,7 +143,7 @@ $(document).ready(function(){
   var currceny = $('#currceny').val(); 
   var pagination = $('#pagination').val(); 
   var adults = $('#adults').val(); 
-  var child = $('#child').val(); 
+  var child = $('#childs').val(); 
   var room = $('#room').val();
   var city_trims = city.replace(/\/?,/g, '/').replace(/-+/g, '-').replace(/^-|-$/g, '').split(' ').join('-').replace('%40', '@');
   var actionURL = 'hotels/';

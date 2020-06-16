@@ -42,11 +42,11 @@
                                 <div class="c4 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Children</span>
-                                        <span class="text-muted ml-5"><small>(+2/+11)</small></span>
+                                         <span class="text-muted ml-5"><small>(+2/+11)</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
                                         <strong class="decrease" id="decreasee">-</strong>
-                                        <span id="child"><input type="text" class="form-control" name="child" id="child" value="0" readonly></span>
+                                        <span id="child"><input type="text" class="form-control" name="childs" id="childs" value="0" readonly></span>
                                         <strong class="increase" id="increasee">+</strong>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                     </div>
                                     <div class="passenger-dropdown-right">
                                         <strong class="decrease" id="decreasee">-</strong>
-                                        <span id="rooms"><input type="text" class="form-control" name="rooms" id="rooms" value="0" readonly></span>
+                                        <span id="rooms"><input type="text" class="form-control" name="rooms" id="rooms" value="1" readonly></span>
                                         <strong class="increase" id="increasee">+</strong>
                                     </div>
                                 </div>

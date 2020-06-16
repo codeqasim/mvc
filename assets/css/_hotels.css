@@ -76,7 +76,7 @@ aside .help-detail .info a{font-size: 22px; font-weight: 500; color: #fff;}
 .list-page .list-wrapper .detail{min-height:150px;position:relative}
 /*.list-page .list-wrapper .detail:after{content:"";position:absolute;width:102%;bottom:0;background:#e1e2e6;height:1px;right:-10px}*/
 .list-page .list-wrapper .detail .title a{color:#000}
-.list-page .list-wrapper .detail .title{padding-top:20px;font-size:18px;color:#000;margin-bottom:0px}
+.list-page .list-wrapper .detail .title{padding-top:5px;font-size:18px;color:#000;margin-bottom:0px}
 .list-page .list-wrapper .detail .rating span{color:rgb(255, 149, 0);font-size:18px}
 .list-page .list-wrapper .aminities span{color:#eee;font-size:35px}
 .list-page .list-wrapper .trust-you{display:flex;flex-direction:row;align-items:center}

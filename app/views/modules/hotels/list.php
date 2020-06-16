@@ -1,5 +1,3 @@
-
-
 <div class="list-page">
   <div class="edit-search">
     <div class="container">
@@ -215,14 +213,14 @@
                   <div class="row h-100 row-rtl">
                     <div class="c7 border-right rtl-align-right">
                       <div class="detail">
-                        <h6 class="title"><a target="_blank" href="#"><?= $list->company_name ;?></a></h6>
+                        <h6 class="title"><a target="_blank" href="#"><strong><?= $list->company_name ;?></strong></a></h6>
                         <div class="rating mb-10">
                           <?php for ($x = 1; $x <= $list->rating; $x++):?>
                             <span>&#10029;</span>
                           <?php endfor; ?>
                           
                         </div>
-                        <small class="text-muted"><?= $list->address ;?></small><br>
+                        <small class="text-muted"><strong><?= $list->address ;?></strong></small><br>
                         <small class="text-muted"><?php echo substr($list->description,0,150);?></small>
                       </div>
                       <!--<div class="aminities mt-10 hide-m">

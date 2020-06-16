@@ -28,15 +28,13 @@ class Hotels
 
         $lang = $url[1];
         $currceny = $url[2];
-        $country = $url[3];
-        $city = $url[4];
-        $checkin = $url[5];
-        $checkout = $url[6];
-        $adults = $url[7];
-        $children = $url[8];
+        $city = $url[3];
+        $checkin = $url[4];
+        $checkout = $url[5];
+        $adults = $url[6];
+        $children = $url[7];
 		$data = array(
-			'country'=>$country,
-			// 'city'=>$city,
+			'country'=>$city,
 			'checkin'=>$checkin,
 			'checkout'=>$checkout,
 			'adults'=>$adults,

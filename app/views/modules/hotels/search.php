@@ -1,11 +1,12 @@
 <div class="tab fade">
+    <form id="hotels-api" method="post">
     <div class="row no-gutters row-rtl search_area main_search">
         <div class="row">
             <div class="c12 data-input">
                 <div class="input-wrapper">
-                    <span class="input-label"><i class="mdi mdi-flight-takeoff"></i> From Origin</span>
+                    <span class="input-label"><i class="mdi mdi-hotel"></i> City Name</span>
                     <div class="input-items">
-                       <input autocomplete="off" type="search" placeholder="Destination" name="destination" value="Dubai - United Arab Emarates" class=""/>
+                       <input autocomplete="off" type="search" placeholder="city" name="city" value="lahore" class=""/>
                     </div>
                 </div>
             </div>
@@ -15,28 +16,14 @@
                         <div class="c3 c-sm-3">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkin</span>
                             <div class="input-items">
-                                <input
-                                    id=""
-                                    name="depart"
-                                    class="depart"
-                                    type="text"
-                                    placeholder="19/03/2020"
-                                    value="20/06/2020"
-                                    />
+                                <input name="checkin" class="checkin" id="checkin" type="text" placeholder="19/03/2020" value="20/06/2020"  />
                             </div>
                         </div>
                         <div class="c3 c-sm-3">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkout</span>
                             <div class="input-items">
                                 <span class="dashed hide show-md">-</span>
-                                <input
-                                    name="return"
-                                    class="returning"
-                                    id=""
-                                    type="text"
-                                    placeholder="20/03/2020"
-                                    value="24/06/2020"
-                                    />
+                                <input name="checkout" class="checkout" id="checkout" type="text" placeholder="20/03/2020" value="24/06/2020"  />
                             </div>
                         </div>
                         <div class="c6 row-rtl pt-15">
@@ -94,6 +81,12 @@
             </div>
         </div>
     </div>
+
+    <input type="hidden" class="form-control" name="language" placeholder="language" value="en">
+    <input type="hidden" class="form-control" name="currceny" placeholder="currceny" value="usd">
+    <input type="hidden" class="form-control" name="city" placeholder="Pagination" value="1">
+
+    </form>
 </div>
 
 

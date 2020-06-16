@@ -4,6 +4,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+
     $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
@@ -11,7 +12,7 @@
     include "config.php";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
-    require_once('app/controller/CMS.php');
+    require_once('app/controller/Cms.php');
 
     $Hotels = new Hotels();
     $flights = new Flights();

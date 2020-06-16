@@ -34,20 +34,20 @@
                                         <span class="text-muted ml-5"> <small>(+12)</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
-                                        <button class="decrease" id="decrease">-</button>
-                                        <span id="adult">1</span>
-                                        <button class="increase" id="increase">+</button>
+                                        <strong class="decrease" id="decrease">-</strong>
+                                        <span id="adult"><input type="text" class="form-control" name="adults" id="adults" value="2" readonly></span>
+                                        <strong class="increase" id="increase">+</strong>
                                     </div>
                                 </div>
                                 <div class="c4 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
-                                        <span><i class="mdi mdi-directions-walk"></i> Children</span> 
+                                        <span><i class="mdi mdi-directions-walk"></i> Children</span>
                                         <span class="text-muted ml-5"><small>(+2/+11)</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
-                                        <button class="decrease" id="decreasee">-</button>
-                                        <span id="children">0</span>
-                                        <button class="increase" id="increasee">+</button>
+                                        <strong class="decrease" id="decreasee">-</strong>
+                                        <span id="child"><input type="text" class="form-control" name="child" id="child" value="0" readonly></span>
+                                        <strong class="increase" id="increasee">+</strong>
                                     </div>
                                 </div>
                                 <div class="c4 room-row flex-content-between items-center row-rtl text-center">
@@ -56,9 +56,9 @@
                                         <span class="text-muted ml-5"><small>&nbsp;</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
-                                        <button class="decrease" id="decreasee">-</button>
-                                        <span id="intant">0</span>
-                                        <button class="increase" id="increasee">+</button>
+                                        <strong class="decrease" id="decreasee">-</strong>
+                                        <span id="rooms"><input type="text" class="form-control" name="rooms" id="rooms" value="0" readonly></span>
+                                        <strong class="increase" id="increasee">+</strong>
                                     </div>
                                 </div>
                                 <div class="passenger-dropdown pb-20">
@@ -85,7 +85,7 @@
     <input type="hidden" class="form-control" name="language" id="language" value="en">
     <input type="hidden" class="form-control" name="currceny" id="currceny" value="usd">
     <input type="hidden" class="form-control" name="pagination" id="pagination"value="1">
-    <input type="hidden" class="form-control" name="adults" id="adults" value="2">
+
     <input type="hidden" class="form-control" name="child" id="child" value="0">
     <input type="hidden" class="form-control" name="room" id="room" value="0">
 

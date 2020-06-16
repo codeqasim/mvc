@@ -16,14 +16,14 @@
                         <div class="c3 c-sm-3">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkin</span>
                             <div class="input-items">
-                                <input name="checkin" class="checkin" id="checkin" type="text" placeholder="19/03/2020" value="20/06/2020"  />
+                                <input name="checkin" class="checkin" id="checkin" type="text" placeholder="" value="20-06-2020"  />
                             </div>
                         </div>
                         <div class="c3 c-sm-3">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkout</span>
                             <div class="input-items">
                                 <span class="dashed hide show-md">-</span>
-                                <input name="checkout" class="checkout" id="checkout" type="text" placeholder="20/03/2020" value="24/06/2020"  />
+                                <input name="checkout" class="checkout" id="checkout" type="text" placeholder="" value="22-06-2020"  />
                             </div>
                         </div>
                         <div class="c6 row-rtl pt-15">

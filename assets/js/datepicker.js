@@ -32,7 +32,7 @@ return date.join(format.separator)},headTemplate:'<thead>'+'<tr>'+'<th class="pr
 var nowTemp = new Date();
 var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 var checkin = $('.checkin').datepicker({
-format: 'dd/mm/yyyy',
+format: 'dd-mm-yyyy',
 onRender: function(date) {
 return date.valueOf() < now.valueOf() ? 'disabled' : ''; }
 }).on('changeDate', function(ev) {
@@ -44,7 +44,7 @@ checkin.hide();
 $('.checkout')[0].focus();
 }).data('datepicker');
 var checkout = $('.checkout').datepicker({
-format: 'dd/mm/yyyy',
+format: 'dd-mm-yyyy',
 onRender: function(date) {
 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : ''; }
 }).on('changeDate', function(ev) {

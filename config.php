@@ -21,7 +21,7 @@ define('root', $root);
 define('views', "app/views/");
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+// $conn = new mysqli($servername, $username, $password, $database);
 
 // // Check connection
 // if ($conn->connect_error) {

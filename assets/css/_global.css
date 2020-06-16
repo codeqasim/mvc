@@ -32,14 +32,14 @@ a:visited{text-decoration:none;outline:0;box-shadow:none}
 img {max-width: 100%;height: auto;}
 ul{list-style-type: none; }
 
-.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
-@media(min-width:576px){.container{max-width:540px}
-}@media(min-width:768px){.container{max-width:720px}
-}@media(min-width:992px){.container{max-width:960px;}
+.contain{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+@media(min-width:576px){.contain{max-width:540px}
+}@media(min-width:768px){.contain{max-width:720px}
+}@media(min-width:992px){.contain{max-width:960px;}
 .flex-md{display: flex;}
 .items-md-center{align-items: center;}
 .flex-content-md-start{justify-content: flex-start;}
-}@media(min-width:1200px){.container{max-width:1190px;width:1190px;padding-right:10px;padding-left:10px}
+}@media(min-width:1200px){.contain{max-width:1190px;width:1190px;padding-right:10px;padding-left:10px}
 }
 
 /* grid system */
@@ -464,7 +464,7 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 .about-us .facilities h4{font-size: 22px; color: #363636;}
 .about-us .facilities p{font-size: 18px; color: #949494; line-height: 26px; width: 80%;}
 .about-us .offering{background: #fff;padding-bottom: 66px;}
-.about-us .offering .img-containerer{height: 97px; display: inline-flex; align-items: center; margin-bottom: 14px;}
+.about-us .offering .img-container{height: 97px; display: inline-flex; align-items: center; margin-bottom: 14px;}
 .about-us .offering  p{font-size: 18px; color: #363636; font-weight: 600;}
 
 .policy .title{text-transform: capitalize; font-size: 18px; font-weight: 500; color: #363636; border-left: 4px solid #363636; padding-left: 10px; margin-bottom: 20px;}

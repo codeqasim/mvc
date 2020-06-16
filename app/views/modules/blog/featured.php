@@ -1,7 +1,7 @@
 <?php  if(!empty($ota_modules->blog->is_active) && !empty($main_model["blog"]->is_active)){ ; ?>
     <?php  if (count($blog) > 0): ?>
         <section class="featured-blog bgb feature">
-            <div class="containerer line">
+            <div class="container line">
                 <div class="col-md-12">
                     <h6><?=lang('021')?> <?=lang('01008')?></h6>
                 </div>

@@ -1,6 +1,6 @@
 <style> body{background-color: #f2f6fb;"}</style>
 <div class="account">
-  <div class="container">
+  <div class="contain">
     <div class="row row-rtl">
       <div class="c7 rtl-align-right">
         <h1>Travel is now easier</h1>

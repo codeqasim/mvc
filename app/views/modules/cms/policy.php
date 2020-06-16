@@ -1,14 +1,14 @@
 <style> body{background-color: #f2f6fb;"}</style>
 <div class="policy">
   <div class="breadcrumb-bg">
-    <div class="container h-100">
+    <div class="contain h-100">
       <ul>
         <li class="breadcrumb-item"><a href="home.php">home</a></li>
         <li class="breadcrumb-item active">Contact Us</li>
       </ul>
     </div>
   </div>
-  <div class="container">
+  <div class="contain">
     <div class="row">
       <div class="c12">
         <h1 class="title">

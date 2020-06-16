@@ -1,7 +1,7 @@
 <div class="contentBody topMargin">
 		<div class="help-view">
 
-      <div class="containerer margin_bottom30">    
+      <div class="container margin_bottom30">    
 
         
         <div class="col-xs-12 col-sm-12 margin_top20">
@@ -23,7 +23,7 @@
 </div>            </div>
       </div> <!--col-sm-9 end -->
         
-    </div> <!--containerer end -->
+    </div> <!--container end -->
 
 </div>
 	</div>

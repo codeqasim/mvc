@@ -1,6 +1,6 @@
 <div class="flight-list-page" id="app">
   <div class="edit-search">
-    <div class="container">
+    <div class="contain">
       <div class="row mb-20 row-rtl">
         <div class="c10">
           <div class="left-side-info rtl-align-right">
@@ -20,12 +20,12 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="contain">
     <input type="checkbox" name="" id="inputFlight" hidden>
         <?php include 'modules/flights/search.php';?>
     </div>
   </div>
-  <div class="container">
+  <div class="contain">
     <div class="row row-rtl">
       <div class="c3">
       <label for="filter" class="btn prime-outline w100 mb-20 btn-filter">Filter</label>
@@ -369,7 +369,7 @@
                                         <h5 class="airline-info__type"> departure </h5>
                                         <div class="flex flex-column items-center">
                                             <div class="airline-info__logo">
-                                                <span class="logo-containerer"><span class="fit-alignment"></span>
+                                                <span class="logo-container"><span class="fit-alignment"></span>
                                                     <img  v-bind:src="''+GetAirLineImage(item.InBoundSegments.Carrier.Code)"></span>
                                             </div>
                                             <h3 class="airline-info__logoName">{{item.InBoundSegments.Carrier.Name}}</h3>
@@ -462,7 +462,7 @@
                                         <h5 class="airline-info__type"> Return </h5>
                                         <div class="flex flex-column items-center">
                                             <div class="airline-info__logo">
-                                                <span class="logo-containerer"><span class="fit-alignment"></span>
+                                                <span class="logo-container"><span class="fit-alignment"></span>
                                                     <img  v-bind:src="'' + GetAirLineImage(item.OutBoundSegments.Carrier.Code)"></span>
                                             </div>
                                             <h3 class="airline-info__logoName">{{item.OutBoundSegments.Carrier.Name}}</h3>
@@ -553,7 +553,7 @@
                         <div class="c3 c-sm-3">
                             <div class="right-side">
                                 <div class="text-center flex flex-column flex-content-center h-100">
-                                    <div class="social-containerer">&#9887;</div>
+                                    <div class="social-container">&#9887;</div>
                                     <div class="price">
                                         <h4>
                                             <span class="price-hint ">{{item.Price}}</span>

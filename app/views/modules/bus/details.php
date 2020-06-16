@@ -1,10 +1,10 @@
 <div class="bus-detail-page">
   <div class="modify mb-20">
-    <div class="container">
+    <div class="contain">
       <?php include $themeurl. 'views/modules/bus/search.php';?>
     </div>
   </div>
-  <div class="container">
+  <div class="contain">
     <div class="row">
       <div class="c4 o2-sm">
         <aside>
@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="c9 flex-md items-md-center flex-content-md-start">
-              <div class="bus-seat-container">
+              <div class="bus-seat-contain">
               <form action="" method="get">
                 <div class="row flex-content-between items-center">
                   <div  class="driver-seat">

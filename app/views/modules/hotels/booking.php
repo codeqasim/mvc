@@ -1,7 +1,7 @@
 <style>body{  background-color: #f2f6fb;}</style>
 <div class="booking-page">
 <div class="bg-white">
-<div class="wizard hide-m row-rtl container">
+<div class="wizard hide-m row-rtl contain">
       <div class="item active">
         <div class="item-hint">
           1
@@ -33,7 +33,7 @@
       </div>
     </div>
     </div>
-  <div class="container">
+  <div class="contain">
     <div class="row row-rtl">
       <div class="c8">
         <div class="list-wrapper mb-20">

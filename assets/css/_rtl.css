@@ -14,7 +14,7 @@
 .list-wrapper .detail ul li{float: right !important;}
 .wrapper-shared label.label-title:before{right: unset !important;left: -10px;}
 .result-card .right-side{border-right: 2px dashed #c6c6c6;border-left: 0 !important;}
-.result-card .right-side .social-containerer{right: unset !important;left: 20px;}
+.result-card .right-side .social-container{right: unset !important;left: 20px;}
 .result-card .left-side:before{right: unset !important;left: 0;}
 .result-card .left-side:after{right: unset !important;left: 0;}
 .result-card .left-side-row .left-side-row-info .airline-info{    border-right:0 !important;border-left: 1px solid #e3e3e3;}

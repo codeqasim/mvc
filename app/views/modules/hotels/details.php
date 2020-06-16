@@ -1,5 +1,5 @@
 <div class="hotels-detail-page pt-20">
-  <div class="container">
+  <div class="contain">
     <div class>
       <div class="sticky">
         <div class="list-wrapper">
@@ -25,7 +25,7 @@
                           <span>Fabulous</span>
                         </div>
                       </div>
-                      <div class="social_share social-containerer">
+                      <div class="social_share social-container">
                         <span class="share icon-share hide-m">&#9737;</span>
                       </div>
                     </div>
@@ -231,7 +231,7 @@
           </section>
           <section class="content-section mt-30 pb-50" id="guest-rating">
             <div class="head rtl-align-right"><span>Guests Rating</span></div>
-            <div class="container px-20">
+            <div class="contain px-20">
               <div class="overview">
                 <div class="trust-score mr-10">
                   <div class="value">4.4</div>

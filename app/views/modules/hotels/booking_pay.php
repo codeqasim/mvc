@@ -31,7 +31,7 @@
       <div class="clear"></div>
     </div>
   </div>
-  <div class="container">
+  <div class="contain">
     <div class="row row-rtl">
       <div class="c8">
         <div class="list-wrapper mb-20">

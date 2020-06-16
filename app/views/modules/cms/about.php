@@ -1,14 +1,14 @@
 <style>body{background-color:#f2f6fb;}</style>
 <div class="about-us">
   <div class="breadcrumb-bg">
-    <div class="container h-100">
+    <div class="contain h-100">
       <ul>
         <li class="breadcrumb-item"><a href="home.php">home</a></li>
         <li class="breadcrumb-item active">about us</li>
       </ul>
     </div>
   </div>
-  <div class="container">
+  <div class="contain">
     <div class="row">
       <div class="c12">
         <h1 class="title rtl-align-right">
@@ -18,7 +18,7 @@
     </div>
   </div>
   <section class="section-about">
-    <div class="container">
+    <div class="contain">
       <div class="banner">
         <img alt=""  src="assets/img/banner.png">
       </div>
@@ -38,7 +38,7 @@
     </div>
   </section>
   <section class="facilities">
-    <div class="container">
+    <div class="contain">
       <h3  class="text-center sub_header">Through PHPTRAVELS you can</h3>
       <div class="row items-center mb-70 row-rtl">
         <div class="c6">
@@ -61,35 +61,35 @@
     </div>
   </section>
   <section class="offering">
-    <div class="container">
+    <div class="contain">
       <h3  class="text-center sub_header">Through PHPTRAVELS you can</h3>
       <div class="row">
         <div class="c-sm-6  col-lg-5-2 text-center">
-          <div class="img-containerer">
+          <div class="img-container">
             <img alt="sale" src="assets/img/sale.svg">
           </div>
           <p>Hot travel deals and great discounts</p>
         </div>
         <div class="c-sm-6 col-lg-5-2 text-center">
-          <div class="img-containerer">
+          <div class="img-container">
             <img alt="" src="assets/img/clock.svg">
           </div>
           <p>Fast Flights booking &amp; hotel reservations</p>
         </div>
         <div class="c-sm-6 col-lg-5-2 text-center">
-          <div class="img-containerer">
+          <div class="img-container">
             <img alt="" src="assets/img/reliability.svg">
           </div>
           <p>No surprising or hidden fees</p>
         </div>
         <div class="c-sm-6 col-lg-5-2 text-center">
-          <div class="img-containerer">
+          <div class="img-container">
             <img alt="" src="assets/img/support.svg">
           </div>
           <p>Friendly customer support to serve you anytime</p>
         </div>
         <div class="c-sm-6 col-lg-5-2 text-center">
-          <div class="img-containerer">
+          <div class="img-container">
             <img alt="" src="assets/img/loyalty.svg">
           </div>
           <p>Loyalty offers to our loyal customer</p>

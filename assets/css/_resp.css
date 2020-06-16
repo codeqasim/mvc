@@ -1,9 +1,9 @@
 @media screen and (min-width:235px){
-	.bus-detail-page .bus-seat-container label{width: 32px;height: 32px;font-size: 14px}
-	.bus-detail-page .bus-seat-container{margin: 20px auto}
+	.bus-detail-page .bus-seat-contain label{width: 32px;height: 32px;font-size: 14px}
+	.bus-detail-page .bus-seat-contain{margin: 20px auto}
 
 }
-@media screen and (min-width: 786px){.bus-detail-page .bus-seat-container{margin-top: 0;}}
+@media screen and (min-width: 786px){.bus-detail-page .bus-seat-contain{margin-top: 0;}}
 @media screen and (max-width:1000px){
 header nav {position: fixed; z-index: 10;top: 0;}
 header .bars {display: block !important;position: fixed; z-index: 90; left: -5px; top: 0px;z-index: 1;}
@@ -66,9 +66,9 @@ header .nav .nav-right ul li:not(:last-child) a{border: 0!important}
  .result-card .left-side-row .left-side-row__info{height:100px;}
  .result-card .left-side-row .left-side-row-info .airline-info{border:none;max-width:50px;padding-left:10px;max-height:110px;}
  .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo{margin:0;}
- .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo .logo-containerer{height:50px;}
- .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo .logo-containerer img{width:22px!important;margin:0!important;display:inline-block;}
- .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo .logo-containerer .fit-alignment{display:inline-block;width:1px;height:100%;vertical-align:middle;border:none;}
+ .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo .logo-container{height:50px;}
+ .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo .logo-container img{width:22px!important;margin:0!important;display:inline-block;}
+ .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logo .logo-container .fit-alignment{display:inline-block;width:1px;height:100%;vertical-align:middle;border:none;}
  .result-card .left-side-row .left-side-row-info .airline-info .airline-info__logoName{display:none;}
  .result-card .left-side-row .left-side-row-info .airline-info .airline-info__class,  .result-card  .left-side-row  .left-side-row-info  .direction-info  h5{display:none;}
  .result-card .left-side-row .left-side-row-info .direction-info .direction-info__row .direction-line{width:160px;}

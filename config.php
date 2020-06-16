@@ -1,8 +1,5 @@
 <?php
 
-$root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
-$root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-
 $APPNAME = "Travel App";
 
 /* API CREDENTIALS */
@@ -17,7 +14,7 @@ $database = "app";
 
 define('API_ENDPOINT', "https://www.phptravels.net/api/");
 define('API_KEYS', "phptravels");
-define('root', $root);
+define('root', "http://localhost/mvc/");
 
 define('views', "app/views/");
 

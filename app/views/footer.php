@@ -1,6 +1,6 @@
 <footer>
     <div class="apps">
-        <div class="contain">
+        <div class="container">
             <div class="row row-rtl">
                 <div class="c3 o2-sm">
                     <div class="apps-image">
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="footer">
-        <div class="contain">
+        <div class="container">
             <div class="row row-rtl">
                 <div class="c6">
                     <h3><strong>B2B</strong> Booking Engine</h3>
@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="contain">
+    <div class="container">
         <div class="sub-footer">
             <div class="flex items-center row-rtl">
                 <a  href="<?=$root;?>" class="mr-10 d-block">

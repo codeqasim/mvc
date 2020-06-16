@@ -1,6 +1,6 @@
 <div class="list-page">
   <div class="edit-search">
-    <div class="contain">
+    <div class="container">
       <div class="row mb-20 row-rtl">
         <div class="c10">
           <div class="left-side-info rtl-align-right">
@@ -19,13 +19,13 @@
       </div>
       <input id="edit" type="checkbox" hidden>
       <div class="panel">
-        <div class="contain">
+        <div class="container">
            <?php include $themeurl. 'views/modules/hotels/search.php';?>
         </div>
       </div>
     </div>
   </div>
-  <div class="contain">
+  <div class="container">
     <div class="row row-rtl">
       <div class="c3">
 
@@ -237,7 +237,7 @@
                             <span>Fabulous</span>
                           </div>
                         </div>
-                        <div class="social_share social-container">
+                        <div class="social_share social-containerer">
                           <span class="share icon-share hide-m">&#9737;</span>
                         </div>
                       </div>

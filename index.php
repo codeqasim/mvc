@@ -5,7 +5,7 @@
 
     include "app/views/header.php";
     include "config.php";
-    echo "<div class='container'>";
+    echo "<div class='containerer'>";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
 

@@ -10,7 +10,7 @@
         </div>
     </div>
     <section  id="search" class="hero lazy" data-src="<?=root;?>uploads/slider/1.jpg" style="border-radius:10px;">
-        <div class="contain">
+        <div class="container">
             <div class="row">
                 <div class="c12">
                     <div class="search">
@@ -40,7 +40,7 @@
 <!-- hero section end -->
 <!-- main start -->
 <div class="offers pt-150 mb-30 second">
-    <div class="contain">
+    <div class="container">
         <div class="row">
             <?php for ($i = 1; $i <= 3; $i++) { ?>
             <div class="c4 offers">
@@ -61,7 +61,7 @@
         </h3>
         <h3>Find the best featured hotels around the world with almatar</h3>
     </div>
-    <div class="contain">
+    <div class="container">
         <div class="row">
             <?php for ($i = 1; $i <= 3; $i++) { ?>
             <div class="c4">
@@ -104,7 +104,7 @@
         </h3>
         <h3>Find out the best hotels to the world's most famous cities</h3>
     </div>
-    <div class="contain">
+    <div class="container">
         <div class="row">
             <?php for ($i = 1; $i <= 5; $i++) { ?>
             <div class="col-lg-5-2">
@@ -121,7 +121,7 @@
         <h2>Top Flight Destinations</h2>
         <h3>Get the best flight deal for top airlines with more than 500 airlines</h3>
     </div>
-    <div class="contain">
+    <div class="container">
         <div class="row">
             <?php for ($i = 1; $i <= 3; $i++) { ?>
             <div class="c4">
@@ -175,7 +175,7 @@
     <div class="section-subtitle">
         <h2>Features</h2>
     </div>
-    <div class="contain">
+    <div class="container">
         <div class="row flex-content-center">
             <div class="c2 text-center feature-item">
                 <img alt="" src="assets/img/airlineCount.svg">

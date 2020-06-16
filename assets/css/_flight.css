@@ -67,7 +67,7 @@
 .result-card .left-side:before{content: ''; position: absolute; width: 15px; height: 15px; right: -15px; display: block; background-color: #ecf0f5; z-index: 9; border-radius: 50%; transform: translate(-50%,-50%) rotate(45deg); -webkit-transform: translate(-50%,-50%) rotate(45deg);}
 .result-card .left-side:after{content: ''; position: absolute; width: 15px; height: 15px; right: -15px; display: block; background-color: #ecf0f5; z-index: 9; border-radius: 50%; transform: translate(-50%,-50%) rotate(45deg); -webkit-transform: translate(-50%,-50%) rotate(45deg);}
 .flight-itenrary-group .result-card .right-side{position: relative; height: 100%; border-left: 2px dashed #c6c6c6; padding-top: 20px; padding-bottom: 20px;}
-.flight-itenrary-group .result-card .right-side .social-container{position: absolute; top: 20px; right: 20px; text-align: right;}
+.flight-itenrary-group .result-card .right-side .social-containerer{position: absolute; top: 20px; right: 20px; text-align: right;}
 .flight-itenrary-group .result-card .right-side .price .price-hint{font-size: 22px; font-weight: 500; color: #363636;} 
 .flight-itenrary-group .result-card .right-side .price .price-currency{text-transform: uppercase; color: #9b9b9b; font-size: 14px; margin: 0 5px;}
 .flight-itenrary-group .result-card .right-side .price h3{font-size: 13px; color: #363636; margin-bottom: 10px;}

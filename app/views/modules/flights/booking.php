@@ -31,7 +31,7 @@
       <div class="clear"></div>
     </div>
   </div>
-  <div class="contain">
+  <div class="container">
     <div class="row row-rtl">
       <div class="c8">
         <?php for ($i = 1; $i <= 1; $i++) { ?>

@@ -529,7 +529,7 @@ var i,
 	rbuggyQSA,
 	rbuggyMatches,
 	matches,
-	contains,
+	containers,
 
 	// Instance-specific data
 	expando = "sizzle" + 1 * new Date(),
@@ -767,7 +767,7 @@ function Sizzle( selector, context, results, seed ) {
 						// TODO: identify versions
 						// getElementById can match elements by name instead of ID
 						if ( newContext && (elem = newContext.getElementById( m )) &&
-							contains( context, elem ) &&
+							containers( context, elem ) &&
 							elem.id === m ) {
 
 							results.push( elem );
@@ -1339,20 +1339,20 @@ setDocument = Sizzle.setDocument = function( node ) {
 	rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join("|") );
 	rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join("|") );
 
-	/* Contains
+	/* containers
 	---------------------------------------------------------------------- */
 	hasCompare = rnative.test( docElem.compareDocumentPosition );
 
-	// Element contains another
+	// Element containers another
 	// Purposefully self-exclusive
-	// As in, an element does not contain itself
-	contains = hasCompare || rnative.test( docElem.contains ) ?
+	// As in, an element does not container itself
+	containers = hasCompare || rnative.test( docElem.containers ) ?
 		function( a, b ) {
 			var adown = a.nodeType === 9 ? a.documentElement : a,
 				bup = b && b.parentNode;
 			return a === bup || !!( bup && bup.nodeType === 1 && (
-				adown.contains ?
-					adown.contains( bup ) :
+				adown.containers ?
+					adown.containers( bup ) :
 					a.compareDocumentPosition && a.compareDocumentPosition( bup ) & 16
 			));
 		} :
@@ -1398,10 +1398,10 @@ setDocument = Sizzle.setDocument = function( node ) {
 			(!support.sortDetached && b.compareDocumentPosition( a ) === compare) ) {
 
 			// Choose the first element that is related to our preferred document
-			if ( a === document || a.ownerDocument === preferredDoc && contains(preferredDoc, a) ) {
+			if ( a === document || a.ownerDocument === preferredDoc && containers(preferredDoc, a) ) {
 				return -1;
 			}
-			if ( b === document || b.ownerDocument === preferredDoc && contains(preferredDoc, b) ) {
+			if ( b === document || b.ownerDocument === preferredDoc && containers(preferredDoc, b) ) {
 				return 1;
 			}
 
@@ -1504,12 +1504,12 @@ Sizzle.matchesSelector = function( elem, expr ) {
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
 };
 
-Sizzle.contains = function( context, elem ) {
+Sizzle.containers = function( context, elem ) {
 	// Set document vars if needed
 	if ( ( context.ownerDocument || context ) !== document ) {
 		setDocument( context );
 	}
-	return contains( context, elem );
+	return containers( context, elem );
 };
 
 Sizzle.attr = function( elem, name ) {
@@ -1954,7 +1954,7 @@ Expr = Sizzle.selectors = {
 			};
 		}),
 
-		"contains": markFunction(function( text ) {
+		"containers": markFunction(function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
 				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
@@ -2761,7 +2761,7 @@ jQuery.expr[ ":" ] = jQuery.expr.pseudos;
 jQuery.uniqueSort = jQuery.unique = Sizzle.uniqueSort;
 jQuery.text = Sizzle.getText;
 jQuery.isXMLDoc = Sizzle.isXML;
-jQuery.contains = Sizzle.contains;
+jQuery.containers = Sizzle.containers;
 jQuery.escapeSelector = Sizzle.escape;
 
 
@@ -2860,7 +2860,7 @@ jQuery.fn.extend( {
 		if ( typeof selector !== "string" ) {
 			return this.pushStack( jQuery( selector ).filter( function() {
 				for ( i = 0; i < len; i++ ) {
-					if ( jQuery.contains( self[ i ], this ) ) {
+					if ( jQuery.containers( self[ i ], this ) ) {
 						return true;
 					}
 				}
@@ -3032,7 +3032,7 @@ jQuery.fn.extend( {
 		return this.filter( function() {
 			var i = 0;
 			for ( ; i < l; i++ ) {
-				if ( jQuery.contains( this, targets[ i ] ) ) {
+				if ( jQuery.containers( this, targets[ i ] ) ) {
 					return true;
 				}
 			}
@@ -4480,7 +4480,7 @@ var isHiddenWithinTree = function( elem, el ) {
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
-			jQuery.contains( elem.ownerDocument, elem ) &&
+			jQuery.containers( elem.ownerDocument, elem ) &&
 
 			jQuery.css( elem, "display" ) === "none";
 	};
@@ -4741,7 +4741,7 @@ function setGlobalEval( elems, refElements ) {
 var rhtml = /<|&#?\w+;/;
 
 function buildFragment( elems, context, scripts, selection, ignored ) {
-	var elem, tmp, tag, wrap, contains, j,
+	var elem, tmp, tag, wrap, containers, j,
 		fragment = context.createDocumentFragment(),
 		nodes = [],
 		i = 0,
@@ -4782,7 +4782,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 				// push.apply(_, arraylike) throws on ancient WebKit
 				jQuery.merge( nodes, tmp.childNodes );
 
-				// Remember the top-level container
+				// Remember the top-level containerer
 				tmp = fragment.firstChild;
 
 				// Ensure the created nodes are orphaned (#12392)
@@ -4805,13 +4805,13 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			continue;
 		}
 
-		contains = jQuery.contains( elem.ownerDocument, elem );
+		containers = jQuery.containers( elem.ownerDocument, elem );
 
 		// Append to fragment
 		tmp = getAll( fragment.appendChild( elem ), "script" );
 
 		// Preserve script evaluation history
-		if ( contains ) {
+		if ( containers ) {
 			setGlobalEval( tmp );
 		}
 
@@ -4927,7 +4927,7 @@ function on( elem, types, selector, data, fn, one ) {
 		origFn = fn;
 		fn = function( event ) {
 
-			// Can use an empty set, since event contains the info
+			// Can use an empty set, since event containers the info
 			jQuery().off( event );
 			return origFn.apply( this, arguments );
 		};
@@ -5531,7 +5531,7 @@ jQuery.each( {
 
 			// For mouseenter/leave call the handler if related is outside the target.
 			// NB: No relatedTarget if the mouse left/entered the browser window
-			if ( !related || ( related !== target && !jQuery.contains( target, related ) ) ) {
+			if ( !related || ( related !== target && !jQuery.containers( target, related ) ) ) {
 				event.type = handleObj.origType;
 				ret = handleObj.handler.apply( this, arguments );
 				event.type = fix;
@@ -5606,7 +5606,7 @@ var
 	rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
 	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
 
-// Prefer a tbody over its parent table for containing new rows
+// Prefer a tbody over its parent table for containering new rows
 function manipulationTarget( elem, content ) {
 	if ( nodeName( elem, "table" ) &&
 		nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ) {
@@ -5692,7 +5692,7 @@ function domManip( collection, args, callback, ignored ) {
 		value = args[ 0 ],
 		valueIsFunction = isFunction( value );
 
-	// We can't cloneNode fragments that contain checked, in WebKit
+	// We can't cloneNode fragments that container checked, in WebKit
 	if ( valueIsFunction ||
 			( l > 1 && typeof value === "string" &&
 				!support.checkClone && rchecked.test( value ) ) ) {
@@ -5750,7 +5750,7 @@ function domManip( collection, args, callback, ignored ) {
 					node = scripts[ i ];
 					if ( rscriptType.test( node.type || "" ) &&
 						!dataPriv.access( node, "globalEval" ) &&
-						jQuery.contains( doc, node ) ) {
+						jQuery.containers( doc, node ) ) {
 
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
@@ -5781,7 +5781,7 @@ function remove( elem, selector, keepData ) {
 		}
 
 		if ( node.parentNode ) {
-			if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
+			if ( keepData && jQuery.containers( node.ownerDocument, node ) ) {
 				setGlobalEval( getAll( node, "script" ) );
 			}
 			node.parentNode.removeChild( node );
@@ -5799,7 +5799,7 @@ jQuery.extend( {
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
 		var i, l, srcElements, destElements,
 			clone = elem.cloneNode( true ),
-			inPage = jQuery.contains( elem.ownerDocument, elem );
+			inPage = jQuery.containers( elem.ownerDocument, elem );
 
 		// Fix IE cloning issues
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
@@ -6070,13 +6070,13 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 			return;
 		}
 
-		container.style.cssText = "position:absolute;left:-11111px;width:60px;" +
+		containerer.style.cssText = "position:absolute;left:-11111px;width:60px;" +
 			"margin-top:1px;padding:0;border:0";
 		div.style.cssText =
 			"position:relative;display:block;box-sizing:border-box;overflow:scroll;" +
 			"margin:auto;border:1px;padding:1px;" +
 			"width:60%;top:1%";
-		documentElement.appendChild( container ).appendChild( div );
+		documentElement.appendChild( containerer ).appendChild( div );
 
 		var divStyle = window.getComputedStyle( div );
 		pixelPositionVal = divStyle.top !== "1%";
@@ -6098,7 +6098,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 		div.style.position = "absolute";
 		scrollboxSizeVal = div.offsetWidth === 36 || "absolute";
 
-		documentElement.removeChild( container );
+		documentElement.removeChild( containerer );
 
 		// Nullify the div so it wouldn't be stored in the memory and
 		// it will also be a sign that checks already performed
@@ -6111,7 +6111,7 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
 	var pixelPositionVal, boxSizingReliableVal, scrollboxSizeVal, pixelBoxStylesVal,
 		reliableMarginLeftVal,
-		container = document.createElement( "div" ),
+		containerer = document.createElement( "div" ),
 		div = document.createElement( "div" );
 
 	// Finish early in limited (non-browser) environments
@@ -6167,7 +6167,7 @@ function curCSS( elem, name, computed ) {
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+		if ( ret === "" && !jQuery.containers( elem.ownerDocument, elem ) ) {
 			ret = jQuery.style( elem, name );
 		}
 
@@ -7593,7 +7593,7 @@ jQuery.extend( {
 		var name,
 			i = 0,
 
-			// Attribute names can contain non-HTML whitespace characters
+			// Attribute names can container non-HTML whitespace characters
 			// https://html.spec.whatwg.org/multipage/syntax.html#attributes-2
 			attrNames = value && value.match( rnothtmlwhite );
 
@@ -9706,7 +9706,7 @@ jQuery.ajaxSetup( {
 // Detect, normalize options and install callbacks for jsonp requests
 jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
-	var callbackName, overwritten, responseContainer,
+	var callbackName, overwritten, responsecontainerer,
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
 			"url" :
 			typeof s.data === "string" &&
@@ -9732,10 +9732,10 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 		// Use data converter to retrieve json after script execution
 		s.converters[ "script json" ] = function() {
-			if ( !responseContainer ) {
+			if ( !responsecontainerer ) {
 				jQuery.error( callbackName + " was not called" );
 			}
-			return responseContainer[ 0 ];
+			return responsecontainerer[ 0 ];
 		};
 
 		// Force json dataType
@@ -9744,7 +9744,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		// Install callback
 		overwritten = window[ callbackName ];
 		window[ callbackName ] = function() {
-			responseContainer = arguments;
+			responsecontainerer = arguments;
 		};
 
 		// Clean-up function (fires after converters)
@@ -9770,11 +9770,11 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			}
 
 			// Call if it was a function and we have a response
-			if ( responseContainer && isFunction( overwritten ) ) {
-				overwritten( responseContainer[ 0 ] );
+			if ( responsecontainerer && isFunction( overwritten ) ) {
+				overwritten( responsecontainerer[ 0 ] );
 			}
 
-			responseContainer = overwritten = undefined;
+			responsecontainerer = overwritten = undefined;
 		} );
 
 		// Delegate to script

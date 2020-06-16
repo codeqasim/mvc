@@ -1,6 +1,5 @@
 <?php
 
- 
 class Hotels
 {
 	
@@ -13,12 +12,6 @@ class Hotels
 	{
 		$title = 'Search Hotels';
 		echo "Hotels Listing Page";
-	}
-
-	function search()
-	{
-		$title = 'Search Hotels';
-		include "app/views/search.php";
 	}
 
 	function hotel_data()
@@ -173,11 +166,7 @@ class Hotels
         include "app/views/modules/hotels/details.php";
 
 	}
- 
 
-	function hotel_details(){
-		include "app/views/modules/hotels/details.php";
-	}
 }
 
 ?>

@@ -38,7 +38,12 @@
                 <div class="c2 p-10">
                   <div class="total-price">
                     <span>starts from</span>
-                    <span><strong>390</strong></span>
+                    <span><strong>
+                        <?php $i = 1; foreach($hotel->response->rooms as $room){ ?>
+                        <?=$room->price;?>
+                        <?php if ($i++ == 1) break; ?>
+                        <?php } ?>
+                      </strong></span>
                     <span> USD </span>
                   </div>
                 </div>
@@ -180,11 +185,7 @@
                   </div>
                 </div>
                 <div class="c9">
-
-
-
-                <?php
-                foreach($hotel->response->rooms as $room){ ?>
+                <?php foreach($hotel->response->rooms as $room){ ?>
 
                   <div class="room-cart">
                     <div class="room-header rtl-align-right">
@@ -194,7 +195,12 @@
                     </div>
                     <div class="room-wrapper-inner">
                       <div class="row row-rtl">
-                        <div class="c9">
+
+                      <div class="c2">
+                      <img src="<?=$room->image[0];?>" alt="" />
+                      </div>
+
+                        <div class="c7">
                           <div class="single-room-header rtl-align-right">
                             <h3>Standard / Single Standard Room</h3>
                           </div>

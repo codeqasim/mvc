@@ -19,7 +19,7 @@
         <meta property="og:image" content="">
 
         <script>
-        var app = {
+        /*var app = {
             url:'<?=$root;?>,
             url_root:'<?=$root;?>',
             booking_decimals:0,
@@ -74,11 +74,14 @@
                 "November",
                 "December"
             ],
-        };
+        };*/
     </script>
 
+    <script src="<?=$root;?>assets/js/jquery.min.js"></script>
+    <script src="<?=$root;?>assets/js/isotope.min.js"></script>
+
     </head>
-    <body onload="oneway()" >
+    <body onload="<!--oneway()-->" >
         <header class="sticky">
             <nav>
                 <div class="container flex flex-content-between row-rtl" >

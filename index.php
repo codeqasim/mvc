@@ -22,7 +22,7 @@
     include "app/views/404.php";
     }
 
-if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
+    if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
     /* routes */
     if     ($url[0] == 'search') $Hotels->search();
     elseif ($url[0] == 'hotels') $Hotels->hotel_data();

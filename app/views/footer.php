@@ -77,7 +77,7 @@
         </div>
     </div>
 </footer>
-<script src="<?=$root;?>assets/js/jquery.min.js"></script>
+
 <script src="<?=$root;?>assets/js/jquery.lazy.min.js"></script>
 <script src="<?=$root;?>assets/js/app.js"></script>
 <script src="<?=$root;?>assets/js/datepicker.js"></script>

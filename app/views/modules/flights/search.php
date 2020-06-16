@@ -138,3 +138,12 @@
         </div>
     </div>
 </div>
+
+<script>
+/* oneway and return */
+function oneway() { document.getElementById("return").disabled = true; };
+function returns() { document.getElementById("return").disabled = false; };
+
+function busoneway() { document.getElementById("return").disabled = true; };
+function busreturns() { document.getElementById("return").disabled = false; };
+</script>

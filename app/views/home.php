@@ -16,12 +16,12 @@
                     <div class="search">
                         <ul class="row-rtl">
                             <li class="HOTELS">
-                                <input id="HOTELS" type="radio" hidden name="module">
+                                <input id="HOTELS" type="radio" hidden checked name="module">
                                 <label for="HOTELS"><i class="mdi mdi-hotel"></i> Hotels</label>
                                 <?php include 'modules/hotels/search.php';?>
                             </li>
                             <li class="FLIGHTS">
-                                <input id="FLIGHTS" type="radio" hidden checked name="module">
+                                <input id="FLIGHTS" type="radio" hidden name="module">
                                 <label for="FLIGHTS"><i class="mdi mdi-airplane"></i> Flights</label>
                                 <?php include 'modules/flights/search.php';?>
                             </li>

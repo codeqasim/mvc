@@ -17,6 +17,66 @@
         <meta property="og:image:width" content="300">
         <meta property="og:image:height" content="300">
         <meta property="og:image" content="">
+
+        <script>
+        var app = {
+            url:'<?=$root;?>,
+            url_root:'<?=$root;?>',
+            booking_decimals:0,
+            thousand_separator:'.',
+            decimal_separator:',',
+            currency_position:'left',
+            currency_code:'USD',
+            currency_symbol:'$',
+            currency_rate:'1',
+            date_format:'DD/MM/YYYY',
+            map_provider:'gmap',
+            map_gmap_key:'key',
+            routes:{
+                login:'<?=$root;?>login',
+                register:'<?=$root;?>/register',
+            },
+            currentUser:0,
+            rtl: 0
+        };
+        var i18n = {
+            warning:"Warning",
+            success:"Success",
+        };
+        var daterangepickerLocale = {
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "first_day_of_week": 1,
+            "daysOfWeek": [
+                "Su",
+                "Mo",
+                "Tu",
+                "We",
+                "Th",
+                "Fr",
+                "Sa"
+            ],
+            "monthNames": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ],
+        };
+    </script>
+
     </head>
     <body onload="oneway()" >
         <header class="sticky">

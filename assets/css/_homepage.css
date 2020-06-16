@@ -6,10 +6,10 @@
 .main_search { padding: 50px 0px; }
 .hero .search { top: -140px; /*background-color: rgba(33, 37, 41, 0.48);*/ padding: 20px 0px 0px 0px;position:relative;/*border-radius:4px 0 4px 4px*/}
 .hero .search  ul { display: flex;margin-bottom: 10px;}
-.hero .search  li label{cursor: pointer; background-color:transparent;padding:10px 20px;color:#fff;border-radius:4px;font-size:18px;font-weight:500;text-transform:capitalize;border:none;text-align:center}
+.hero .search  li label{ align-items: center; cursor: pointer; background-color:transparent;padding:15px 20px;color:#fff;border-radius:4px;font-size:18px;font-weight:500;text-transform:capitalize;border:none;text-align:center}
 .hero .search  li label:hover{ background: rgba(26, 57, 96, 0.10196078431372549); }
 .hero .search  li:not(:last-child){margin-right:10px}
-.hero .search .fade{top: 37px;}
+.hero .search .fade{top: 40px;}
 .hero .search .input-items input::first-letter { color: #fff }
 .hero .search .input-items input,.hero .search select { letter-spacing: 0.5px; font-family: 'Muli Bold',sans-serif;letter-spacing: 0px;border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px; background: rgba(26, 57, 96, 0.10196078431372549); width: 100%; border: none; outline: 0; color: #000; font-size: 16px; font-weight: 900; padding: 15px; height: 55px; }
 .hero .search .input-items input::placeholder { color: #000 }

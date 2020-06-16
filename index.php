@@ -1,4 +1,8 @@
-<?php
+    <?php
+    // All rights reserved by PHPTRAVELS 2020 www.phptravels.com
+    ?>
+
+    <?php
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -26,6 +30,10 @@
     function page404()
     { include "app/views/404.php"; }
 
+    function copyright() {
+    echo "All rights reserved by <strong>PHPTRAVELS</strong> 2020";
+    }
+
     if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
     /* routes */
     if     ($url[0] == 'search') $Hotels->search();
@@ -36,9 +44,9 @@
     /* CMS */
     elseif ($url[0] == 'cms') $cms->index();
     else page404();
-}
+    }
 
-else
-{ home(); }
+    else
+    { home(); }
 
-include "app/views/footer.php";
+    include "app/views/footer.php";

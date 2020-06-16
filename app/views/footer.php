@@ -70,8 +70,8 @@
                 <img alt="" width="100px" src="<?=$root;?>assets/img/logo.png">
                 </a>
                 <p class="coy_right">
-                    <span>&copy; 2020 Appname</span>
-                    <span class="reserved">  All rights reserved.</span>
+                    <span><?php copyright(); ?></span>
+                    <!--<span class="reserved">  All rights reserved.</span>-->
                 </p>
             </div>
         </div>

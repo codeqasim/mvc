@@ -14,7 +14,7 @@
 
     function home()
     {
-    $title='Homepage';
+    define('title', "Homepage");
     include "app/views/home.php";
     }
 

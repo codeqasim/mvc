@@ -64,13 +64,38 @@ class Hotels
 		$response = curl_exec($curl);
 		// Close cURL session
 		curl_close($curl);
-		// echo $response . PHP_EOL;
-
+		// echo $response . PHP_EOL
 		$arr = json_decode($response);
-		// echo "<pre>";
-    	// dd($arr);
-		$listdata = $arr;
+		$listrating = [];
+    	foreach ($arr->response as $list) {
+    		$y = $list->rating;
+			$x = (int)$y;
+    		if ($x == 1) {
+    			$colors []= $x;
+    			$listrating = array('count_stars'=>array_count_values($colors));
+    		}elseif ($x == 2) {
+    			$colors []= $x;
+    			$listrating = array('count_stars'=>array_count_values($colors));
+    		}elseif ($x== 3) {
+    			$colors []= $x;
+    			$listrating = array('count_stars'=>array_count_values($colors));
+    		}elseif ($x == 4) {
+    			$colors []=$x;
+    			$listrating = array('count_stars'=>array_count_values($colors));
+    		}elseif ($x == 5) {
+    			$colors []= $x;
+    			$listrating = array('count_stars'=>array_count_values($colors));
+    		}
+    		}
+
+		$arrs = json_encode($listrating);
+		$arrsdecode = json_decode($arrs);
+		$obj_merged = (object) array_merge( 
+        (array) $arrsdecode, (array) $arr);
+
+		$listdata = $obj_merged;
     	include "app/views/modules/hotels/list.php";
+
 
 
 	}
@@ -144,6 +169,11 @@ class Hotels
 		echo "<pre>";
     	print_r ($arr);
 
+	}
+ 
+
+	function hotel_details(){
+		include "app/views/modules/hotels/details.php";
 	}
 }
 

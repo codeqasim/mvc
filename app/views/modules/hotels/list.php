@@ -70,7 +70,11 @@
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
-              <strong><?php echo count($listdata->response) ?></strong>
+              <strong>
+                <?php if (isset($listrating['count_stars']['5']))
+                {echo $listrating['count_stars']['5'];
+                }else{echo "0";} ?>
+              </strong>
             </label>
             <div class="clear"></div>
 
@@ -79,7 +83,11 @@
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
-              <strong>20</strong>
+              <strong>
+                <?php if (isset($listrating['count_stars']['4']))
+                {echo $listrating['count_stars']['4'];
+                }else{echo "0";} ?>
+              </strong>
             </label>
             <div class="clear"></div>
 
@@ -87,20 +95,32 @@
               <span>&#10029;</span>
               <span>&#10029;</span>
               <span>&#10029;</span>
-              <strong>20</strong>
+              <strong>
+                <?php if (isset($listrating['count_stars']['3']))
+                {echo $listrating['count_stars']['3'];
+                }else{echo "0";} ?>
+              </strong>
             </label>
             <div class="clear"></div>
 
             <label for="s2"> <input type="radio" id="s2" name="stars" value="s2" class="filter-item"/>
               <span>&#10029;</span>
               <span>&#10029;</span>
-              <strong>15</strong>
+              <strong>
+                <?php if (isset($listrating['count_stars']['2']))
+                {echo $listrating['count_stars']['2'];
+                }else{echo "0";} ?>
+              </strong>
             </label>
             <div class="clear"></div>
 
             <label for="s1"> <input type="radio" id="s1" name="stars" value="s1" class="filter-item"/>
               <span>&#10029;</span>
-              <strong>5</strong>
+              <strong>
+                <?php if (isset($listrating['count_stars']['1']))
+                {echo $listrating['count_stars']['1'];
+                }else{echo "0";} ?>
+              </strong>
             </label>
             <div class="clear"></div>
 

@@ -1,11 +1,9 @@
-<div class="page-wrap d-flex flex-row align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <span class="display-1 d-block">404</span>
-                <div class="mb-4 lead">The page you are looking for was not found.</div>
-                <a href="<?=root;?>" class="btn btn-link">Back to Home</a>
-            </div>
-        </div>
-    </div>
-</div>
+<style>body{background:rgba(229, 246, 255, 1.0)}</style>
+<section class="text-center" style="margin:160px;">
+ 	<div class="intro_title error">
+    	<h1 class="animated fadeInDown"><strong>Error 404</strong></h1>
+        <p class="animated fadeInDown">Wrong Page.</p>
+        <br>
+       <form action="<?=root;?>" method="post"><button type="submit" class="btn btn-default">Back to Home</button></form>
+	</div>
+</section>

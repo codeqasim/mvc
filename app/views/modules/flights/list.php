@@ -22,7 +22,7 @@
     </div>
     <div class="contain">
     <input type="checkbox" name="" id="inputFlight" hidden>
-        <?php include $themeurl. 'views/modules/flights/search.php';?>
+        <?php include 'modules/flights/search.php';?>
     </div>
   </div>
   <div class="contain">
@@ -94,21 +94,21 @@
             <div class="mt-10 airlines">
               <label for="airline-1">
               <input type="checkbox" id="airline-1" />
-              <img src="<?php echo $theme_url;?>assets/img/WY.png" alt="Airlines">
+              <img src="<?=root;?>assets/img/WY.png" alt="Airlines">
               Oman International Airlines
               </label>
             </div>
             <div class="mt-10 airlines">
               <label for="airline-2">
               <input type="checkbox" id="airline-2" />
-              <img src="<?php echo $theme_url;?>assets/img/WY.png" alt="Airlines">
+              <img src="<?=root;?>assets/img/WY.png" alt="Airlines">
               Oman International Airlines
               </label>
             </div>
             <div class="mt-10 airlines">
               <label for="airline-3">
               <input type="checkbox" id="airline-3" />
-              <img src="<?php echo $theme_url;?>assets/img/WY.png" alt="Airlines">
+              <img src="<?=root;?>assets/img/WY.png" alt="Airlines">
               Oman International Airlines
               </label>
             </div>
@@ -439,7 +439,7 @@
                                                 </ul>
                                             </div>
                                             <div class="timeline-group__details__extraInfo row-rtl">
-                                                <img src="<?php echo $theme_url;?>assets/img/bag.svg">
+                                                <img src="<?=root;?>assets/img/bag.svg">
                                                 <ul class="list-unstyled">
                                                     <li class="bold">baggage info</li>
                                                     <li>
@@ -532,7 +532,7 @@
                                                 </ul>
                                             </div>
                                             <div class="timeline-group__details__extraInfo row-rtl">
-                                                <img src="<?php echo $theme_url;?>assets/img/bag.svg">
+                                                <img src="<?=root;?>assets/img/bag.svg">
                                                 <ul class="list-unstyled">
                                                     <li class="bold">baggage info</li>
                                                     <li>

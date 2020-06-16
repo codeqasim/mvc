@@ -1,10 +1,4 @@
-<!-- <?php
-// echo "<pre>";
-// print_r($listdata);
-foreach ($listdata->response as $list){
-  echo $list->company_name;
-}
-?> -->
+
 
 <div class="list-page">
   <div class="edit-search">
@@ -223,13 +217,13 @@ foreach ($listdata->response as $list){
                       <div class="detail">
                         <h6 class="title"><a target="_blank" href="#"><?= $list->company_name ;?></a></h6>
                         <div class="rating mb-10">
-                          <span>&#10029;</span>
-                          <span>&#10029;</span>
-                          <span>&#10029;</span>
-                          <span>&#10029;</span>
-                          <span>&#10029;</span>
+                          <?php for ($x = 1; $x <= $list->rating; $x++):?>
+                            <span>&#10029;</span>
+                          <?php endfor; ?>
+                          
                         </div>
-                        <small class="text-muted"><?= $list->address ;?></small>
+                        <small class="text-muted"><?= $list->address ;?></small><br>
+                        <small class="text-muted"><?php echo substr($list->description,0,150);?></small>
                       </div>
                       <!--<div class="aminities mt-10 hide-m">
                         <span>&#10070;</span>
@@ -257,11 +251,11 @@ foreach ($listdata->response as $list){
                           <span class="total-price-value-before-discount">
                           <!--<span class="price-before">250</span>
                           <span class="currency-before-discount">USD</span>-->
-                          </span> <strong>521</strong> <span>USD</span>
+                          </span> <strong><?= $list->price ;?></strong> <span>USD</span>
                         </h5>
                       </div>
                       <div class="text-center mt-10">
-                        <a class="btn prime-o hide-m w100" href="<?php echo base_url(); ?>hotels/details">Details </a>
+                        <a class="btn prime-o hide-m w100" href="hotels/details">Details </a>
                       </div>
                     </div>
                   </div>

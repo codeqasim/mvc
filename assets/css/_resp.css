@@ -39,6 +39,7 @@ header .menu { margin: 0 7px; }
 .hero .search{top: 10px;}	
 .main_search { padding: 15px 0px; }
 .hero .search li label { font-size: 16px }
+.search_area { border-top-left-radius: 0px;border-top-right-radius: 0px; padding: 10px !important; }
 .apps .apps-image {justify-content: center;}
 .detail-page .hotel-amenities{margin-top:20px;}
 .result-card .left-side-row  .left-side-row__info{margin:0;}

@@ -37,9 +37,9 @@
                                         <span class="text-muted ml-5"> <small>(+12)</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
-                                        <strong class="decrease" id="decrease">-</strong>
+                                        <strong class="decrease" id="decrease1">-</strong>
                                         <span id="adult"><input type="text" class="form-control" name="adults" id="adults" value="2" readonly></span>
-                                        <strong class="increase" id="increase">+</strong>
+                                        <strong class="increase" id="increase1">+</strong>
                                     </div>
                                 </div>
                                 <div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
@@ -48,9 +48,9 @@
                                          <span class="text-muted ml-5"><small>(+2/+11)</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
-                                        <strong class="decrease" id="decreasee">-</strong>
+                                        <strong class="decrease" id="decreasee2">-</strong>
                                         <span id="child"><input type="text" class="form-control" name="childs" id="childs" value="0" readonly></span>
-                                        <strong class="increase" id="increasee">+</strong>
+                                        <strong class="increase" id="increasee2">+</strong>
                                     </div>
                                 </div>
                                 <div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
@@ -59,9 +59,9 @@
                                         <span class="text-muted ml-5"><small>&nbsp;</small></span>
                                     </div>
                                     <div class="passenger-dropdown-right">
-                                        <strong class="decrease" id="decreasee">-</strong>
+                                        <strong class="decrease" id="decreasee3">-</strong>
                                         <span id="rooms"><input type="text" class="form-control" name="rooms" id="rooms" value="1" readonly></span>
-                                        <strong class="increase" id="increasee">+</strong>
+                                        <strong class="increase" id="increasee3">+</strong>
                                     </div>
                                 </div>
                                 <div class="passenger-dropdown pb-20">

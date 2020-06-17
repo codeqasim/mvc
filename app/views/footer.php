@@ -138,6 +138,10 @@ $('#category').select2({
 $('.select2-container').css('width','100%')
 </script>
 
+<script>
+
+</script>
+
 
 </body>
 </html>

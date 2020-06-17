@@ -27,7 +27,7 @@
             $dir    = 'app/lang';
             $files1 = scandir($dir);
 
-            print_r($files1);
+            dd($files1);
             ?>
 
             <ul class="dropdown">

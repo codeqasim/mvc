@@ -2,8 +2,7 @@
 
 require 'lib/i18n/i18n.class.php';
 $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/lib/i18n/langcache/', 'en');
-$i18n->setForcedLang('en');
-$i18n->init();
+
 
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);

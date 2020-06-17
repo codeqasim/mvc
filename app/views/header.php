@@ -1,4 +1,8 @@
-<?php include "app/config.php"; ?>
+<?php
+include "app/config.php";
+$i18n->setForcedLang('en');
+$i18n->init();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="#rtl">
     <head>

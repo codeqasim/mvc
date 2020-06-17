@@ -1,4 +1,6 @@
 <?php class TRANS {
+const language_name = 'English';
+const language_type = 'LTR';
 const login = 'Login';
 const signup = 'Signup';
 const agents = 'Agents';

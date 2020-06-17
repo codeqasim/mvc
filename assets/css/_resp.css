@@ -37,7 +37,8 @@ header .menu { margin: 0 7px; }
 .data-input .input-wrapper{border-radius: 0!important}
 .hero{align-items: flex-start;padding: 5px}	
 .hero .search{top: 10px;}	
-.main_search { padding: 15px; }
+.main_search { padding: 15px 0px; }
+.hero .search li label { font-size: 16px }
 .apps .apps-image {justify-content: center;}
 .detail-page .hotel-amenities{margin-top:20px;}
 .result-card .left-side-row  .left-side-row__info{margin:0;}

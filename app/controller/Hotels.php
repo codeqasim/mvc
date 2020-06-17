@@ -19,7 +19,7 @@ class Hotels
 	    $title = 'Hotels';
 		$url = explode('/', $_GET['url']);
 		$count = count($url);
-		if ($count < 9) {
+		if ($count < 8) {
 			$homepage=root;
 			echo ("<script>location.href='$homepage'</script>");
 		}
@@ -31,7 +31,6 @@ class Hotels
         $checkout = $url[5];
         $adults = $url[6];
         $children = $url[7];
-        $pagination = $url[8];
 		$data = array(
 			'country'=>$city,
 			'checkin'=>$checkin,

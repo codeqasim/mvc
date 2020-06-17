@@ -144,7 +144,7 @@ $(document).ready(function(){
   var room = $('#room').val();
   var city_trims = city.replace(/\/?,/g, '/').replace(/-+/g, '-').replace(/^-|-$/g, '').split(' ').join('-').replace('%40', '@');
   var actionURL = 'hotels/';
-  var finelURL = actionURL +language+'/'+currceny+'/'+city_trims+'/'+ checkin+'/'+checkout+'/'+adults+'/'+child+'/'+pagination;
+  var finelURL = actionURL +language+'/'+currceny+'/'+city_trims+'/'+ checkin+'/'+checkout+'/'+adults+'/'+child;
   // alert(finelURL);
   window.location.href = finelURL;
 

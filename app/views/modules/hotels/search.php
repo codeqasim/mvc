@@ -7,9 +7,12 @@
                     <span class="input-label"><i class="mdi mdi-hotel"></i> City Name</span>
                     <div class="input-items">
 
-                        <select id="locations" name="location" class="form-control"  required>
-                            <option value="" selected>text</option>
+                        <select id="locations" name="location" class="form-control" required>
+                            <?php foreach(json_decode($product->secondary_cities) as $loc){ ?>
+                            <option value="<?=$loc?>" selected><?=$loc?></option>
+                            <?php } ?>
                         </select>
+
 
                        <!--<input autocomplete="off" type="search" placeholder="city" id="city" name="city" value="lahore" class="city"/>-->
                     </div>
@@ -93,6 +96,7 @@
 
     </form>
 </div>
+
 
 
 

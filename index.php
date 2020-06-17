@@ -21,9 +21,9 @@
 
     function getLocations(){
         $final_results = array();
-        $results = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$this->input->get("q").'&key=AIzaSyBxuDvvvAEk0SCERQ4wc7xfLeTHynMrMNg&sessiontoken=1234567890'));
-         foreach($results->predictions as $item){
-            array_push($final_results,(object)array("id"=>$item->structured_formatting->main_text,"text"=>$item->structured_formatting->main_text));
+        $results = json_decode(file_get_contents('https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term='.$_GET['q']));
+        foreach($results as $item){
+            array_push($final_results,(object)array("id"=>$item->latinFullName,"text"=>$item->latinFullName));
          }
          echo json_encode($final_results);
     }
@@ -56,6 +56,7 @@
     elseif ($url[0] == 'cms') $cms->index();
     elseif ($url[0] == 'about') $cms->about();
     elseif ($url[0] == 'login') $account->index();
+    elseif ($url[0] == 'getLocations') getLocations();
     else page404();
     }
 

@@ -94,9 +94,6 @@ threshold: 0
 });
 </script>
 
-
-
-
 <script>
 $('#locations').select2({
     placeholder: "Search By City Name",
@@ -132,7 +129,7 @@ $('#locations').select2({
 
 
 <script>
-$('.category').select2({
+$('#category').select2({
     placeholder: {
         id: '1',
         text: 'Select Category'

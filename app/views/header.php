@@ -73,7 +73,7 @@
 
     <script src="<?=$root;?>assets/js/jquery.min.js"></script>
     <script src="<?=$root;?>assets/js/isotope.min.js"></script>
-
+    
     </head>
     <body onload="<!--oneway()-->" >
         <header class="sticky">

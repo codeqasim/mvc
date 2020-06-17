@@ -1,6 +1,6 @@
 <?php
 
-class CMS
+class Cms
 {
 	
 	function __construct(){
@@ -12,8 +12,27 @@ class CMS
 
     function about()
     {
-    $title='Search';
-    echo "CMS";
+    include "app/views/modules/cms/about.php";
+    }
+
+    function careers()
+    {
+    include "app/views/modules/cms/careers.php";
+    }
+
+    function contact()
+    {
+    include "app/views/modules/cms/contact.php";
+    }
+
+    function faqs()
+    {
+    include "app/views/modules/cms/faqs.php";
+    }
+
+    function policy()
+    {
+    include "app/views/modules/cms/policy.php";
     }
 
 }

@@ -13,7 +13,8 @@
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
     include "app/views/header.php";
-    include "config.php";
+    include "app/config.php";
+    include "app/functions.php";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
     require_once('app/controller/Cms.php');
@@ -54,6 +55,10 @@
 
     /* CMS */ 
     elseif ($url[0] == 'cms') $cms->index();
+    elseif ($url[0] == 'policy') $cms->policy();
+    elseif ($url[0] == 'faqs') $cms->faqs();
+    elseif ($url[0] == 'careers') $cms->careers();
+    elseif ($url[0] == 'contact') $cms->contact();
     elseif ($url[0] == 'about') $cms->about();
     elseif ($url[0] == 'login') $account->index();
     elseif ($url[0] == 'getLocations') getLocations();

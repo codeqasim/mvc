@@ -31,7 +31,7 @@
                         <div class="c4">
                             <ul>
                                 <li><a href="<?=$root;?>policy">privacy policy</a></li>
-                                <li><a href="<?=$root;?>faq">FAQs</a></li>
+                                <li><a href="<?=$root;?>faqs">FAQs</a></li>
                             </ul>
                         </div>
                         <div class="c4">

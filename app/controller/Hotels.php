@@ -107,13 +107,9 @@ class Hotels
 		$listdata = $obj_merged;
     	include "app/views/modules/hotels/list.php";
 
-
-
 	}
 
 	function hotel_detail(){
-
-
 
 		if (empty($_POST['id'])) {
 			$url = explode('/', $_GET['url']);
@@ -157,8 +153,6 @@ class Hotels
 		// exit();
 
 		}
-		
-
 
 		$this->apiurl = API_ENDPOINT.'Travelhopehotels/detail?appKey='.API_KEYS;
 		// Initializes a new cURL session

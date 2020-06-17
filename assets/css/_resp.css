@@ -32,7 +32,7 @@ header .menu { margin: 0 7px; }
 }
 
 @media only screen and (max-width:768px){
-.datepicker.dropdown-menu { bottom: 0px; width: 100%; left: 0px !important; }
+.datepicker.dropdown-menu { bottom: 0px; width: 100%; left: 0px !important; height: -webkit-fill-available;}
 .datepicker table { width: 100% !important }
 .data-input .input-wrapper{border-radius: 0!important}
 .hero{align-items: flex-start;padding: 5px}	

@@ -109,3 +109,16 @@
 .categories .select2-selection__rendered { text-indent: 14px !important; font-size: 16px !important; }
 .categories .select2-selection__arrow { top: 16px !important; right: 12px !important; }
 .locations  .select2{ margin-top: -76px }
+
+.hero .search .input-items .select2-selection { letter-spacing: 0.5px; font-family: 'Muli Bold',sans-serif;letter-spacing: 0px;border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:4px;border-bottom-left-radius:4px; background: rgba(26, 57, 96, 0.10196078431372549); width: 100%; border: none; outline: 0; color: #000; font-size: 16px; font-weight: 900; padding: 15px; height: 55px; }
+.hero .search .input-items .select2-selection:hover { background: rgba(26, 57, 96, 0.15) }
+.hero .search .input-items .select2-selection:focus { background: rgba(26, 57, 96, 0.25) }
+.hero .search .input-items .select2-selection:disabled { color: transparent; }
+.select2-container--open .select2-dropdown--below { top: -54px; }
+.select2-search--dropdown { padding: 0px; }
+.select2-container--default .select2-search--dropdown .select2-search__field { text-transform: capitalize; border: 0px solid #aaa; height: 55px; background: rgba(26, 57, 96, 0.25); padding: 16px; font-size: 18px; color: #000; }
+.select2-results__option { padding: 6px; user-select: none; -webkit-user-select: none; position: absolute; top: 10px; right: 10px; }
+.select2-container--default .select2-results__option[aria-disabled=true] { color: #000; }
+.select2-dropdown { background-color: white; border: 0px solid #aaa; border-radius: 4px; box-sizing: border-box; display: block; position: absolute; left: -100000px; width: 100%; z-index: 1051; }
+.select2-container--default .select2-selection--single .select2-selection__arrow b { border-color: #000 transparent transparent transparent; border-style: solid; border-width: 5px 4px 0 4px; height: 0; left: 50%; margin-left: -16px; margin-top: 12px; position: absolute; top: 50%; width: 0; }
+.select2-container--default .select2-selection--single .select2-selection__placeholder { color: #000; }

@@ -98,21 +98,21 @@ threshold: 0
 $('#locations').select2({
     placeholder: "Search By City Name",
     minimumInputLength: 3,
-    multiple:true,
+    multiple:false,
     ajax: {
-        url: '<?=$root;?>getLocations',
+        url: 'https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term=',
         dataType: 'json',
-        data: function (params) {
+        /*data: function (params) {
             return {
                 q: $.trim(params.term)
             };
-        },
+        },*/
         processResults: function (data) {
             var result = [];
             data.forEach(function (dataObj) {
                 result.push({
                     id: dataObj.id,
-                    text: dataObj.text,
+                    text: dataObj.latinFullName,
                 })
             });
             return {
@@ -122,7 +122,7 @@ $('#locations').select2({
         cache: true
     }
 }).on("select2:select", function(e) {
-    const propertyName = $(e.target).data("property-name");
+    const propertyName = $(e.target).data("latinFullName");
     const propertyValue = e.params.data.id;
 });
 </script>

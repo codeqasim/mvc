@@ -1,3 +1,4 @@
+<?php echo "<script>document.title = '".$title."';</script>"; ?>
 <style> body{background-color: #f2f6fb;"}</style>
 <div class="account">
   <div class="contain">

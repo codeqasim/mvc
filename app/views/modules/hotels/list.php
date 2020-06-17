@@ -1,3 +1,4 @@
+<?php echo "<script>document.title = '".$title."';</script>"; ?>
 <div class="list-page" id="listing">
   <div class="edit-search">
     <div class="container">
@@ -60,45 +61,35 @@
                 <label for="s5"> <input type="radio" id="s5" name="stars" value="s5" class="filter-item"/>
                 <?php for ($i = 1; $i <= 5; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?php if (isset($listrating['count_stars']['5']))
-                  {echo $listrating['count_stars']['5'];
-                  }else{echo "0";} ?>
+                <?=$five_stars?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s4"> <input type="radio" id="s4" name="stars" value="s4" class="filter-item"/>
                 <?php for ($i = 1; $i <= 4; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?php if (isset($listrating['count_stars']['4']))
-                  {echo $listrating['count_stars']['4'];
-                  }else{echo "0";} ?>
+                <?=$four_stars?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s3"> <input type="radio" id="s3" name="stars" value="s3" class="filter-item"/>
                 <?php for ($i = 1; $i <= 3; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?php if (isset($listrating['count_stars']['3']))
-                  {echo $listrating['count_stars']['3'];
-                  }else{echo "0";} ?>
+                <?=$three_stars?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s2"> <input type="radio" id="s2" name="stars" value="s2" class="filter-item"/>
                 <?php for ($i = 1; $i <= 2; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?php if (isset($listrating['count_stars']['2']))
-                  {echo $listrating['count_stars']['2'];
-                  }else{echo "0";} ?>
+                <?=$two_stars?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s1"> <input type="radio" id="s1" name="stars" value="s1" class="filter-item"/>
                 <?php for ($i = 1; $i <= 1; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?php if (isset($listrating['count_stars']['1']))
-                  {echo $listrating['count_stars']['1'];
-                  }else{echo "0";} ?>
+                <?=$one_stars?>
                 </strong>
                 </label>
                 <div class="clear"></div>

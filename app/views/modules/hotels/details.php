@@ -1,3 +1,4 @@
+<?php echo "<script>document.title = '".$hotel->response->company_name."';</script>"; ?>
 <div class="hotels-detail-page pt-20">
   <div class="container">
     <div class="crumb">

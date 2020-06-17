@@ -1,3 +1,4 @@
+<?php echo "<script>document.title = '".$title."';</script>"; ?>
 <section class="text-center" style="margin:160px;">
  	<div class="intro_title error">
     	<h1 class="animated fadeInDown"><strong>Error 404</strong></h1>

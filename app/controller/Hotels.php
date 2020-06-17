@@ -18,7 +18,11 @@ class Hotels
 	{
 	    $title = 'Hotels';
 		$url = explode('/', $_GET['url']);
-
+		$count = count($url);
+		if ($count < 9) {
+			$homepage=root;
+			echo ("<script>location.href='$homepage'</script>");
+		}
 
         $lang = $url[1];
         $currceny = $url[2];
@@ -80,6 +84,21 @@ class Hotels
     			$listrating = array('count_stars'=>array_count_values($colors));
     		}
     		}
+	  if (isset($listrating['count_stars']['5']))
+          {$five_stars = $listrating['count_stars']['5'];
+          }else{$five_stars = "0";} 
+      if (isset($listrating['count_stars']['4']))
+          {$four_stars=$listrating['count_stars']['4'];
+          }else{$four_stars="0";}
+      if (isset($listrating['count_stars']['3']))
+          {$three_stars=$listrating['count_stars']['3'];
+          }else{$three_stars="0";}
+      if (isset($listrating['count_stars']['2']))
+          {$two_stars=$listrating['count_stars']['2'];
+          }else{$two_stars="0";}
+      if (isset($listrating['count_stars']['1']))
+          {$one_stars=$listrating['count_stars']['1'];
+          }else{$one_stars="0";}
 
 		$arrs = json_encode($listrating);
 		$arrsdecode = json_decode($arrs);

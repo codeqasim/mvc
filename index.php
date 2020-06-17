@@ -2,7 +2,7 @@
     // All rights reserved by PHPTRAVELS 2020 www.phptravels.com
     ?>
 
-    <?php
+    <?php 
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -17,18 +17,20 @@
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
     require_once('app/controller/Cms.php');
+    require_once('app/controller/Account.php');
 
-    $Hotels = new Hotels();
+    $hotels = new Hotels();
     $flights = new Flights();
-
+    $cms = new Cms();
+    $account = new Account();
     function home()
     {
-    define('title', "Homepage");
+    $title = "Homepage";
     include "app/views/home.php";
     }
 
     function page404()
-    { include "app/views/404.php"; }
+    { $title = "page not found!"; include "app/views/404.php"; }
 
     function copyright() {
     echo "All rights reserved by <strong>PHPTRAVELS</strong> 2020";
@@ -36,13 +38,15 @@
 
     if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
     /* routes */
-    if     ($url[0] == 'search') $Hotels->search();
-    elseif ($url[0] == 'hotels') $Hotels->hotel_data();
-    elseif ($url[0] == 'hotel') $Hotels->hotel_detail();
+    if     ($url[0] == 'search') $hotels->search();
+    elseif ($url[0] == 'hotels') $hotels->hotel_data();
+    elseif ($url[0] == 'hotel') $hotels->hotel_detail();
     elseif ($url[0] == 'flights') $flights->index();
 
-    /* CMS */
+    /* CMS */ 
     elseif ($url[0] == 'cms') $cms->index();
+    elseif ($url[0] == 'about') $cms->about();
+    elseif ($url[0] == 'login') $account->index();
     else page404();
     }
 

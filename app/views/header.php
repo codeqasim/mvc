@@ -10,8 +10,6 @@
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 
-        <?php meta; ?>
-
         <script>
         /*var app = {
             url:'<?=$root;?>,
@@ -73,7 +71,7 @@
 
     <script src="<?=$root;?>assets/js/jquery.min.js"></script>
     <script src="<?=$root;?>assets/js/isotope.min.js"></script>
-    
+
     </head>
     <body onload="<!--oneway()-->" >
         <header class="sticky">

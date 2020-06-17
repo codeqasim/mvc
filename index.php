@@ -13,14 +13,13 @@
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
     include "app/views/header.php";
-    include "app/config.php";
     include "app/functions.php";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
     require_once('app/controller/Cms.php');
     require_once('app/controller/Account.php');
 
-    
+
 
     function getLocations(){
         $final_results = array();

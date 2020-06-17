@@ -1,6 +1,6 @@
 <?php
 include "app/config.php";
-$i18n->setForcedLang('en');
+$i18n->setForcedLang('english');
 $i18n->init();
 ?>
 <!DOCTYPE html>

@@ -22,6 +22,14 @@
             </ul>
             </li>
             <li class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
+
+            <?php
+            $dir    = 'app/lang';
+            $files1 = scandir($dir);
+
+            print_r($files1);
+            ?>
+
             <ul class="dropdown">
               <li><a href="<?=$root;?>ar"><i class="flag sa"></i> Arabic</a></li>
               <li><a href="<?=$root;?>en"><i class="flag us"></i> English</a></li>

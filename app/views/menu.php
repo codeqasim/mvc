@@ -27,7 +27,7 @@
               <li><a href="<?=$root;?>en"><i class="flag us"></i> English</a></li>
             </ul>
             </li>
-            <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong>Login</strong></a></li>
+            <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=TRANS::L1; ?></strong></a></li>
         </ul>
         <a href="<?=$root;?>login#signup" class="btn danger-o f-left">sign up</a>
         <ul>

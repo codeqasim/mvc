@@ -32,7 +32,7 @@
                 <div class="input-wrapper">
                     <span class="input-label"><i class="mdi mdi-flight-takeoff"></i> From Origin</span>
                     <div class="input-items">
-                        <input autocomplete="off" type="text" placeholder="Origin" onfocus="this.value=''" name="from" id="autocomplete" class="autocomplete-airport"/>
+                        <input autocomplete="off" type="search" placeholder="Origin" onfocus="this.value=''" name="from" id="autocomplete" class="autocomplete-airport"/>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="input-wrapper">
                     <span class="input-label"><i class="mdi mdi-flight-land"></i> To Destination</span>
                     <div class="input-items">
-                        <input autocomplete="off" type="text" onfocus="this.value=''" name="to" id="autocomplete2" class="autocomplete-airport" placeholder="Destination" />
+                        <input autocomplete="off" type="search" onfocus="this.value=''" name="to" id="autocomplete2" class="autocomplete-airport" placeholder="Destination" />
                     </div>
                 </div>
             </div>

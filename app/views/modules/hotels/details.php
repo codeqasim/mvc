@@ -77,21 +77,13 @@
         </ul>
       </div>
       <div class="row row-rtl" id="hotel">
-        <div class="c3">
-          <div style="overflow:hidden;max-width:100%;width:500px;height:300px;">
-            <div id="embeddedmap-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://maps.google.com/maps?q=<?php echo $hotel->response->latitude; ?>,<?php echo $hotel->response->longitude; ?>&hl=es;z=14&amp;output=embed"></iframe></div>
-            <a class="embedded-maphtml" href="https://www.embed-map.com" id="enable-mapdata">https://www.embed-map.com</a>
-            <style>#embeddedmap-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style>
-          </div>
-        </div>
         <div class="c9">
           <div class="grid-img">
             <div class="row">
               <div class="c8 pr-0">
                 <img class="main-img"
                   src="<?php echo $hotel->response->thumb; ?>"
-                  title="Holiday Inn Citystars"
-                  alt="Holiday Inn Citystars"
+                  alt="<?=$hotel->response->company_name;?>"
                   />
               </div>
               <div class="c4">
@@ -99,12 +91,18 @@
                 <?php
                 $i = 1;
                 foreach($hotel->response->images as $img){ ?>
-                <li><img src="<?=$img;?>" alt="<?php echo $hotel->response->company_name; ?>" /></li>
+                <li><img src="<?=$img;?>" alt="<?=$hotel->response->company_name;?>" /></li>
                 <?php if ($i++ == 3) break; ?>
                 <?php } ?>
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="c3">
+          <div style="overflow:hidden;max-width:100%;width:100%;height:292px;" class="grid-img">
+            <div id="embeddedmap-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://maps.google.com/maps?q=<?php echo $hotel->response->latitude; ?>,<?php echo $hotel->response->longitude; ?>&hl=es;z=14&amp;output=embed"></iframe></div>
+            <style>#embeddedmap-display img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style>
           </div>
         </div>
       </div>

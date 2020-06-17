@@ -232,9 +232,9 @@ $(document).ready(function(){
     var destination = $("#autocomplete2").val();
     var cdeparture = $("#departure").val();
     var returnn = $("#return").val();
-    var adult = $("#adult").text();
-    var children  = $("#children").text();
-    var infant  = $("#infant").text();
+    var adult = $("#fadult").text();
+    var children  = $("#fchildren").text();
+    var infant  = $("#finfant").text();
 
     /*origin & destination validation*/
     if(origin == ''){
@@ -260,7 +260,7 @@ $(document).ready(function(){
     var re_turn = partss[0] + '-' + partss[1] + '-' + partss[2];
 
     /* finally url*/
-    var base_url = "<?=root;?>";
+    var base_url = "<?=root;?>/flights";
 
     var url = base_url+"flights/"+origin_res1.toLowerCase()+"/"+destination_res1.toLowerCase()+"/"+flight_type+"/"+departur+"/"+re_turn+"/"+adult+"/"+children+"/"+infant;
 
@@ -297,73 +297,6 @@ $(document).ready(function(){
     flight_type = value;
     }
 
-    $(document).ready(function(){
-    $('#increase').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    var quantity = parseInt($('#adult').text());
-    // If is not undefined
-    $('#adult').text(quantity + 1);
-    // Increment
-    });
-
-    $('#decrease').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    var quantity = parseInt($('#adult').text());
-    // If is not undefined
-    // Increment
-    if(quantity>1){
-    $('#adult').text(quantity - 1);
-    }
-    });
-    });
-
-    $(document).ready(function(){
-    var quantitiy=0;
-    $('#increasee').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    var quantity = parseInt($('#children').text());
-    // If is not undefined
-    $('#children').text(quantity + 1);
-    });
-
-    $('#decreasee').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    var quantity = parseInt($('#children').text());
-    if(quantity>0){
-    $('#children').text(quantity - 1);
-    }
-    });
-    });
-
-    $(document).ready(function(){
-    var quantitiy=0;
-    $('#increasee').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    var quantity = parseInt($('#intant').text());
-    // If is not undefined
-    $('#intant').text(quantity + 1);
-    });
-
-    $('#decreasee').click(function(e){
-    // Stop acting like a button
-    e.preventDefault();
-    // Get the field name
-    var quantity = parseInt($('#intant').text());
-    if(quantity>0){
-    $('#intant').text(quantity - 1);
-    }
-    });
-    })
 </script>
 
 	</body>

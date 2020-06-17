@@ -32,9 +32,12 @@ header .menu { margin: 0 7px; }
 }
 
 @media only screen and (max-width:768px){
+.datepicker.dropdown-menu { bottom: 0px; width: 100%; left: 0px !important; }
+.datepicker table { width: 100% !important }
 .data-input .input-wrapper{border-radius: 0!important}
-.hero{align-items: flex-start;}	
-.hero .search{top: 100px;}	
+.hero{align-items: flex-start;padding: 5px}	
+.hero .search{top: 10px;}	
+.main_search { padding: 15px; }
 .apps .apps-image {justify-content: center;}
 .detail-page .hotel-amenities{margin-top:20px;}
 .result-card .left-side-row  .left-side-row__info{margin:0;}

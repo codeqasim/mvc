@@ -8,9 +8,7 @@
                     <div class="input-items">
 
                         <select id="locations" name="location" class="form-control" required>
-                            <?php foreach(json_decode($product->secondary_cities) as $loc){ ?>
-                            <option value="<?=$loc?>" selected><?=$loc?></option>
-                            <?php } ?>
+                            <option>Search by location name</option>
                         </select>
 
 
@@ -21,13 +19,13 @@
             <div class="c12 data-input">
                 <div class="input-wrapper">
                     <div class="row no-gutters items-center">
-                        <div class="c3 c-sm-3">
+                        <div class="c3 c-sm-6">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkin</span>
                             <div class="input-items">
                                 <input name="checkin" class="checkin" id="checkin" type="text" placeholder="" value="20-06-2020"  />
                             </div>
                         </div>
-                        <div class="c3 c-sm-3">
+                        <div class="c3 c-sm-6">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkout</span>
                             <div class="input-items">
                                 <span class="dashed hide show-md">-</span>
@@ -36,7 +34,7 @@
                         </div>
                         <div class="c6 row-rtl pt-15">
                             <div class="row">
-                                <div class="c4 room-row flex-content-between row-rtl text-center">
+                                <div class="c4 room-row flex-content-between row-rtl text-center c-sm-4">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Adults </span>
                                         <span class="text-muted ml-5"> <small>(+12)</small></span>
@@ -47,7 +45,7 @@
                                         <strong class="increase" id="increase">+</strong>
                                     </div>
                                 </div>
-                                <div class="c4 room-row flex-content-between items-center row-rtl text-center">
+                                <div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Children</span>
                                          <span class="text-muted ml-5"><small>(+2/+11)</small></span>
@@ -58,7 +56,7 @@
                                         <strong class="increase" id="increasee">+</strong>
                                     </div>
                                 </div>
-                                <div class="c4 room-row flex-content-between items-center row-rtl text-center">
+                                <div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Rooms</span>
                                         <span class="text-muted ml-5"><small>&nbsp;</small></span>

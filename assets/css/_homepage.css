@@ -18,6 +18,7 @@
 .hero .search .input-items input:disabled { color: transparent; }
 .hero .search .input-items .checkin,.hero .search .input-items .depart,.hero .search .input-items .busdepart{border-top-right-radius:0px;border-bottom-right-radius: 0px; }
 .hero .search .input-items .checkout,.hero .search .input-items .returning,.hero .search .input-items .busreturning{border-top-left-radius:0px;border-bottom-left-radius: 0px; }
+.hero .search .direct input[type="checkbox"] { margin-top: -5px; }
 .passenger-dropdown {opacity:0;visibility:hidden;-webkit-transition: all 0.1s ease-out; -moz-transition: all 0.1s ease-out; -o-transition: all 0.1s ease-out; transition: all 0.1s ease-out; box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);}
 .dropshow:hover + .passenger-dropdown { -webkit-transition: opacity .3s,padding .3s; -moz-transition: opacity .3s,padding .3s; transition: opacity .3s,padding .3s; visibility: visible; opacity: 1; }
 .search label { font-family: 'Muli Bold'; font-weight: normal; }

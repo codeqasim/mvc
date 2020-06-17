@@ -80,7 +80,7 @@
         <div class="search_bottom">
             <div class="c12">
                 <button type="submit" id="submit" class="f-right btn prime m"><i class="mdi mdi-search"></i> Search Hotels</button>
-                <label for="direct" class="direct f-right btn m"><input type="checkbox" id="direct" class="mr-10">Direct Flights</label>
+                <label for="nearby" class="direct f-right btn m"><input type="checkbox" id="nearby" class="mr-10">Nearby Me</label>
             </div>
         </div>
     </div>

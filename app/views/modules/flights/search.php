@@ -55,8 +55,7 @@
                                     name="depart"
                                     class="depart"
                                     type="text"
-                                    placeholder="19/03/2020"
-                                    value="19/04/2020"
+                                    value="<?php $d=strtotime("+4 Days"); echo date("d-m-Y", $d); ?>"
                                     />
                             </div>
                         </div>
@@ -69,8 +68,7 @@
                                     class="returning"
                                     id="return"
                                     type="text"
-                                    placeholder="20/03/2020"
-                                    value="20/04/2020"
+                                    value="<?php $d=strtotime("+5 Days"); echo date("d-m-Y", $d); ?>"
                                     />
                             </div>
                         </div>
@@ -83,7 +81,7 @@
                                     </div>
                                     <div class="passenger-dropdown-right">
                                         <strong class="decrease" id="decreasef1">-</strong>
-                                        <span id="adult"><input type="text" class="form-control" name="adults" id="adults" value="2" readonly></span>
+                                        <span id="adult"><input type="text" class="form-control" name="adults" id="fadults" value="2" readonly></span>
                                         <strong class="increase" id="increasef1">+</strong>
                                     </div>
                                 </div>
@@ -94,7 +92,7 @@
                                     </div>
                                     <div class="passenger-dropdown-right">
                                         <strong class="decrease" id="decreaseef2">-</strong>
-                                        <span id="child"><input type="text" class="form-control" name="childs" id="childs" value="0" readonly></span>
+                                        <span id="child"><input type="text" class="form-control" name="childs" id="fchilds" value="0" readonly></span>
                                         <strong class="increase" id="increaseef2">+</strong>
                                     </div>
                                 </div>
@@ -105,15 +103,8 @@
                                     </div>
                                     <div class="passenger-dropdown-right">
                                         <strong class="decrease" id="decreaseef3">-</strong>
-                                        <span id="rooms"><input type="text" class="form-control" name="infant" id="infant" value="0" readonly></span>
+                                        <span id="rooms"><input type="text" class="form-control" name="infant" id="finfant" value="0" readonly></span>
                                         <strong class="increase" id="increaseef3">+</strong>
-                                    </div>
-                                </div>
-                                <div class="passenger-dropdown pb-20">
-                                    <div class="passenger-dropdown-head rtl-align-right">
-                                        <span >Options</span>
-                                    </div>
-                                    <div class="class_type">
                                     </div>
                                 </div>
                             </div>

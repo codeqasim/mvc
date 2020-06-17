@@ -19,19 +19,19 @@
                         <div class="c3 c-sm-6">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkin</span>
                             <div class="input-items">
-                                <input name="checkin" class="checkin" id="checkin" type="text" placeholder="" value="20-06-2020" readonly="readonly"/>
+                                <input name="checkin" class="checkin" id="checkin" type="text" placeholder="" value="<?php $d=strtotime("+4 Days"); echo date("d-m-Y", $d); ?>" readonly="readonly"/>
                             </div>
                         </div>
                         <div class="c3 c-sm-6">
                             <span class="input-label"><i class="mdi mdi-calendar"></i> Checkout</span>
                             <div class="input-items">
                                 <span class="dashed hide show-md">-</span>
-                                <input name="checkout" class="checkout" id="checkout" type="text" placeholder="" value="22-06-2020" readonly="readonly" />
+                                <input name="checkout" class="checkout" id="checkout" type="text" placeholder="" value="<?php $d=strtotime("+5 Days"); echo date("d-m-Y", $d); ?>" readonly="readonly" />
                             </div>
                         </div>
                         <div class="c6 row-rtl pt-15">
                             <div class="row">
-                                <div class="c4 room-row flex-content-between row-rtl text-center c-sm-4">
+                                <div class="c6 c-sm-6 room-row flex-content-between row-rtl text-center c-sm-4">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Adults </span>
                                         <span class="text-muted ml-5"> <small>(+12)</small></span>
@@ -42,7 +42,7 @@
                                         <strong class="increase" id="increase1">+</strong>
                                     </div>
                                 </div>
-                                <div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
+                                <div class="c6 c-sm-6 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Children</span>
                                          <span class="text-muted ml-5"><small>(+2/+11)</small></span>
@@ -53,7 +53,7 @@
                                         <strong class="increase" id="increasee2">+</strong>
                                     </div>
                                 </div>
-                                <div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
+                                <!--<div class="c4r c-sm-4 room-row flex-content-between items-center row-rtl text-center">
                                     <div class="passenger-dropdown-left">
                                         <span><i class="mdi mdi-directions-walk"></i> Rooms</span>
                                         <span class="text-muted ml-5"><small>&nbsp;</small></span>
@@ -63,14 +63,14 @@
                                         <span id="rooms"><input type="text" class="form-control" name="rooms" id="rooms" value="1" readonly></span>
                                         <strong class="increase" id="increasee3">+</strong>
                                     </div>
-                                </div>
-                                <div class="passenger-dropdown pb-20">
+                                </div>-->
+                                <!--<div class="passenger-dropdown pb-20">
                                     <div class="passenger-dropdown-head rtl-align-right">
                                         <span >Options</span>
                                     </div>
                                     <div class="class_type">
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>

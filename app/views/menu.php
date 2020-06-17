@@ -27,11 +27,11 @@
               <li><a href="<?=$root;?>en"><i class="flag us"></i> English</a></li>
             </ul>
             </li>
-            <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=TRANS::L1; ?></strong></a></li>
+            <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=TRANS::login; ?></strong></a></li>
         </ul>
-        <a href="<?=$root;?>login#signup" class="btn danger-o f-left">sign up</a>
+        <a href="<?=$root;?>login#signup" class="btn danger-o f-left"><?=TRANS::signup; ?></a>
         <ul>
-         <li><a href="<?=$root;?>agents"><strong>AGENTS</strong></a></li>
+         <li><a href="<?=$root;?>agents"><strong><?=TRANS::agents; ?></strong></a></li>
         </ul>
         <div class="clear"></div>
     </div>

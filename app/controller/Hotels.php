@@ -113,6 +113,16 @@ class Hotels
 
 	function hotel_detail(){
 
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="<?=$meta_url; ?>">
+        <meta property="og:description" content="<?=$meta_desc; ?>">
+        <meta property="fb:app_id" content="">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="300">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image" content="<?=$meta_img; ?>">
+
+
 		if (empty($_POST['id'])) {
 			$url = explode('/', $_GET['url']);
         	$lang = $url[1];

@@ -9,14 +9,8 @@
         <!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="<?=$root;?>">
-        <meta property="og:description" content="">
-        <meta property="fb:app_id" content="">
-        <meta property="og:image:type" content="image/jpeg">
-        <meta property="og:image:width" content="300">
-        <meta property="og:image:height" content="300">
-        <meta property="og:image" content="">
+
+        <?php meta; ?>
 
         <script>
         /*var app = {

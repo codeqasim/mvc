@@ -81,6 +81,7 @@
 <script src="<?=$root;?>assets/js/jquery.lazy.min.js"></script>
 <script src="<?=$root;?>assets/js/app.js"></script>
 <script src="<?=$root;?>assets/js/datepicker.js"></script>
+<script src="<?=$root;?>assets/js/select2.js"></script>
 
 <!-- lazyload -->
 <script>
@@ -92,6 +93,54 @@ threshold: 0
 });
 });
 </script>
+
+
+
+
+<script>
+$('#locations').select2({
+    placeholder: "Search By City Name",
+    minimumInputLength: 3,
+    multiple:true,
+    ajax: {
+        url: '<?=$root;?>getLocations',
+        dataType: 'json',
+        data: function (params) {
+            return {
+                q: $.trim(params.term)
+            };
+        },
+        processResults: function (data) {
+            var result = [];
+            data.forEach(function (dataObj) {
+                result.push({
+                    id: dataObj.id,
+                    text: dataObj.text,
+                })
+            });
+            return {
+                results: result
+            };
+        },
+        cache: true
+    }
+}).on("select2:select", function(e) {
+    const propertyName = $(e.target).data("property-name");
+    const propertyValue = e.params.data.id;
+});
+</script>
+
+
+<script>
+$('.category').select2({
+    placeholder: {
+        id: '1',
+        text: 'Select Category'
+    }
+});
+$('.select2-container').css('width','100%')
+</script>
+
 
 </body>
 </html>

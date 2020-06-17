@@ -6,7 +6,12 @@
                 <div class="input-wrapper">
                     <span class="input-label"><i class="mdi mdi-hotel"></i> City Name</span>
                     <div class="input-items">
-                       <input autocomplete="off" type="search" placeholder="city" id="city" name="city" value="lahore" class="city"/>
+
+                        <select id="locations" name="location" class="form-control"  required>
+                            <option value="" selected>text</option>
+                        </select>
+
+                       <!--<input autocomplete="off" type="search" placeholder="city" id="city" name="city" value="lahore" class="city"/>-->
                     </div>
                 </div>
             </div>
@@ -88,16 +93,6 @@
 
     </form>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 

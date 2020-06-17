@@ -19,6 +19,15 @@
     require_once('app/controller/Cms.php');
     require_once('app/controller/Account.php');
 
+    function getLocations(){
+        $final_results = array();
+        $results = json_decode(file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$this->input->get("q").'&key=AIzaSyBxuDvvvAEk0SCERQ4wc7xfLeTHynMrMNg&sessiontoken=1234567890'));
+         foreach($results->predictions as $item){
+            array_push($final_results,(object)array("id"=>$item->structured_formatting->main_text,"text"=>$item->structured_formatting->main_text));
+         }
+         echo json_encode($final_results);
+    }
+
     $hotels = new Hotels();
     $flights = new Flights();
     $cms = new Cms();

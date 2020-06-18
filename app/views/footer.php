@@ -83,6 +83,7 @@
 <script src="<?=$root.js;?>datepicker.js"></script>
 <script src="<?=$root.js;?>select2.js"></script>
 
+
 <!-- lazyload -->
 <script>
 $(function() {
@@ -102,10 +103,7 @@ threshold: 0
         if (repo.loading) return repo.text;
         console.log(repo);
         var markup =
-            "<div class='select2-result'><i class=\"flag " + repo.icon.toLowerCase() + "\"></i></div>" +
-            "<div class='select2-result'>" +
-            "<div class='select2-result'>" + repo.text;
-
+            "<i class=\"flag " + repo.icon.toLowerCase() + "\"></i>" + repo.text;
         return markup;
     }
 
@@ -115,7 +113,6 @@ threshold: 0
 
     $ajax.select2({
 
-
         ajax: {
             url: "<?php echo $root; ?>/app/functions.php",
             dataType: 'json',
@@ -124,7 +121,6 @@ threshold: 0
                     q: $.trim(params.term)
                 };
             },
-
 
             processResults: function (data) {
                 var result = [];
@@ -148,15 +144,23 @@ threshold: 0
         templateResult: formatRepo,
         templateSelection: formatRepoSelection,
 
+        cache: true,
 
         placeholder: {
         id: 'lahore', // the value of the option
         text: 'Select an option'
         },
 
-        allowClear: true
-
     });
+
+
+    var select2Instance = $(selectNode).data('select2');
+    select2Instance.on('results:message', function(params){
+    this.dropdown._resizeDropdown();
+    this.dropdown._positionDropdown();
+    });
+
+
 </script>
 
 

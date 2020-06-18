@@ -41,7 +41,7 @@
 </div>
 
 <script>
-$(".hero,input").click(function() {
+$(".hero,input,.select2-search").click(function() {
  $('html, body').animate({
   scrollTop: $("#search").offset().top
  }, 1);

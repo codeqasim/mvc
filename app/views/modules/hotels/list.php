@@ -205,8 +205,8 @@
                     <div class="row h-100 row-rtl">
                       <div class="c7 border-right rtl-align-right">
                         <div class="detail">
-                          <h6 class="title"><a target="_blank" href="#"><strong><?= $list->company_name ;?></strong></a></h6>
-                          <div class="rating mb-10">
+                          <h6 class="title"><a target="_blank" href="#"><strong><?php echo substr($list->company_name,0,35);?></strong></a></h6>
+                          <div class="rating mb-10 mt-10">
                             <?php for ($x = 1; $x <= $list->rating; $x++):?>
                             <span class="icon mdi mdi-star"></span>
                             <?php endfor; ?>
@@ -214,12 +214,12 @@
                           <small class="text-muted"><strong><?= $list->address ;?></strong></small><br>
                           <small class="text-muted"><?php echo substr($list->description,0,150);?></small>
                         </div>
-                        <div class="aminities mt-10 hide-m">
+                        <!--<div class="aminities mt-10 hide-m">
                           <span>&#10070;</span>
                           <span>&#10070;</span>
                           <span>&#10070;</span>
                           <span>&#10070;</span>
-                          </div>
+                          </div>-->
                       </div>
                       <div class="c5 p-10">
                         <div class="flex flex-content-between row-rtl">

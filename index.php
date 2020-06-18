@@ -33,9 +33,9 @@
     echo "</code>";
     exit();
     }
-    
+
     $php_version = explode('.', phpversion());
-    if ($php_version[0] < 7) { include_once './assets/fix/php.php'; die(); }
+    if ($php_version[0] < 7) { include_once 'app/core/php.php'; die(); }
 
     $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
@@ -45,15 +45,6 @@
     require_once('app/controller/Flights.php');
     require_once('app/controller/Cms.php');
     require_once('app/controller/Account.php');
-
-//    function getLocations(){
-//        $final_results = array();
-//        $results = json_decode(file_get_contents('https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term='.$_GET['q']));
-//        foreach($results as $item){
-//            array_push($final_results,(object)array("id"=>$item->latinFullName,"text"=>$item->latinFullName));
-//         }
-//         echo json_encode($final_results);
-//    }
 
     $hotels = new Hotels();
     $flights = new Flights();

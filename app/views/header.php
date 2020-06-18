@@ -17,9 +17,6 @@ $i18n->init();
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 
-
-
-
         <script>
         var app = {
             url:'<?=$root;?>',
@@ -45,6 +42,12 @@ $i18n->init();
         var i18n = {
             warning:"Warning",
             success:"Success",
+        };
+        var currencies = {
+            USD:United States,
+            EURO:Europeon Euro,
+            SAR:Saudi Riyals,
+            PKR:Pakistani PKR
         };
     </script>
 

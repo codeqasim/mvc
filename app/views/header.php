@@ -4,6 +4,7 @@ include "app/functions.php";
 $i18n->setForcedLang('en');
 $i18n->init();
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="#rtl">
     <head>
@@ -15,6 +16,9 @@ $i18n->init();
         <!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
+
+
+
 
         <script>
         var app = {

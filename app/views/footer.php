@@ -83,24 +83,6 @@
 <script src="<?=$root.js;?>datepicker.js"></script>
 <script src="<?=$root.js;?>select2.js"></script>
 
-<script>
-$.ajax({
-    url: "<?=$geo_url;?>",
-    jsonpCallback: "callback",
-    dataType: "jsonp",
-    success: function(location) {
-        $('#country').html(location.country_name);
-        $('#state').html(location.state);
-        $('#city_name').html(location.city);
-        $('#latitude').html(location.latitude);
-        $('#longitude').html(location.longitude);
-        $('#ip').html(location.IPv4);
-    }
-});
-
-
-</script>
-
 <!-- lazyload -->
 <script>
 $(function() {
@@ -119,10 +101,10 @@ threshold: 0
 
         if (repo.loading) return repo.text;
         console.log(repo);
-        var markup = "<div class='select2-result-repository clearfix'>" +
-            "<div class='select2-result-repository__avatar'><span><i class=\"flag " + repo.icon.toLowerCase() + "\"></i>  </span></div>" +
-            "<div class='select2-result-repository__meta'>" +
-            "<div class='select2-result-repository__title'>" + repo.text + "</div>";
+        var markup =
+            "<div class='select2-result'><i class=\"flag " + repo.icon.toLowerCase() + "\"></i></div>" +
+            "<div class='select2-result'>" +
+            "<div class='select2-result'>" + repo.text;
 
         return markup;
     }
@@ -132,14 +114,18 @@ threshold: 0
     }
 
     $ajax.select2({
+
+
         ajax: {
-            url: "<?php echo $root; ?>//app/functions.php",
+            url: "<?php echo $root; ?>/app/functions.php",
             dataType: 'json',
             data: function (params) {
                 return {
                     q: $.trim(params.term)
                 };
             },
+
+
             processResults: function (data) {
                 var result = [];
                 data.forEach(function (dataObj) {
@@ -156,11 +142,20 @@ threshold: 0
             },
             cache: false
         },
+
         escapeMarkup: function (markup) { return markup; },
         minimumInputLength: 3,
         templateResult: formatRepo,
         templateSelection: formatRepoSelection,
-        theme: 'adwitt'
+
+
+        placeholder: {
+        id: 'lahore', // the value of the option
+        text: 'Select an option'
+        },
+
+        allowClear: true
+
     });
 </script>
 

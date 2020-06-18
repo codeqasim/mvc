@@ -127,6 +127,7 @@
 .select2-container--default .select2-results__option--highlighted[aria-selected] { background-color: #0058e6;  }
 .select2-container--default .select2-results__option { padding: 20px 20px; height: 58px; }
 
+
 .loading-results:after  {
   content: "";
   position: absolute !important;

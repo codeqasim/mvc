@@ -61,39 +61,40 @@
                 <label for="s5"> <input type="radio" id="s5" name="stars" value="s5" class="filter-item"/>
                 <?php for ($i = 1; $i <= 5; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?=$five_stars?>
+                <?php if (empty($listempty)) { echo $five_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s4"> <input type="radio" id="s4" name="stars" value="s4" class="filter-item"/>
                 <?php for ($i = 1; $i <= 4; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?=$four_stars?>
+                <?php if (empty($listempty)) { echo $four_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s3"> <input type="radio" id="s3" name="stars" value="s3" class="filter-item"/>
                 <?php for ($i = 1; $i <= 3; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?=$three_stars?>
+                <?php if (empty($listempty)) { echo $three_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s2"> <input type="radio" id="s2" name="stars" value="s2" class="filter-item"/>
                 <?php for ($i = 1; $i <= 2; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?=$two_stars?>
+                <?php if (empty($listempty)) { echo $two_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
                 <div class="clear"></div>
                 <label for="s1"> <input type="radio" id="s1" name="stars" value="s1" class="filter-item"/>
                 <?php for ($i = 1; $i <= 1; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
                 <strong>
-                <?=$one_stars?>
+                <?php if (empty($listempty)) { echo $one_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
                 <div class="clear"></div>
               </div>
+
             </div>
             <div class="clear"></div>
             <div class="filter-section chain-hotel pb-10">
@@ -162,7 +163,8 @@
                 <div class="flex items-center">
                   <div>
                     <strong>
-                    <?php echo count($listdata->response) ?> Hotels in Cairo
+                    <?php  if (!empty($totalhotel)){echo $totalhotel .' '. $cityname;
+                    }else{echo $totalempty .' '. $cityname;}?>
                     </strong>
                   </div>
                   <!--<div class="ml-30">
@@ -176,12 +178,10 @@
           </div>
         </div>
         <div id="products">
-          <?php foreach($listdata->response as $list){?>
-          <?php
-            $y = $list->rating;
-            $x = (int)$y;
-            ?>
-          <div class="row row-rtl s<?= $x ;?> product-block item">
+          <?php if (empty($listempty)) {?>
+            <?php foreach($listdata->response as $list){?>
+          <?php $y = $list->rating; $x = (int)$y; ?>
+                          <div class="row row-rtl s<?= $x ;?> product-block item">
             <div class="c12">
               <div class="list-wrapper">
                 <div class="row row-rtl">
@@ -214,12 +214,12 @@
                           <small class="text-muted"><strong><?= $list->address ;?></strong></small><br>
                           <small class="text-muted"><?php echo substr($list->description,0,150);?></small>
                         </div>
-                        <!--<div class="aminities mt-10 hide-m">
+                        <div class="aminities mt-10 hide-m">
                           <span>&#10070;</span>
                           <span>&#10070;</span>
                           <span>&#10070;</span>
                           <span>&#10070;</span>
-                          </div>-->
+                          </div>
                       </div>
                       <div class="c5 p-10">
                         <div class="flex flex-content-between row-rtl">
@@ -257,6 +257,7 @@
             </div>
           </div>
           <?php } ?>
+          <?php }else{echo $listempty;} ?>
         </div>
       </div>
     </div>

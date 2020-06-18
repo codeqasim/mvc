@@ -62,25 +62,27 @@ class Hotels
 		curl_close($curl);
 		// echo $response . PHP_EOL
 		$arr = json_decode($response);
+
+		if (empty($arr->response->HotelListResponse)) {
 		$listrating = [];
     	foreach ($arr->response as $list) {
     		$y = $list->rating;
 			$x = (int)$y;
     		if ($x == 1) {
-    			$colors []= $x;
-    			$listrating = array('count_stars'=>array_count_values($colors));
+    			$stars []= $x;
+    			$listrating = array('count_stars'=>array_count_values($stars));
     		}elseif ($x == 2) {
-    			$colors []= $x;
-    			$listrating = array('count_stars'=>array_count_values($colors));
+    			$stars []= $x;
+    			$listrating = array('count_stars'=>array_count_values($stars));
     		}elseif ($x== 3) {
-    			$colors []= $x;
-    			$listrating = array('count_stars'=>array_count_values($colors));
+    			$stars []= $x;
+    			$listrating = array('count_stars'=>array_count_values($stars));
     		}elseif ($x == 4) {
-    			$colors []=$x;
-    			$listrating = array('count_stars'=>array_count_values($colors));
+    			$stars []=$x;
+    			$listrating = array('count_stars'=>array_count_values($stars));
     		}elseif ($x == 5) {
-    			$colors []= $x;
-    			$listrating = array('count_stars'=>array_count_values($colors));
+    			$stars []= $x;
+    			$listrating = array('count_stars'=>array_count_values($stars));
     		}
     		}
 	  if (isset($listrating['count_stars']['5']))
@@ -99,12 +101,23 @@ class Hotels
           {$one_stars=$listrating['count_stars']['1'];
           }else{$one_stars="0";}
 
-		$arrs = json_encode($listrating);
-		$arrsdecode = json_decode($arrs);
-		$obj_merged = (object) array_merge(
-        (array) $arrsdecode, (array) $arr);
+		// $arrs = json_encode($listrating);
+		// $arrsdecode = json_decode($arrs);
+		// $obj_merged = (object) array_merge(
+  //       (array) $arrsdecode, (array) $arr);
+		
+	}
 
-		$listdata = $obj_merged;
+	if (empty($arr->response->HotelListResponse)) {
+			$listdata = $arr;
+			$totalhotel = count($listdata->response);
+			$cityname = $url[3];
+		}else{
+			$listempty = 'data not found!';
+			$totalempty = '0';
+			$cityname = $url[3];
+		}
+		
     	include "app/views/modules/hotels/list.php";
 
 	}

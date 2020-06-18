@@ -1,3 +1,53 @@
+<script>
+$.ajax({
+    url: "https://geolocation-db.com/jsonp",
+    jsonpCallback: "callback",
+    dataType: "jsonp",
+    success: function(location) {
+        $('#country').html(location.country_name);
+        $('#state').html(location.state);
+        $('#city').html(location.city);
+        $('#latitude').html(location.latitude);
+        $('#longitude').html(location.longitude);
+        $('#ip').html(location.IPv4);
+    }
+});
+
+
+    </script>
+
+    <p>Country: <span id="country"></span></p>
+    <p>State: <span id="state"></span></p>
+    <p>City: <span id="city"></span></p>
+    <p>Address: <span id="address"></span></p>
+
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+
+    <script type="text/javascript">
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function success(position) {
+
+            var GEOCODING = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + '%2C' + position.coords.longitude + '&language=en';
+
+            $.getJSON(GEOCODING).done(function(location) {
+                $('#country').html(location.results[0].address_components[5].long_name);
+                $('#state').html(location.results[0].address_components[4].long_name);
+                $('#city').html(location.results[0].address_components[2].long_name);
+                $('#address').html(location.results[0].formatted_address);
+                $('#latitude').html(position.coords.latitude);
+                $('#longitude').html(position.coords.longitude);
+            })
+
+        }
+
+        function error(err) {
+            console.log(err)
+        }
+    </script>
+
+
 <?php
 
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];

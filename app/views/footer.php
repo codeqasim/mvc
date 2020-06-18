@@ -137,7 +137,7 @@ $('#city').select2({
             data.forEach(function (dataObj) {
                 result.push({
                     id: dataObj.id,
-                    text: dataObj.text,
+                    text: jQuery("<span><i class=\"flag " + dataObj.id.toLowerCase() + "\"></i> " + dataObj.text + "</span>").appendTo(document.body),
                 })
             });
             return {

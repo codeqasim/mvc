@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,strong,b{ font-family: 'Muli Bold'; font-weight: normal; }
 a{text-decoration:none;outline:0;box-shadow:none}
 a:hover{text-decoration:none;outline:0;box-shadow:none}
 a:visited{text-decoration:none;outline:0;box-shadow:none}
-img {max-width: 100%;height: auto;background:#eee}
+img {max-width: 100%;height: auto;}
 ul{list-style-type: none; }
 
 ::-moz-selection { background: transparent; } ::selection { background: transparent; }

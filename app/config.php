@@ -1,12 +1,9 @@
-
-
-    <p>Country: <span id="country"></span></p>
-    <p>State: <span id="state"></span></p>
-    <p>City: <span id="city"></span></p>
-    <p>Address: <span id="address"></span></p>
-
-    <p>Latitude: <span id="latitude"></span></p>
-    <p>Longitude: <span id="longitude"></span></p>
+<span id="country"></span>
+<span id="state"></span>
+<span id="city"></span>
+<span id="address"></span>
+<span id="latitude"></span>
+<span id="longitude"></span>
 
 <?php
 
@@ -19,8 +16,8 @@ $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/lib/i18n/langcache/', 'en');
 
 // function dd
 function dd($data) {
-    echo "<pre>";
-    print_r($data);
+echo "<pre>";
+print_r($data);
 }
 
 $APPNAME = "Travel App";

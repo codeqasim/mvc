@@ -1,12 +1,12 @@
 <div class="tab fade">
-    <form id="hotels-api" method="post">
+    <form id="hotels-list" method="post">
     <div class="row no-gutters row-rtl search_area main_search">
         <div class="row">
             <div class="c12 data-input">
                 <div class="input-wrapper">
                     <span class="input-label"><i class="mdi mdi-hotel"></i> City Name</span>
                     <div class="input-items">
-                        <select id="locations" name="city" class="form-control" required>
+                        <select id="city" name="city" class="form-control" required>
                             <option>Search by location name</option>
                         </select>
                        <!--<input autocomplete="off" type="search" placeholder="city" id="city" name="city" value="lahore" class="city"/>-->

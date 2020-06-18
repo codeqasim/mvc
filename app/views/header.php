@@ -16,6 +16,7 @@ $i18n->init();
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 
         <script>
+
         /*var app = {
             url:'<?=$root;?>,
             url_root:'<?=$root;?>',
@@ -23,7 +24,7 @@ $i18n->init();
             thousand_separator:'.',
             decimal_separator:',',
             currency_position:'left',
-            currency_code:'USD',
+            currency_code:'',
             currency_symbol:'$',
             currency_rate:'1',
             date_format:'DD/MM/YYYY',

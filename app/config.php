@@ -10,9 +10,6 @@
 
 <?php
 
-$geo_url = "https://geolocation-db.com/jsonp";
-
-
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
@@ -31,6 +28,10 @@ $APPNAME = "Travel App";
 /* API CREDENTIALS */
 $API_ENDPOINT = "https://www.phptravels.net/api/";
 $API_KEYS = "phptravels";
+
+/* GEO LOCATION PROVIDER */
+// $geo_url = "http://ip-api.com/json/";
+$geo_url = "https://geolocation-db.com/jsonp";
 
 // $servername = "localhost:3307";
 // $username = "root";

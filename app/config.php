@@ -13,7 +13,7 @@ $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 // included libs
 require 'lib/compress/compress.php';
 require 'lib/i18n/i18n.class.php';
-$i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/lib/i18n/langcache/', 'en');
+$i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
 
 // function dd
 function dd($data) {

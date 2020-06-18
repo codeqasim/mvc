@@ -17,8 +17,8 @@ $i18n->init();
 
         <script>
 
-        /*var app = {
-            url:'<?=$root;?>,
+        var app = {
+            url:'<?=$root;?>',
             url_root:'<?=$root;?>',
             booking_decimals:0,
             thousand_separator:'.',
@@ -72,7 +72,7 @@ $i18n->init();
                 "November",
                 "December"
             ],
-        };*/
+        };
     </script>
 
     <script src="<?=$root;?>assets/js/jquery.min.js"></script>

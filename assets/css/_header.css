@@ -38,3 +38,4 @@ header .dropdown ul {z-index: 999; padding-top: 8px; padding-bottom: 8px; border
 header .dropdown li { width: 100%; }
 header .dropdown li a:hover { background: #f2f6fb }
 header .dropdown li a{ color: #000 !important; border-bottom: 1px solid #dadfe6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; background-color: #fff; padding: 10px !important; line-height: 15px; font-size: 14px !important; border-right: none !important; width: 100%; display: block}
+header ul li:first-child { visibility: hidden; }

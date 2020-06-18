@@ -102,9 +102,9 @@ threshold: 0
         if (repo.loading) return repo.text;
         console.log(repo);
         var markup =
-            "<div class='select2-result'><i class=\"flag " + repo.icon.toLowerCase() + "\"></i></div>" +
-            "<div class='select2-result'>" +
-            "<div class='select2-result'>" + repo.text;
+            "<i class=\"flag " + repo.icon.toLowerCase() + "\"></i>" +
+
+             repo.text;
 
         return markup;
     }

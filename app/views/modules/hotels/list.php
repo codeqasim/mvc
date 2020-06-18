@@ -214,12 +214,12 @@
                           <small class="text-muted"><strong><?= $list->address ;?></strong></small><br>
                           <small class="text-muted"><?php echo substr($list->description,0,150);?></small>
                         </div>
-                        <div class="aminities mt-10 hide-m">
+                        <!--<div class="aminities mt-10 hide-m">
                           <span>&#10070;</span>
                           <span>&#10070;</span>
                           <span>&#10070;</span>
                           <span>&#10070;</span>
-                          </div>
+                          </div>-->
                       </div>
                       <div class="c5 p-10">
                         <div class="flex flex-content-between row-rtl">

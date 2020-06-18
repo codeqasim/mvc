@@ -16,8 +16,8 @@ $i18n->init();
 <!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
 <script> var baseurl = "<?=$root;?>"; </script>
 <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
-<script src="<?=$root;?>assets/js/jquery.min.js"></script>
-<script src="<?=$root;?>assets/js/isotope.min.js"></script>
+<script src="<?=$root.js;?>jquery.min.js"></script>
+<script src="<?=$root.js;?>isotope.min.js"></script>
 
 <script>
 var app = {

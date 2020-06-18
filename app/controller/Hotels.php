@@ -117,9 +117,8 @@ class Hotels
 			$totalempty = '0';
 			$cityname = $url[3];
 		}
-		
-    	include "app/views/modules/hotels/list.php";
 
+         include HotelsViews."list.php";
 	}
 
 	function hotel_detail(){
@@ -190,10 +189,8 @@ class Hotels
        //	print_r ($arr);
         $hotel = $arr;
 
-        include "app/views/modules/hotels/details.php";
-
+         include HotelsViews."details.php";
 	}
-
 }
 
 ?>

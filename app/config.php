@@ -46,7 +46,7 @@ define('HotelsList', "hotels/search");
 define('HotelsDetail', "hotels/details");
 
 
-define('views', "app/views/");
+define('HotelsViews', "app/views/modules/hotels/");
 define('css', "assets/css/");
 define('js', "assets/js/");
 

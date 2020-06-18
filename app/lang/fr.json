@@ -1,0 +1,12 @@
+{
+	"language_name": "French",
+	"language_type": "LTR",
+	"country": "fr",
+	
+	"login": "Login",
+	"signup": "Signup",
+	"agents": "Agents",
+	"category": {
+		"somethingother": "Something other..."
+	}
+}

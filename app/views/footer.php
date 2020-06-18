@@ -83,105 +83,22 @@
 <script src="<?=$root.js;?>datepicker.js"></script>
 <script src="<?=$root.js;?>select2.js"></script>
 
-
-<!-- lazyload -->
+<!-- layload -->
 <script>
-$(function() {
-$('.lazy').lazy({
-effect: "fadeIn",
-effectTime: 200,
-threshold: 0
-});
-});
+$(function() { $('.lazy').lazy({ effect: "fadeIn", effectTime: 200, threshold: 0 }); });
+</script>
+
+<!-- select2 init -->
+<script>
+var $ajax=$("#city");function formatRepo(t){return t.loading?t.text:(console.log(t),'<i class="flag '+t.icon.toLowerCase()+'"></i>'+t.text)}function formatRepoSelection(t){return t.text}$ajax.select2({ajax:{url:"<?php echo $root; ?>/app/functions.php",dataType:"json",data:function(t){return{q:$.trim(t.term)}},processResults:function(t){var e=[];return t.forEach(function(t){e.push({id:t.id,text:t.text,icon:t.icon})}),console.log(e),{results:e}},cache:!0},escapeMarkup:function(t){return t},minimumInputLength:3,templateResult:formatRepo,templateSelection:formatRepoSelection,cache:!0});
 </script>
 
 <script>
-    var $ajax = $("#city");
-
-    function formatRepo (repo) {
-
-        if (repo.loading) return repo.text;
-        console.log(repo);
-        var markup =
-            "<i class=\"flag " + repo.icon.toLowerCase() + "\"></i>" + repo.text;
-        return markup;
-    }
-
-    function formatRepoSelection (repo) {
-        return repo.text;
-    }
-
-    $ajax.select2({
-
-        ajax: {
-            url: "<?php echo $root; ?>/app/functions.php",
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    q: $.trim(params.term)
-                };
-            },
-
-            processResults: function (data) {
-                var result = [];
-                data.forEach(function (dataObj) {
-                    result.push({
-                        id: dataObj.id,
-                        text: dataObj.text,
-                        icon: dataObj.icon,
-                    })
-                });
-                console.log(result);
-                return {
-                    results: result
-                };
-            },
-            cache: false
-        },
-
-        escapeMarkup: function (markup) { return markup; },
-        minimumInputLength: 3,
-        templateResult: formatRepo,
-        templateSelection: formatRepoSelection,
-
-        cache: true,
-
-        placeholder: {
-        id: 'lahore', // the value of the option
-        text: 'Select an option'
-        },
-
-    });
-
-
-    var select2Instance = $(selectNode).data('select2');
-    select2Instance.on('results:message', function(params){
-    this.dropdown._resizeDropdown();
-    this.dropdown._positionDropdown();
-    });
-
-
+$('#category').select2({ placeholder: { id: '1', text: 'Select Category' } }); $('.select2-container').css('width','100%')
 </script>
-
-
-<script>
-$('#category').select2({
-    placeholder: {
-        id: '1',
-        text: 'Select Category'
-    }
-});
-$('.select2-container').css('width','100%')
-</script>
-
-<script>
-
-</script>
-
 
 </body>
 </html>
-
 
 <script>
 

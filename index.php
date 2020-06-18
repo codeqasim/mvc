@@ -17,8 +17,6 @@
     require_once('app/controller/Cms.php');
     require_once('app/controller/Account.php');
 
-
-
 //    function getLocations(){
 //        $final_results = array();
 //        $results = json_decode(file_get_contents('https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term='.$_GET['q']));

@@ -113,43 +113,53 @@ threshold: 0
 </script>
 
 <script>
-$('#city').select2({
-    placeholder: "Search By City Name",
-    minimumInputLength: 3,
-    multiple:false,
+    var $ajax = $("#city");
 
-    formatResult: function (country) {
-            return $(
-              "<span><i class=\"flag flag-" + country.id.toLowerCase() + "\"></i> " + country.text + "</span>"
-            );;
-        },
-        
-    ajax: {
-        url: "<?php echo $root; ?>app/functions.php",
-        dataType: 'json',
-        data: function (params) {
-            return {
-                q: $.trim(params.term)
-            };
-        },
-        processResults: function (data) {
-            var result = [];
-            data.forEach(function (dataObj) {
-                result.push({
-                    id: dataObj.id,
-                    text: jQuery("<span><i class=\"flag " + dataObj.id.toLowerCase() + "\"></i> " + dataObj.text + "</span>").appendTo(document.body),
-                })
-            });
-            return {
-                results: result
-            };
-        },
-        cache: false
+    function formatRepo (repo) {
+
+        if (repo.loading) return repo.text;
+        console.log(repo);
+        var markup = "<div class='select2-result-repository clearfix'>" +
+            "<div class='select2-result-repository__avatar'><span><i class=\"flag " + repo.id.toLowerCase() + "\"></i>  </span></div>" +
+            "<div class='select2-result-repository__meta'>" +
+            "<div class='select2-result-repository__title'>" + repo.text + "</div>";
+
+        return markup;
     }
-}).on("select2:select", function(e) {
-    const propertyName = $(e.target).data("text");
-    const propertyValue = e.params.data.id;
-});
+
+    function formatRepoSelection (repo) {
+        return repo.text;
+    }
+
+    $ajax.select2({
+        ajax: {
+            url: "<?php echo $root; ?>//app/functions.php",
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: $.trim(params.term)
+                };
+            },
+            processResults: function (data) {
+                var result = [];
+                data.forEach(function (dataObj) {
+                    result.push({
+                        id: dataObj.id,
+                        text: dataObj.text,
+                    })
+                });
+                return {
+                    results: result
+                };
+            },
+            cache: false
+        },
+        escapeMarkup: function (markup) { return markup; },
+        minimumInputLength: 3,
+        templateResult: formatRepo,
+        templateSelection: formatRepoSelection,
+        theme: 'adwitt'
+    });
 </script>
 
 

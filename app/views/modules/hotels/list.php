@@ -206,7 +206,7 @@
                       <div class="c7 border-right rtl-align-right">
                         <div class="detail">
                           <h6 class="title"><a target="_blank" href="#"><strong><?= $list->company_name ;?></strong></a></h6>
-                          <div class="rating mb-10">
+                          <div class="rating mb-10 mt-10">
                             <?php for ($x = 1; $x <= $list->rating; $x++):?>
                             <span class="icon mdi mdi-star"></span>
                             <?php endfor; ?>

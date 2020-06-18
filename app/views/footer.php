@@ -145,13 +145,22 @@ threshold: 0
         templateSelection: formatRepoSelection,
 
         cache: true,
-         
+
         placeholder: {
         id: 'lahore', // the value of the option
         text: 'Select an option'
         },
 
     });
+
+
+    var select2Instance = $(selectNode).data('select2');
+    select2Instance.on('results:message', function(params){
+    this.dropdown._resizeDropdown();
+    this.dropdown._positionDropdown();
+    });
+
+
 </script>
 
 

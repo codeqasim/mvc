@@ -25,11 +25,3 @@ if(isset($_GET['q']) && !empty($_GET['q'])) {
     }
     echo json_encode($final_results);
 }
-
-
-$user_country ="<span id='country'></span>";
-$user_state ="<span id='state'></span>";
-$user_city_name ="<span id='city_name'></span>";
-$user_address ="<span id='address'></span>";
-$user_latitude ="<span id='latitude'></span>";
-$user_longitude ="<span id='longitude'></span>";

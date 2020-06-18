@@ -114,7 +114,7 @@
 .hero .search .input-items .select2-selection:hover { background: rgba(26, 57, 96, 0.15) }
 .hero .search .input-items .select2-selection:focus { background: rgba(26, 57, 96, 0.25) }
 .hero .search .input-items .select2-selection:disabled { color: transparent; }
-.select2-container--open .select2-dropdown--below { top: -54px; }
+.select2-container--open .select2-dropdownz--below { top: -54px; }
 .select2-search--dropdown { padding: 0px; }
 .select2-container--default .select2-search--dropdown .select2-search__field { text-transform: capitalize; border: 0px solid #aaa; height: 55px; background: rgba(26, 57, 96, 0.25); padding: 16px; font-size: 18px; color: #000; }
 /*.select2-results__option { padding: 6px; user-select: none; -webkit-user-select: none; position: absolute; top: 11px; right: 10px; }*/

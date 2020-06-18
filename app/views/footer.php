@@ -78,10 +78,10 @@
     </div>
 </footer>
 
-<script src="<?=$root;?>assets/js/jquery.lazy.min.js"></script>
-<script src="<?=$root;?>assets/js/app.js"></script>
-<script src="<?=$root;?>assets/js/datepicker.js"></script>
-<script src="<?=$root;?>assets/js/select2.js"></script>
+<script src="<?=$root.js;?>jquery.lazy.min.js"></script>
+<script src="<?=$root.js;?>app.js"></script>
+<script src="<?=$root.js;?>datepicker.js"></script>
+<script src="<?=$root.js;?>select2.js"></script>
 
 <script>
 $.ajax({

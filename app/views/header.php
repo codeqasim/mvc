@@ -1,5 +1,6 @@
 <?php
 include "app/config.php";
+include "app/functions.php";
 $i18n->setForcedLang('en');
 $i18n->init();
 ?>
@@ -10,13 +11,13 @@ $i18n->init();
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title></title>
-        <link rel="stylesheet" href="<?=$root;?>assets/css/_style.css" />
+        <link rel="stylesheet" href="<?=$root.css;?>_style.css" />
         <!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 
-        <script>
 
+        <script>
         var app = {
             url:'<?=$root;?>',
             url_root:'<?=$root;?>',
@@ -24,7 +25,7 @@ $i18n->init();
             thousand_separator:'.',
             decimal_separator:',',
             currency_position:'left',
-            currency_code:'',
+            currency_code:'USD',
             currency_symbol:'$',
             currency_rate:'1',
             date_format:'DD/MM/YYYY',
@@ -40,38 +41,6 @@ $i18n->init();
         var i18n = {
             warning:"Warning",
             success:"Success",
-        };
-        var daterangepickerLocale = {
-            "applyLabel": "Apply",
-            "cancelLabel": "Cancel",
-            "fromLabel": "From",
-            "toLabel": "To",
-            "customRangeLabel": "Custom",
-            "weekLabel": "W",
-            "first_day_of_week": 1,
-            "daysOfWeek": [
-                "Su",
-                "Mo",
-                "Tu",
-                "We",
-                "Th",
-                "Fr",
-                "Sa"
-            ],
-            "monthNames": [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-            ],
         };
     </script>
 

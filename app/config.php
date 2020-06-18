@@ -1,17 +1,10 @@
-<span id="country"></span>
-<span id="state"></span>
-<span id="city_name"></span>
-<span id="address"></span>
-<span id="latitude"></span>
-<span id="longitude"></span>
-
 <?php
 
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
 // included libs
-require 'lib/compress/compress.php';
+// require 'lib/compress/compress.php';
 require 'lib/i18n/i18n.class.php';
 $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
 
@@ -41,6 +34,8 @@ define('API_KEYS', "phptravels");
 define('root', $root);
 
 define('views', "app/views/");
+define('css', "assets/css/");
+define('js', "assets/js/");
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $database);

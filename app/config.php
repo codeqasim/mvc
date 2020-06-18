@@ -1,20 +1,4 @@
-<script>
-$.ajax({
-    url: "https://geolocation-db.com/jsonp",
-    jsonpCallback: "callback",
-    dataType: "jsonp",
-    success: function(location) {
-        $('#country').html(location.country_name);
-        $('#state').html(location.state);
-        $('#city').html(location.city);
-        $('#latitude').html(location.latitude);
-        $('#longitude').html(location.longitude);
-        $('#ip').html(location.IPv4);
-    }
-});
 
-
-    </script>
 
     <p>Country: <span id="country"></span></p>
     <p>State: <span id="state"></span></p>
@@ -24,11 +8,9 @@ $.ajax({
     <p>Latitude: <span id="latitude"></span></p>
     <p>Longitude: <span id="longitude"></span></p>
 
-   
-
-
 <?php
 
+$geo_url = "https://geolocation-db.com/jsonp";
 
 
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];

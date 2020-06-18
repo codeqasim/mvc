@@ -84,6 +84,8 @@
 <script src="<?=$root.js;?>app.js"></script>
 <script src="<?=$root.js;?>datepicker.js"></script>
 <script src="<?=$root.js;?>select2.js"></script>
+<script src="<?=$root.js;?>price_ranger.js"></script>
+
 
 <!-- layload -->
 <script>

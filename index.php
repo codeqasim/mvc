@@ -40,10 +40,10 @@
     $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
-    require_once('app/controller/Hotels.php');
-    require_once('app/controller/Flights.php');
-    require_once('app/controller/Cms.php');
-    require_once('app/controller/Account.php');
+    include('app/controller/Hotels.php');
+    include('app/controller/Flights.php');
+    include('app/controller/Cms.php');
+    include('app/controller/Account.php');
     include "app/views/header.php";
 
     $hotels = new Hotels();

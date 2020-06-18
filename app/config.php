@@ -38,13 +38,11 @@ define('API_ENDPOINT', "https://www.phptravels.net/api/");
 define('API_KEYS', "phptravels");
 define('root', $root);
 
-
 // hotels api
 define('HOTELS_API_ENDPOINT', "https://bookingengine.co/api/");
 define('Ota', "172a7bc0-d892-11e9-ad7d-8d041c8c7592");
 define('HotelsList', "hotels/search");
 define('HotelsDetail', "hotels/details");
-
 
 define('HotelsViews', "app/views/modules/hotels/");
 define('css', "assets/css/");

@@ -91,7 +91,7 @@ $.ajax({
     success: function(location) {
         $('#country').html(location.country_name);
         $('#state').html(location.state);
-        $('#city').html(location.city);
+        $('#city_name').html(location.city);
         $('#latitude').html(location.latitude);
         $('#longitude').html(location.longitude);
         $('#ip').html(location.IPv4);
@@ -113,36 +113,36 @@ threshold: 0
 </script>
 
 <script>
-    $('#locations').select2({
-        placeholder: "Search By City Name",
-        minimumInputLength: 3,
-        multiple:false,
-        ajax: {
-            url: "<?php echo $root; ?>app/functions.php",
-            dataType: 'json',
-            data: function (params) {
-                return {
-                    q: $.trim(params.term)
-                };
-            },
-            processResults: function (data) {
-                var result = [];
-                data.forEach(function (dataObj) {
-                    result.push({
-                        id: dataObj.id,
-                        text: dataObj.text,
-                    })
-                });
-                return {
-                    results: result
-                };
-            },
-            cache: false
-        }
-    }).on("select2:select", function(e) {
-        const propertyName = $(e.target).data("text");
-        const propertyValue = e.params.data.id;
-    });
+$('#city').select2({
+    placeholder: "Search By City Name",
+    minimumInputLength: 3,
+    multiple:false,
+    ajax: {
+        url: "<?php echo $root; ?>app/functions.php",
+        dataType: 'json',
+        data: function (params) {
+            return {
+                q: $.trim(params.term)
+            };
+        },
+        processResults: function (data) {
+            var result = [];
+            data.forEach(function (dataObj) {
+                result.push({
+                    id: dataObj.id,
+                    text: dataObj.text,
+                })
+            });
+            return {
+                results: result
+            };
+        },
+        cache: false
+    }
+}).on("select2:select", function(e) {
+    const propertyName = $(e.target).data("text");
+    const propertyValue = e.params.data.id;
+});
 </script>
 
 

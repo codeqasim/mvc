@@ -1,6 +1,6 @@
 <span id="country"></span>
 <span id="state"></span>
-<span id="city"></span>
+<span id="city_name"></span>
 <span id="address"></span>
 <span id="latitude"></span>
 <span id="longitude"></span>

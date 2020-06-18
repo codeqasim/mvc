@@ -5,7 +5,7 @@ class Hotels
 	
 	function __construct()
 	{
-	    
+
 	}
 
     function index()
@@ -16,10 +16,11 @@ class Hotels
 
 	function hotel_data()
 	{
-	    $title = 'Hotels';
+
+
 		$url = explode('/', $_GET['url']);
 		$count = count($url);
-		if ($count < 8) {
+        if ($count < 8) {
 			$homepage=root;
 			echo ("<script>location.href='$homepage'</script>");
 		}
@@ -117,7 +118,7 @@ class Hotels
 			$totalempty = '0';
 			$cityname = $url[3];
 		}
-
+         echo "<script>var title = 'Hotel listing page'</script>";
          include HotelsViews."list.php";
 	}
 

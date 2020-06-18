@@ -1,4 +1,3 @@
-<?php echo "<script>document.title = '".$title."';</script>"; ?>
 <div class="container">
 <div class="main_search">
     <div class="row hide-m text-center" style="height:100px">

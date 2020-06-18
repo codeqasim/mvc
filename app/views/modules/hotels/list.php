@@ -1,4 +1,3 @@
-<?php echo "<script>document.title = '".$title."';</script>"; ?>
 <div class="list-page" id="listing">
   <div class="edit-search">
     <div class="container">

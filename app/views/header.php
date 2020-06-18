@@ -16,7 +16,8 @@ $i18n->init();
         <!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
-
+        <script src="<?=$root;?>assets/js/jquery.min.js"></script>
+        <script src="<?=$root;?>assets/js/isotope.min.js"></script>
 
 
 
@@ -48,11 +49,36 @@ $i18n->init();
         };
     </script>
 
-    <script src="<?=$root;?>assets/js/jquery.min.js"></script>
-    <script src="<?=$root;?>assets/js/isotope.min.js"></script>
+        <script>
+    $.ajax({
+        url: "https://geolocation-db.com/jsonp",
+        jsonpCallback: "callback",
+        dataType: "jsonp",
+        success: function(location) {
+            document.cookie = "country_name = " + location.country_name;
+            document.cookie = "state = " + location.state;
+            document.cookie = "city = " + location.city;
+            document.cookie = "latitude = " + location.latitude;
+            document.cookie = "longitude = " + location.longitude;
+            document.cookie = "ip = " + location.IPv4;
+        }
+
+    });
+
+    </script>
 
     </head>
     <body onload="<!--oneway()-->" >
+
+
+    Country: <span id="country"><?=$_COOKIE['country_name']?></span>
+    <div>State: <span id="state"><?=$_COOKIE['state']?></span>
+    <div>City: <span id="mycity"><?=$_COOKIE['city']?></span>
+    <div>Latitude: <span id="latitude"><?=$_COOKIE['latitude']?></span>
+    <div>Longitude: <span id="longitude"><?=$_COOKIE['longitude']?></span>
+    <div>IP: <span id="ip"><?=$_COOKIE['ip']?></span><br><br><br><br>
+
+        
         <header class="sticky">
             <nav>
                 <div class="container flex flex-content-between row-rtl" >
@@ -75,3 +101,4 @@ $i18n->init();
                 </div>
             </nav>
         </header>
+

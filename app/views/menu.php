@@ -1,7 +1,6 @@
 <div class="nav c10 p0 flex hide-m mobnav animated fadeInLeft hide row-rtl">
     <div class="items-center">
         <div class="menu row-rtl">
-            <a href="<?=$root;?>search" class=""> <i class="mdi mdi-search"></i> </a>
             <a href="<?=$root;?>hotels" class="active"> <i class="mdi mdi-hotel"></i> </a>
             <a href="<?=$root;?>flights" class=""> <i class="mdi mdi-airplane"></i> </a>
             <a href="<?=$root;?>tours" class=""> <i class="mdi mdi-case"></i> </a>
@@ -37,11 +36,11 @@
               array_push ($fils_data,json_decode($string));
             }?>
             
-    <ul class="dropdown">
-        <?php foreach($fils_data as $item):?>
-      <li><a href="<?=$root;?>ar"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></a></li>
-          <?php endforeach; ?>
-    </ul>
+            <ul class="dropdown">
+            <?php foreach($fils_data as $item):?>
+            <li><a href="<?=$root;?>ar"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></a></li>
+            <?php endforeach; ?>
+            </ul>
 
             </li>
             <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=TRANS::login; ?></strong></a></li>

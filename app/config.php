@@ -22,8 +22,9 @@ $API_KEYS = "phptravels";
 
 /* GEO LOCATION PROVIDER */
 $geo_url = "http://ip-api.com/json/";
-// $geo_url = "https://geolocation-db.com/jsonp";
 $details = json_decode(file_get_contents($geo_url));
+// $geo_url = "https://api.ipdata.co/?api-key=test/";
+// $geo_url = "https://geolocation-db.com/jsonp";
 
 define('city', $details->city);
 define('country', $details->country);

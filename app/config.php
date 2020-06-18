@@ -1,20 +1,35 @@
+<script>
+$.ajax({
+    url: "https://geolocation-db.com/jsonp",
+    jsonpCallback: "callback",
+    dataType: "jsonp",
+    success: function(location) {
+        $('#country').html(location.country_name);
+        $('#state').html(location.state);
+        $('#city').html(location.city);
+        $('#latitude').html(location.latitude);
+        $('#longitude').html(location.longitude);
+        $('#ip').html(location.IPv4);
+    }
+});
 
-    <script type="text/javascript">
-       async getAddress() {
-    // notice, no then(), cause await would block and
-    // wait for the resolved result
-    const position = await this.getCoordinates();
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    let url = Constants.OSMAP_URL + latitude + "&lon=" + longitude;
 
-    // Actually return a value
-    return this.reverseGeoCode(url);
-}
     </script>
+
+    <p>Country: <span id="country"></span></p>
+    <p>State: <span id="state"></span></p>
+    <p>City: <span id="city"></span></p>
+    <p>Address: <span id="address"></span></p>
+
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+
+   
 
 
 <?php
+
+
 
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);

@@ -117,6 +117,13 @@ $('#city').select2({
     placeholder: "Search By City Name",
     minimumInputLength: 3,
     multiple:false,
+
+    formatResult: function (country) {
+            return $(
+              "<span><i class=\"flag flag-" + country.id.toLowerCase() + "\"></i> " + country.text + "</span>"
+            );;
+        },
+        
     ajax: {
         url: "<?php echo $root; ?>app/functions.php",
         dataType: 'json',

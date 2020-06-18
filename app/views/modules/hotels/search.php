@@ -1,5 +1,5 @@
 <div class="tab fade">
-    <form id="hotels-api" method="post">
+    <form id="hotels-list" method="post">
     <div class="row no-gutters row-rtl search_area main_search">
         <div class="row">
             <div class="c12 data-input">

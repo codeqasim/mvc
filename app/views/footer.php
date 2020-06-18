@@ -199,7 +199,7 @@ $(document).ready(function(){
   });
 })
 
-  $("#hotels-api").submit(function() {
+  $("#hotels-list").submit(function() {
   event.preventDefault();
   var city = $('#city').val(); 
   var checkin = $('#checkin').val(); 

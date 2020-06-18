@@ -39,7 +39,7 @@
             
     <ul class="dropdown">
         <?php foreach($fils_data as $item):?>
-      <li><a href="<?=$root;?>ar"><i class="flag sa"></i>  <?=$item->language_name?></a></li>
+      <li><a href="<?=$root;?>ar"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></a></li>
           <?php endforeach; ?>
     </ul>
 

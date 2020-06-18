@@ -1,9 +1,7 @@
-
-	{
-
+{
 	"language_name": "English",
 	"language_type": "LTR",
-	"country": "US",
+	"country": "us",
 	
 	"login": "Login",
 	"signup": "Signup",

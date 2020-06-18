@@ -17,7 +17,6 @@ class Hotels
 	function hotel_data()
 	{
 
-
 		$url = explode('/', $_GET['url']);
 		$count = count($url);
         if ($count < 8) {

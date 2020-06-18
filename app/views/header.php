@@ -52,57 +52,6 @@ $i18n->init();
     </head>
     <body>
 
-    <div id="country_name"></div>
-    <div id="state"></div>
-    <div id="cityname"></div>
-    <div id="latitude"></div>
-    <div id="longitude"></div>
-    <div id="ip"></div>
-
-    <script>
-        $( document ).ready(function() {
-    $.ajax({
-        url: "https://geolocation-db.com/jsonp",
-        jsonpCallback: "callback",
-        dataType: "jsonp",
-        success: function(location) {
-            localStorage.setItem("country_name", location.country_name);
-            document.getElementById("country_name").innerHTML = localStorage.getItem("country_name");
-
-            localStorage.setItem("state", location.state);
-            document.getElementById("state").innerHTML = localStorage.getItem("state");
-
-            localStorage.setItem("city", location.city);
-            document.getElementById("cityname").innerHTML = localStorage.getItem("city");
-
-            localStorage.setItem("latitude", location.latitude);
-            document.getElementById("latitude").innerHTML = localStorage.getItem("latitude");
-
-            localStorage.setItem("longitude", location.country_name);
-            document.getElementById("longitude").innerHTML = localStorage.getItem("longitude");
-
-            localStorage.setItem("ip", location.IPv4);
-            document.getElementById("ip").innerHTML = localStorage.getItem("ip");
-        }
-
-    });
-        });
-
-    </script>
-
-
-
-
-
-
-<!--    <strong>Country:</strong> <p id="country">--><?//=$_COOKIE['country_name']?><!--</p>-->
-<!--    <strong>State:</strong> <p id="state">--><?//=$_COOKIE['state']?><!--</p>-->
-<!--    <strong>City:</strong> <p id="mycity">--><?//=$_COOKIE['city']?><!--</p>-->
-<!--    <strong>Latitude:</strong> <p id="latitude">--><?//=$_COOKIE['latitude']?><!--</p>-->
-<!--    <strong>Longitude:</strong> <p id="longitude">--><?//=$_COOKIE['longitude']?><!--</p>-->
-<!--    <strong>IP:</strong> <span id="ip">--><?//=$_COOKIE['ip']?><!--</span><br><br><br><br>-->
-
-        
         <header class="sticky">
             <nav>
                 <div class="container flex flex-content-between row-rtl" >

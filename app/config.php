@@ -21,8 +21,12 @@ $API_ENDPOINT = "https://www.phptravels.net/api/";
 $API_KEYS = "phptravels";
 
 /* GEO LOCATION PROVIDER */
-// $geo_url = "http://ip-api.com/json/";
-$geo_url = "https://geolocation-db.com/jsonp";
+$geo_url = "http://ip-api.com/json/";
+// $geo_url = "https://geolocation-db.com/jsonp";
+$details = json_decode(file_get_contents($geo_url));
+
+define('city', $details->city);
+define('country', $details->country);
 
 // $servername = "localhost:3307";
 // $username = "root";

@@ -67,35 +67,35 @@
             <label><input type="checkbox" value="<?= $list->rating ;?>" class="filter-item" /> <?= $list->rating ;?></label>&nbsp;&nbsp;
             <?php } ?>-->
           <div class="mt-30 row-rtl">
-            <label for="s5"> <input type="radio" id="s5" name="stars" value="s5" class="filter-item"/>
+            <label for="s5"> <input type="radio" id="s5" name="stars" value="s5" class="filter-stars"/>
             <?php for ($i = 1; $i <= 5; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
             <strong>
             <?php if (empty($listempty)) { echo $five_stars; }else{echo'0';} ?>
             </strong>
             </label>
             <div class="clear"></div>
-            <label for="s4"> <input type="radio" id="s4" name="stars" value="s4" class="filter-item"/>
+            <label for="s4"> <input type="radio" id="s4" name="stars" value="s4" class="filter-stars"/>
             <?php for ($i = 1; $i <= 4; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
             <strong>
             <?php if (empty($listempty)) { echo $four_stars; }else{echo'0';} ?>
             </strong>
             </label>
             <div class="clear"></div>
-            <label for="s3"> <input type="radio" id="s3" name="stars" value="s3" class="filter-item"/>
+            <label for="s3"> <input type="radio" id="s3" name="stars" value="s3" class="filter-stars"/>
             <?php for ($i = 1; $i <= 3; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
             <strong>
             <?php if (empty($listempty)) { echo $three_stars; }else{echo'0';} ?>
             </strong>
             </label>
             <div class="clear"></div>
-            <label for="s2"> <input type="radio" id="s2" name="stars" value="s2" class="filter-item"/>
+            <label for="s2"> <input type="radio" id="s2" name="stars" value="s2" class="filter-stars"/>
             <?php for ($i = 1; $i <= 2; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
             <strong>
             <?php if (empty($listempty)) { echo $two_stars; }else{echo'0';} ?>
             </strong>
             </label>
             <div class="clear"></div>
-            <label for="s1"> <input type="radio" id="s1" name="stars" value="s1" class="filter-item"/>
+            <label for="s1"> <input type="radio" id="s1" name="stars" value="s1" class="filter-stars"/>
             <?php for ($i = 1; $i <= 1; $i++) { ?><span class="icon mdi mdi-star"></span><?php }?>
             <strong>
             <?php if (empty($listempty)) { echo $one_stars; }else{echo'0';} ?>
@@ -191,9 +191,11 @@
     </div>
     <div id="products">
       <?php if (empty($listempty)) {?>
-        <?php foreach($listdata->response as $list){?>
+      <?php foreach($listdata->response as $list){?>
       <?php $y = $list->rating; $x = (int)$y; ?>
-                      <div class="row row-rtl s<?= $x ;?> product-block item">
+      <?php $p = $list->price; ?>
+
+       <div class="row row-rtl s<?=$x;?> p<?= $p ;?> product-block item">
         <div class="c12">
           <div class="list-wrapper">
             <div class="row row-rtl">
@@ -278,12 +280,13 @@
 
 <script>
 var itemSelector = ".item";
-var $checkboxes = $('.filter-item');
+var $stars = $('.filter-stars');
+var $price = $('.filter-price');
 var $container = $('#products').isotope({ itemSelector: itemSelector });
 
 //Ascending order
 var responsiveIsotope = [ [480, 4] , [720, 6] ];
-var itemsPerPageDefault = 10;
+var itemsPerPageDefault = 15;
 var itemsPerPage = defineItemsPerPage();
 var currentNumberPages = 1;
 var currentPage = 1;
@@ -302,7 +305,7 @@ function goToPage(n) {
   var selector = itemSelector;
   var exclusives = [];
       // for each box checked, add its value and push to array
-      $checkboxes.each(function (i, elem) {
+      $stars.each(function (i, elem) {
           if (elem.checked) {
               selector += ( currentFilter != '*' ) ? '.'+elem.value : '';
               exclusives.push(selector);
@@ -341,7 +344,7 @@ function setPagination() {
       var selector = itemSelector;
       var exclusives = [];
           // for each box checked, add its value and push to array
-          $checkboxes.each(function (i, elem) {
+          $stars.each(function (i, elem) {
               if (elem.checked) {
                   selector += ( currentFilter != '*' ) ? '.'+elem.value : '';
                   exclusives.push(selector);
@@ -400,7 +403,7 @@ function setPagination() {
 }
 // remove checks from all boxes and refilter
 function clearAll(){
-  $checkboxes.each(function (i, elem) {
+  $stars.each(function (i, elem) {
       if (elem.checked) {
           elem.checked = null;
       }
@@ -414,7 +417,7 @@ setPagination();
 goToPage(1);
 
 //event handlers
-$checkboxes.change(function(){
+$stars.change(function(){
   var filter = $(this).attr(filterAttribute);
   currentFilter = filter;
   setPagination();

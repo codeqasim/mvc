@@ -16,7 +16,6 @@ $i18n->init();
         <script> var baseurl = "<?=$root;?>"; </script>
         <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 
-
         <script>
         var app = {
             url:'<?=$root;?>',
@@ -29,6 +28,7 @@ $i18n->init();
             currency_symbol:'$',
             currency_rate:'1',
             date_format:'DD/MM/YYYY',
+            user_country:'',
             map_provider:'gmap',
             map_gmap_key:'key',
             routes:{

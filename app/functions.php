@@ -21,7 +21,7 @@ if(isset($_GET['q']) && !empty($_GET['q'])) {
     $city = json_decode($response);
     $final_results = array();
     foreach ($city->cities as $item) {
-        array_push($final_results, (object)array("id" => $item->countryCode, "text" => $item->latinFullName));
+        array_push($final_results, (object)array("id" => $item->latinFullName, "text" => $item->latinFullName , "icon" => $item->countryCode));
     }
     echo json_encode($final_results);
 }

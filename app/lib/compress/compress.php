@@ -1,24 +1,10 @@
 <?php
-
-function sanitize_output($buffer) {
-
-    $search = array(
-        '/\>[^\S ]+/s',     // strip whitespaces after tags, except space
-        '/[^\S ]+\</s',     // strip whitespaces before tags, except space
-        '/(\s)+/s',         // shorten multiple whitespace sequences
-        '/<!--(.|\s)*?-->/' // Remove HTML comments
-    );
-
-    $replace = array(
-        '>',
-        '<',
-        '\\1',
-        ''
-    );
-
-    $buffer = preg_replace($search, $replace, $buffer);
-
+function minify_output($buffer){
+    $search = array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s');
+    $replace = array('>','<','\\1');
+    if (preg_match("/\<html/i",$buffer) == 1 && preg_match("/\<\/html\>/i",$buffer) == 1) {
+        $buffer = preg_replace($search, $replace, $buffer);
+    }
     return $buffer;
 }
-
-ob_start("sanitize_output");
+ob_start("minify_output");?>

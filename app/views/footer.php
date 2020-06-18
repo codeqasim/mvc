@@ -113,36 +113,36 @@ threshold: 0
 </script>
 
 <script>
-$('#locations').select2({
-    placeholder: "Search By City Name",
-    minimumInputLength: 3,
-    multiple:false,
-    ajax: {
-        url: 'https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term=',
-        dataType: 'json',
-        /*data: function (params) {
-            return {
-                q: $.trim(params.term)
-            };
-        },*/
-        processResults: function (data) {
-            var result = [];
-            data.forEach(function (dataObj) {
-                result.push({
-                    id: dataObj.id,
-                    text: dataObj.latinFullName,
-                })
-            });
-            return {
-                results: result
-            };
-        },
-        cache: true
-    }
-}).on("select2:select", function(e) {
-    const propertyName = $(e.target).data("latinFullName");
-    const propertyValue = e.params.data.id;
-});
+    $('#locations').select2({
+        placeholder: "Search By City Name",
+        minimumInputLength: 3,
+        multiple:false,
+        ajax: {
+            url: "<?php echo $root; ?>app/functions.php",
+            dataType: 'json',
+            data: function (params) {
+                return {
+                    q: $.trim(params.term)
+                };
+            },
+            processResults: function (data) {
+                var result = [];
+                data.forEach(function (dataObj) {
+                    result.push({
+                        id: dataObj.id,
+                        text: dataObj.text,
+                    })
+                });
+                return {
+                    results: result
+                };
+            },
+            cache: false
+        }
+    }).on("select2:select", function(e) {
+        const propertyName = $(e.target).data("text");
+        const propertyValue = e.params.data.id;
+    });
 </script>
 
 

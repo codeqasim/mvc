@@ -8,12 +8,10 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-
     $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
     include "app/views/header.php";
-    include "app/functions.php";
     require_once('app/controller/Hotels.php');
     require_once('app/controller/Flights.php');
     require_once('app/controller/Cms.php');
@@ -21,14 +19,14 @@
 
 
 
-    function getLocations(){
-        $final_results = array();
-        $results = json_decode(file_get_contents('https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term='.$_GET['q']));
-        foreach($results as $item){
-            array_push($final_results,(object)array("id"=>$item->latinFullName,"text"=>$item->latinFullName));
-         }
-         echo json_encode($final_results);
-    }
+//    function getLocations(){
+//        $final_results = array();
+//        $results = json_decode(file_get_contents('https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term='.$_GET['q']));
+//        foreach($results as $item){
+//            array_push($final_results,(object)array("id"=>$item->latinFullName,"text"=>$item->latinFullName));
+//         }
+//         echo json_encode($final_results);
+//    }
 
     $hotels = new Hotels();
     $flights = new Flights();
@@ -62,7 +60,6 @@
     elseif ($url[0] == 'contact') $cms->contact();
     elseif ($url[0] == 'about') $cms->about();
     elseif ($url[0] == 'login') $account->index();
-    elseif ($url[0] == 'getLocations') getLocations();
     else page404();
     }
 

@@ -49,7 +49,11 @@ $i18n->init();
         };
     </script>
 
-        <script>
+    </head>
+    <body>
+
+
+    <script>
     $.ajax({
         url: "https://geolocation-db.com/jsonp",
         jsonpCallback: "callback",
@@ -62,21 +66,16 @@ $i18n->init();
             document.cookie = "longitude = " + location.longitude;
             document.cookie = "ip = " + location.IPv4;
         }
-
     });
 
     </script>
 
-    </head>
-    <body onload="<!--oneway()-->" >
-
-
-    Country: <span id="country"><?=$_COOKIE['country_name']?></span>
-    <div>State: <span id="state"><?=$_COOKIE['state']?></span>
-    <div>City: <span id="mycity"><?=$_COOKIE['city']?></span>
-    <div>Latitude: <span id="latitude"><?=$_COOKIE['latitude']?></span>
-    <div>Longitude: <span id="longitude"><?=$_COOKIE['longitude']?></span>
-    <div>IP: <span id="ip"><?=$_COOKIE['ip']?></span><br><br><br><br>
+    <strong>Country:</strong> <p id="country"><?=$_COOKIE['country_name']?></p>
+    <strong>State:</strong> <p id="state"><?=$_COOKIE['state']?></p>
+    <strong>City:</strong> <p id="mycity"><?=$_COOKIE['city']?></p>
+    <strong>Latitude:</strong> <p id="latitude"><?=$_COOKIE['latitude']?></p>
+    <strong>Longitude:</strong> <p id="longitude"><?=$_COOKIE['longitude']?></p>
+    <strong>IP:</strong> <span id="ip"><?=$_COOKIE['ip']?></span><br><br><br><br>
 
         
         <header class="sticky">

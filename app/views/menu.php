@@ -25,15 +25,24 @@
 
             <?php
             $dir    = 'app/lang';
-            $files1 = scandir($dir);
+            $files = scandir($dir,1); 
+            $data=array();
+            for ($i=0; $i < count($files)-2; $i++) { 
+               array_push ($data,$files[$i]);
+            }
+            $fils_data = array();
+            foreach ($data as $value )
+            {
+              $string = file_get_contents("app/lang/$value");
+              array_push ($fils_data,json_decode($string));
+            }?>
+            
+    <ul class="dropdown">
+        <?php foreach($fils_data as $item):?>
+      <li><a href="<?=$root;?>ar"><i class="flag sa"></i>  <?=$item->language_name?></a></li>
+          <?php endforeach; ?>
+    </ul>
 
-            dd($files1);
-            ?>
-
-            <ul class="dropdown">
-              <li><a href="<?=$root;?>ar"><i class="flag sa"></i> Arabic</a></li>
-              <li><a href="<?=$root;?>en"><i class="flag us"></i> English</a></li>
-            </ul>
             </li>
             <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=TRANS::login; ?></strong></a></li>
         </ul>

@@ -1,6 +1,11 @@
 {
-	"greeting": "Hallo Welt!",
+	"language_name": "Arabic",
+	"language_type": "RTL",
+	
+	"login": "Login",
+	"signup": "Signup",
+	"agents": "Agents",
 	"category": {
-		"somethingother": "Etwas anderes..."
+		"somethingother": "Something other..."
 	}
 }

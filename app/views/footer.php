@@ -120,7 +120,7 @@ threshold: 0
         if (repo.loading) return repo.text;
         console.log(repo);
         var markup = "<div class='select2-result-repository clearfix'>" +
-            "<div class='select2-result-repository__avatar'><span><i class=\"flag " + repo.id.toLowerCase() + "\"></i>  </span></div>" +
+            "<div class='select2-result-repository__avatar'><span><i class=\"flag " + repo.icon.toLowerCase() + "\"></i>  </span></div>" +
             "<div class='select2-result-repository__meta'>" +
             "<div class='select2-result-repository__title'>" + repo.text + "</div>";
 
@@ -146,8 +146,10 @@ threshold: 0
                     result.push({
                         id: dataObj.id,
                         text: dataObj.text,
+                        icon: dataObj.icon,
                     })
                 });
+                console.log(result);
                 return {
                     results: result
                 };

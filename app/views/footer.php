@@ -218,9 +218,9 @@ $(document).ready(function(){
   });
 })
 
-  $("#hotels-list").submit(function() {
+ $("#hotels-list").submit(function() {
   event.preventDefault();
-  var city = $('#city').val(); 
+  var city = $('#city').val().toLowerCase();
   var checkin = $('#checkin').val(); 
   var checkout = $('#checkout').val(); 
   var language = $('#language').val(); 
@@ -229,10 +229,10 @@ $(document).ready(function(){
   var adults = $('#adults').val(); 
   var child = $('#childs').val(); 
   var room = $('#room').val();
-  var city_trims = city.replace(/\/?,/g, '/').replace(/-+/g, '-').replace(/^-|-$/g, '').split(' ').join('-').replace('%40', '@');
+  var city_trims = city.split(',').slice(0, 1).join(' ').split(' ').join('-').replace('%40', '@');
   var actionURL = 'hotels/';
   var finelURL = actionURL +language+'/'+currceny+'/'+city_trims+'/'+ checkin+'/'+checkout+'/'+adults+'/'+child;
-  // alert(finelURL);
+  // alert(city_trims);
   window.location.href = finelURL;
 
  });

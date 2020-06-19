@@ -12,8 +12,9 @@ include "app/functions.php";
 //      // session_destroy();
 //     }
 // }
-echo $_SESSION['mylans'];
-$i18n->setForcedLang($_SESSION['mylans']);
+
+echo $test_lang;
+$i18n->setForcedLang($test_lang);
 $i18n->init();
 ?>
     

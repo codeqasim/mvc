@@ -40,12 +40,15 @@
     $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
+
+
+
     include('app/controller/Hotels.php');
     include('app/controller/Flights.php');
     include('app/controller/Cms.php');
     include('app/controller/Account.php');
     include('app/controller/Main.php');
-    include "app/views/header.php";
+    
 
     $hotels = new Hotels();
     $flights = new Flights();

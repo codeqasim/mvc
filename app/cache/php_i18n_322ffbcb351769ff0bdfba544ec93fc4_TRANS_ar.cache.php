@@ -1,13 +1,11 @@
 <?php class TRANS {
-const language_name = 'English';
-const language_type = 'LTR';
-const country = 'us';
-const lang_code = 'en';
-const login = 'Login';
-const signup = 'Signup';
+const language_name = 'Arabic';
+const language_type = 'RTL';
+const country = 'sa';
+const lang_code = 'ar';
+const login = 'Dakhool';
+const signup = 'Tasjeel';
 const agents = 'Agents';
-const hero1 = 'Your new travel mate';
-const hero2 = 'Book Hotels &amp; Flights at The Best price.';
 const category_somethingother = 'Something other...';
 public static function __callStatic($string, $args) {
     return vsprintf(constant("self::" . $string), $args);

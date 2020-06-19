@@ -12,12 +12,15 @@ class Main
 	}
 
 	function index()
-	{
+	{	
+		
 		// session_start();
 		$url = explode('/', $_GET['url']);
 		$mylan = $url[0];
-		
-		$_SESSION['mylans'] = $mylan;
+		$_SESSION['test'] = $mylan;
+		 // return TRUE;
+		$test_lang = $_SESSION['test'];
+		include "app/views/header.php";
 		
 	}
 }

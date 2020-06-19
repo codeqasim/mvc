@@ -3,10 +3,10 @@
     <div class="row hide-m text-center" style="height:100px">
         <div class="c8 mx-auto hero-content">
             <h2 class="hero-title-h2">
-                <?=TRANS::hero1; ?>
+                <?=T::hero1; ?>
             </h2>
             <h3 class="hero-title-h3">
-                <?=TRANS::hero2; ?>
+                <?=T::hero2; ?>
             </h3>
         </div>
     </div>
@@ -67,12 +67,9 @@ $(".hero,input,.select2-search").click(function() {
 </div>
 <div class="hotels-feature">
     <div class="section-subtitle">
-        <h2>Featured hotels</h2>
-        <h3>
-            Choose from the best featured hotels worldwide offering the best
-            price. Book your trip now!
-        </h3>
-        <h3>Find the best featured hotels around the world with almatar</h3>
+        <h2><?=T::hotels_featured_hotels; ?></h2>
+        <h3><?=T::hotels_featured_hotels_t1; ?> </h3>
+        <h3><?=T::hotels_featured_hotels_t2; ?> </h3>
     </div>
     <div class="container">
         <div class="row">
@@ -131,8 +128,8 @@ $(".hero,input,.select2-search").click(function() {
 </div>
 <div class="top-airlines">
     <div class="section-subtitle">
-        <h2>Top Flight Destinations</h2>
-        <h3>Get the best flight deal for top airlines with more than 500 airlines</h3>
+        <h2><?=T::flights_featured_flights; ?></h2>
+        <h3><?=T::flights_featured_flights_t1; ?></h3>
     </div>
     <div class="container">
         <div class="row">

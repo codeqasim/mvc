@@ -43,13 +43,12 @@
             </ul>
 
             </li>
-            <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=TRANS::login; ?></strong></a></li>
+            <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=T::login; ?></strong></a></li>
         </ul>
-        <a href="<?=$root;?>login#signup" class="btn danger-o f-left"><?=TRANS::signup; ?></a>
+        <a href="<?=$root;?>login#signup" class="btn danger-o f-left"><?=T::signup; ?></a>
         <ul>
-         <li><a href="<?=$root;?>agents"><strong><?=TRANS::agents; ?></strong></a></li>
+         <li><a href="<?=$root;?>agents"><strong><?=T::agents; ?></strong></a></li>
         </ul>
         <div class="clear"></div>
     </div>
 </div>
-

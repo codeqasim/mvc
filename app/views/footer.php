@@ -24,20 +24,20 @@
                     <div class="row links row-rtl">
                         <div class="c4">
                             <ul>
-                                <li><a href="<?=$root;?>about">about us</a></li>
-                                <li><a  href="<?=$root;?>careers">careers</a></li>
+                                <li><a href="<?=$root;?>about"><?=T::cms_about; ?></a></li>
+                                <li><a  href="<?=$root;?>careers"><?=T::cms_careers; ?></a></li>
                             </ul>
                         </div>
                         <div class="c4">
                             <ul>
-                                <li><a href="<?=$root;?>policy">privacy policy</a></li>
-                                <li><a href="<?=$root;?>faqs">FAQs</a></li>
+                                <li><a href="<?=$root;?>policy"><?=T::cms_policy; ?></a></li>
+                                <li><a href="<?=$root;?>faqs"><?=T::cms_faqs; ?></a></li>
                             </ul>
                         </div>
                         <div class="c4">
                             <ul>
-                                <li><a href="<?=$root;?>contact">contact us</a></li>
-                                <li><a  href="<?=$root;?>account"><span >register </span></a></li>
+                                <li><a href="<?=$root;?>contact"><?=T::cms_contact; ?></a></li>
+                                <li><a  href="<?=$root;?>account"><span ><?=T::cms_signup; ?></span></a></li>
                             </ul>
                         </div>
                     </div>

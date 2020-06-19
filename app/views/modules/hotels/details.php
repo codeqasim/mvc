@@ -204,7 +204,7 @@
                       <div class="row row-rtl">
 
                       <div class="c2">
-                      <img class="lazy" data-src="<?=$room->image[0];?>" alt="" />
+                      <img class="lazy roompic" data-src="<?=$room->image[0];?>" alt="" />
                       </div>
 
                         <div class="c10">
@@ -400,7 +400,7 @@
                     <ul>
                     <?php
                     foreach($hotel->response->amenities as $amenity){ ?>
-                    <li><i class="mr-10">&#10003;</i><?=$amenity->title;?></li>
+                    <li><i class="mr-10 mdi mdi-check"></i><?=$amenity->title;?></li>
                     <?php } ?>
                     </ul>
                   </div>
@@ -412,6 +412,51 @@
       </div>
   </div>
 </div>
+
+
+<div class="hotels-feature">
+    <div class="section-subtitle">
+        <h2>Related Hotels</h2>
+        <h3> Choose from the best related hotels worldwide offering the best price. Book your trip now!</h3>
+        <h3>Find the best related hotels around the world with us</h3>
+    </div>
+    <div class="container">
+        <div class="row">
+            <?php for ($i = 1; $i <= 3; $i++) { ?>
+            <div class="c4">
+                <a href="<?=root;?>hotels/details">
+                    <div class="hotels-feature-items">
+                        <figure class="item-image">
+                            <div
+                                class="hotel-image"
+                                style='background-image: url("<?=root;?>assets/img/hotel.jpg");'
+                                ></div>
+                        </figure>
+                        <div class="item-info rtl-align-right">
+                            <div class="item-info-title">
+                                <h4>Shangri La Hotel Dubai</h4>
+                            </div>
+                            <div class="item-rating">
+                                <span>&#10029;</span>
+                                <span>&#10029;</span>
+                                <span>&#10029;</span>
+                                <span>&#10029;</span>
+                                <span>&#10029;</span>
+                            </div>
+                            <div class="item-location my-10">
+                                <i class="icon-location"></i>
+                                <p>Dubai, United Arab Emarates</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+
 <script>
 var tabs = document.getElementsByClassName("tabs")[0];
 tabs.addEventListener('click',function(e){

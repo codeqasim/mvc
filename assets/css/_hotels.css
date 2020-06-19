@@ -79,7 +79,7 @@ list-page aside section{width:100%;height:100vh;overflow-y:scroll;padding: 0 6px
 .list-page .list-wrapper .detail{min-height:150px;position:relative}
 /*.list-page .list-wrapper .detail:after{content:"";position:absolute;width:102%;bottom:0;background:#e1e2e6;height:1px;right:-10px}*/
 .list-page .list-wrapper .detail .title a{color:#000}
-.list-page .list-wrapper .detail .title{padding-top:5px;font-size:18px;color:#000;margin-bottom:0px}
+.list-page .list-wrapper .detail .title{padding-top:5px;font-size:18px;color:#000;margin-bottom:0px;overflow: hidden; white-space: pre;}
 .list-page .list-wrapper .detail .rating span{color:rgb(255, 149, 0);font-size:18px}
 .list-page .list-wrapper .aminities span{color:#eee;font-size:35px}
 .list-page .list-wrapper .trust-you{display:flex;flex-direction:row;align-items:center}
@@ -137,7 +137,9 @@ list-page aside section{width:100%;height:100vh;overflow-y:scroll;padding: 0 6px
 .hotels-detail-page .content-section .room-wrapper-inner .panel{border: 1px solid #d5d5d5; padding: 10px; border-radius: 5px; margin-bottom: 15px;}
 .hotels-detail-page .content-section .room-wrapper-inner .panel:hover{background: #eee}
 .hotels-detail-page .content-section .room-wrapper-inner .panel ul i{font-size: 14px; font-weight: bold; color: #3edb67; top: 2px; right: 2px; position: relative;}
-.hotels-detail-page .content-section .room-wrapper-inner .roompic{border-radius: 5px; min-height: 150px;}
+.hotels-detail-page .content-section .room-wrapper-inner .roompic{border-radius: 5px; min-height: 150px; background: #eee; width: 100%; margin-bottom: 3px;}
+.hotels-detail-page .content-section .room-wrapper-inner .roompic~label{align-items: center; display: flex; height: 40px; margin: 4px 0px;width: 100%}
+.hotels-detail-page .content-section .room-wrapper-inner .roompic~label input[type="checkbox"] {top: 0}
 .hotels-detail-page .content-section .room-wrapper-inner .load_more{border-radius:20px;border:1px solid #e1e1e1;background-color:#fff;font-size:12px;font-weight:500;color:#363636;padding-top:10px;padding-bottom:10px;position:absolute;left:50%;bottom:-16px;width:114px;text-align:center;transform:translateX(-51%);-webkit-transform:translateX(-51%);-ms-transform:translateX(-51%);-moz-transform:translateX(-51%);-o-transform:translateX(-51%);cursor:pointer}
 .hotels-detail-page .content-section .room-wrapper-inner:after{content:"";position:absolute;width:1px;height:100%;background-color:#eee;top:0;right:25%}
 .hotels-detail-page .content-section .room-wrapper-inner ul{margin-top:0px}

@@ -370,7 +370,7 @@ input[type="radio"]:checked::after{border-radius:15px;content:"\02714";color:whi
 .account .account-tab .login .remember-sec .forgetPassword{text-decoration:underline;font-size:15px;color:#0058e6}
 
 /* loading animation */
-.plane-loader{position:relative;width:250px;height:250px;background-color:#00afdd;margin:20px auto;border-radius:125px;overflow:hidden;z-index:1}
+.plane-loader{position:relative;width:250px;height:250px;background-color:#0058e6;margin:20px auto;border-radius:125px;overflow:hidden;z-index:1}
 .plane{position:absolute;top:60px;left:60px;height:130px;width:130px;animation:levitate 4s alternate ease-in-out infinite;transition:transform 150ms ease;background-size:100% 100%;background-repeat:no-repeat}
 .cloud{position:absolute;background-size:100% 100%;background-repeat:no-repeat;background-color:transparent}
 .cloud1{top:-30px;left:30px;height:39px;width:42px;animation:cloud1 7s linear infinite}

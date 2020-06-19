@@ -31,6 +31,7 @@ a:hover{text-decoration:none;outline:0;box-shadow:none}
 a:visited{text-decoration:none;outline:0;box-shadow:none}
 img {max-width: 100%;height: auto;}
 ul{list-style-type: none; }
+.lazy { background: #eee }
 
 ::-moz-selection { background: transparent; } ::selection { background: transparent; }
 

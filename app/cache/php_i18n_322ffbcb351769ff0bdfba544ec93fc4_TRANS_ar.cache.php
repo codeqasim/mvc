@@ -6,6 +6,8 @@ const lang_code = 'ar';
 const login = 'Dakhool';
 const signup = 'Tasjeel';
 const agents = 'Agents';
+const hero1 = 'رفيق السفر الجديد الخاص بك';
+const hero2 = 'احجز الفنادق والرحلات بأفضل الأسعار';
 const category_somethingother = 'Something other...';
 public static function __callStatic($string, $args) {
     return vsprintf(constant("self::" . $string), $args);

@@ -37,7 +37,7 @@
                         <div class="c4">
                             <ul>
                                 <li><a href="<?=$root;?>contact"><?=T::cms_contact; ?></a></li>
-                                <li><a  href="<?=$root;?>account"><span ><?=T::cms_signup; ?></span></a></li>
+                                <li><a  href="<?=$root;?>account"><span ><?=T::signup; ?></span></a></li>
                             </ul>
                         </div>
                     </div>

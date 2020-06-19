@@ -7,7 +7,7 @@
         <div class="list-wrapper">
           <div class="row row-rtl">
             <div class="c1 p-10">
-              <img class="main-img" src="<?php echo $hotel->response->thumb; ?>" alt="<?php echo $hotel->response->company_name; ?>" />
+              <img class="main-img lazy" data-src="<?php echo $hotel->response->thumb; ?>" />
             </div>
             <div class="c11">
               <div class="row h-100 row-rtl">
@@ -80,17 +80,14 @@
           <div class="grid-img">
             <div class="row">
               <div class="c8 pr-0">
-                <img class="main-img"
-                  src="<?php echo $hotel->response->thumb; ?>"
-                  alt="<?=$hotel->response->company_name;?>"
-                  />
+                <img class="main-img lazy" data-src="<?php echo $hotel->response->thumb; ?>" />
               </div>
               <div class="c4">
                 <ul class="other-img">
                 <?php
                 $i = 1;
                 foreach($hotel->response->images as $img){ ?>
-                <li><img src="<?=$img;?>" alt="<?=$hotel->response->company_name;?>" /></li>
+                <li><img class="lazy" data-src="<?=$img;?>" /></li>
                 <?php if ($i++ == 3) break; ?>
                 <?php } ?>
                 </ul>
@@ -118,7 +115,7 @@
             </div>
             <div class="room-wrapper p-10">
               <div class="row row-rtl">
-                <div class="c3">
+                <div class="c3" hidden>
                   <div class="filter-section">
                     <div class="service-title">
                       <span>bed Types</span>
@@ -184,13 +181,22 @@
                     </label>
                   </div>
                 </div>
-                <div class="c9">
+                <div class="c12">
                 <?php foreach($hotel->response->rooms as $room){ ?>
 
                   <div class="room-cart">
                     <div class="room-header rtl-align-right">
-                      <h3><?=$room->room_name;?>
-                        <span> 1  nights ,  Rooms </span>
+                      <h3>
+                      <div class="row">
+                      <div class="c2">Room</div>
+                      <div class="c10">
+                      <div class="row">
+                      <div class="c4">Option</div>
+                      <div class="c2">Capacity</div>
+                      <div class="c2">Price / Night</div>
+                      </div>
+                      </div>
+                      </div>
                       </h3>
                     </div>
                     <div class="room-wrapper-inner">
@@ -200,30 +206,57 @@
                       <img src="<?=$room->image[0];?>" alt="" />
                       </div>
 
-                        <div class="c7">
+                        <div class="c10">
+
+                        <?php for ($i = 1; $i <= 4; $i++) { ?>
+                        <div class="row panel">
+                        <div class="c4">
                           <div class="single-room-header rtl-align-right">
-                            <h3>Standard / Single Standard Room</h3>
+                            <h3><?=$room->room_name;?></h3>
                           </div>
                           <ul>
-                            <li>max number of guests 1</li>
-                            <li>Room only</li>
-                            <li>Non-refundable</li>
+                            <li><i class="mdi mdi-check"></i> max number of guests</li>
+                            <li><i class="mdi mdi-check"></i> Room only</li>
+                            <li><i class="mdi mdi-check"></i> Non-refundable</li>
                           </ul>
                         </div>
-                        <div class="c3">
-                          <div class="price-sec">
-                            <h6 >Total stay for <span><span> 1 </span>nights </span></h6>
+
+                        <div class="c2">
+                          <ul class="middle">
+                            <li>Adults 2</li>
+                            <li>Child 1</li>
+                          </ul>
+                        </div>
+
+                        <div class="c2">
+                           <div class="">
+                           <!--<h6 class="">Total stay for <span><span> 1 </span>nights </span></h6>-->
                             <!--<small><h4 class="price-before-discount"><span>433</span><span class="currency"> SAR</span></h4></small>-->
-                            <h3  class="price">
-                              <span><?=$room->price;?></span>
-                              <span  class="currency">USD</span>
+                            <h3 class="price middle">
+                              <small class="tax">incl.tax</small>
+                              <span><strong><?=$room->price;?></strong></span> &nbsp;<small class="currency">USD</small>
                             </h3>
-                            <!--<h6 class="text-success mt-10">(incl.tax)</h6>-->
+                            </div>
+                        </div>
+
+
+                        <div class="c4">
+                          <div class="price-sec middle" style="justify-content: center;">
+                            <select name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            </select>
                             <a  class="btn success" href="hotels/booking">Book now</a>
                           </div>
                         </div>
+                        </div>
+                        <?php } ?>
+
+                        </div>
                       </div>
-                      <button class="load_more">Load More</button>
+                      <!--<button class="load_more">Load More</button>-->
                     </div>
                   </div>
                   <?php } ?>

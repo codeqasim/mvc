@@ -10,6 +10,8 @@
             </h3>
         </div>
     </div>
+
+
     <section id="search" class="hero lazy" data-src="<?=root;?>uploads/slider/1.jpg" style="border-radius:10px;">
         <div class="container">
             <div class="row">

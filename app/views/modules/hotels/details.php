@@ -80,13 +80,14 @@
           <div class="grid-img">
             <div class="row">
               <div class="c8 pr-0">
-                <img class="main-img lazy" data-src="<?php echo $hotel->response->thumb; ?>" />
+                <img class="main-img lazy" data-src="<?php echo $hotel->response->images[1]; ?>" />
               </div>
               <div class="c4">
                 <ul class="other-img">
                 <?php
                 $i = 1;
-                foreach($hotel->response->images as $img){ ?>
+                foreach($hotel->response->images as  $k => $img){
+                if ($k < 2) continue; ?>
                 <li><img class="lazy" data-src="<?=$img;?>" /></li>
                 <?php if ($i++ == 3) break; ?>
                 <?php } ?>
@@ -203,7 +204,7 @@
                       <div class="row row-rtl">
 
                       <div class="c2">
-                      <img src="<?=$room->image[0];?>" alt="" />
+                      <img class="lazy" data-src="<?=$room->image[0];?>" alt="" />
                       </div>
 
                         <div class="c10">

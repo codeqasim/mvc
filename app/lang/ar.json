@@ -4,9 +4,9 @@
 	"country": "sa",
 	"lang_code": "ar",
 	
-	"login": "Dakhool",
-	"signup": "Tasjeel",
-	"agents": "Agents",
+	"login": "تسجيل الدخول",
+	"signup": "تسجيل",
+	"agents": "عملاء",
 	"hero1": "رفيق السفر الجديد الخاص بك",
 	"hero2": "احجز الفنادق والرحلات بأفضل الأسعار",
 	"category": {

@@ -3,10 +3,10 @@
     <div class="row hide-m text-center" style="height:100px">
         <div class="c8 mx-auto hero-content">
             <h2 class="hero-title-h2">
-                Your new travel mate
+                <?=TRANS::hero1; ?>
             </h2>
             <h3 class="hero-title-h3">
-                Book Hotels &amp; Flights at The Best price.
+                <?=TRANS::hero2; ?>
             </h3>
         </div>
     </div>

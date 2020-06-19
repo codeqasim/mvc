@@ -1,8 +1,8 @@
 {
-	"language_name": "English",
-	"language_type": "LTR",
-	"country": "us",
-	"lang_code": "en",
+	"language_name": "Arabic",
+	"language_type": "RTL",
+	"country": "sa",
+	"lang_code": "ar",
 	
 	"login": "Login",
 	"signup": "Signup",

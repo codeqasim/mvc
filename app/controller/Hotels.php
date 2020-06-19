@@ -4,6 +4,7 @@ define('API_ENDPOINT', "https://www.phptravels.net/api/");
 define('API_KEYS', "phptravels");
 define('root', $root);
 define('HotelList', 'app/views/modules/hotels/list.php');
+define('HotelDetails', 'app/views/modules/hotels/details.php');
 
 class Hotels
 {
@@ -201,7 +202,9 @@ class Hotels
        //	print_r ($arr);
         $hotel = $arr;
 
-         include HotelsViews."details.php";
+        $title = "Hotels Result";
+        $body = HotelDetails;
+        include "app/views/main.php";
 	}
 }
 

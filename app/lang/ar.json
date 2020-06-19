@@ -1,15 +1,40 @@
 {
-	"language_name": "Arabic",
-	"language_type": "RTL",
-	"country": "sa",
-	"lang_code": "ar",
+	"language_name": "English",
+	"language_type": "LTR",
+	"country": "us",
+	"lang_code": "en",
 	
-	"login": "تسجيل الدخول",
-	"signup": "تسجيل",
-	"agents": "عملاء",
-	"hero1": "رفيق السفر الجديد الخاص بك",
-	"hero2": "احجز الفنادق والرحلات بأفضل الأسعار",
-	"category": {
-		"somethingother": "Something other..."
+	"login": "Login",
+	"signup": "Signup",
+	"agents": "Agents",
+	"hero1": "Your new travel mate",
+	"hero2": "Book Hotels &amp; Flights at The Best price.",
+
+	"hotels": {
+		"hotels": "Hotels",
+	    "hotel": "Hotel",
+	    "rooms": "rooms",
+	    "featured_hotels": "Featured Hotels",
+	    "featured_hotels_t1": "Choose from the best featured hotels worldwide offering the best price. Book your trip now!",
+	    "featured_hotels_t2": "Find the best featured hotels around the world with us"
+	},
+
+	"flights": {
+		"flights": "flights",
+	    "flight": "flight",
+	    "airline": "airline",
+	    "featured_flights": "Top Flight Destinations",
+	    "featured_flights_t1": "Get the best flight deal for top airlines with more than 500 airlines"
+	},
+
+	"cms": {
+		"about": "About Us",
+	    "careers": "Careers",
+	    "policy": "Policy",
+	    "contact": "Contact Us",
+	    "faqs": "FAQs"
 	}
+
+
+
 }

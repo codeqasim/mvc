@@ -2,8 +2,7 @@
     // All rights reserved by PHPTRAVELS 2020 www.phptravels.com
     ?>
 
-    <?php 
-
+    <?php
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -40,14 +39,12 @@
     $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
-
-
-
     include('app/controller/Hotels.php');
     include('app/controller/Flights.php');
     include('app/controller/Cms.php');
     include('app/controller/Account.php');
     include('app/controller/Main.php');
+
     
 
     $hotels = new Hotels();
@@ -55,11 +52,6 @@
     $cms = new Cms();
     $account = new Account();
     $main = new Main();
-    function home()
-    {
-    $title = "Homepage";
-    include "app/views/home.php";
-    }
 
     function page404()
     { $title = "page not found!"; include "app/views/404.php"; }
@@ -76,7 +68,7 @@
     elseif ($url[0] == 'hotel') $hotels->hotel_detail();
     elseif ($url[0] == 'flights') $flights->index();
     elseif ($url[0] == $lan_function) $main->index();
-    /* CMS */ 
+    /* CMS */
     elseif ($url[0] == 'cms') $cms->index();
     elseif ($url[0] == 'policy') $cms->policy();
     elseif ($url[0] == 'faqs') $cms->faqs();
@@ -89,6 +81,4 @@
     }
 
     else
-    { home(); }
-
-    include "app/views/footer.php";
+    { $main->index(); }

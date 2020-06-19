@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * 
@@ -12,15 +12,29 @@ class Main
 	}
 
 	function index()
-	{	
-		
-		// session_start();
-		$url = explode('/', $_GET['url']);
-		$mylan = $url[0];
-		$_SESSION['test'] = $mylan;
-		 // return TRUE;
-		$test_lang = $_SESSION['test'];
-		include "app/views/header.php";
-		
+	{
+
+        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+
+        if (!empty($base_url)){
+
+        $url = explode('/', $_GET['url']);
+        $lang_val = $url[0];
+        $_SESSION['session_lang'] = $lang_val;
+        $lang = $_SESSION['session_lang'];
+
+        }else {
+
+         echo "hello";
+
+        }
+
+
+
+        $title = "Homepage";
+        $body = "app/views/home.php";
+        include "app/views/main.php";
+
+
 	}
 }

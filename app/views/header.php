@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "app/config.php";
 include "app/functions.php";
 
@@ -13,8 +12,10 @@ include "app/functions.php";
 //     }
 // }
 
-echo $test_lang;
-$i18n->setForcedLang($test_lang);
+session_start();
+echo $lang;
+
+$i18n->setForcedLang($lang);
 $i18n->init();
 ?>
     

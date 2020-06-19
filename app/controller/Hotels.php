@@ -1,11 +1,16 @@
 <?php
 
+define('API_ENDPOINT', "https://www.phptravels.net/api/");
+define('API_KEYS', "phptravels");
+define('root', $root);
+define('HotelList', 'app/views/modules/hotels/list.php');
+
 class Hotels
 {
-	
+
 	function __construct()
 	{
- 
+
 	}
 
     function index()
@@ -16,6 +21,9 @@ class Hotels
 
 	function hotel_list()
 	{
+
+
+
 
 		$url = explode('/', $_GET['url']);
 		$count = count($url);
@@ -87,7 +95,7 @@ class Hotels
     		}
 	  if (isset($listrating['count_stars']['5']))
           {$five_stars = $listrating['count_stars']['5'];
-          }else{$five_stars = "0";} 
+          }else{$five_stars = "0";}
       if (isset($listrating['count_stars']['4']))
           {$four_stars=$listrating['count_stars']['4'];
           }else{$four_stars="0";}
@@ -105,7 +113,7 @@ class Hotels
 		// $arrsdecode = json_decode($arrs);
 		// $obj_merged = (object) array_merge(
   //       (array) $arrsdecode, (array) $arr);
-		
+
 	}
 
 	if (empty($arr->response->HotelListResponse)) {
@@ -118,7 +126,11 @@ class Hotels
 			$cityname = $url[3];
 		}
          echo "<script>var title = 'Hotel listing page'</script>";
-         include HotelsViews."list.php";
+
+        $title = "Hotels Result";
+        $body = HotelList;
+        include "app/views/main.php";
+
 	}
 
 	function hotel_detail(){

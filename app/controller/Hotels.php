@@ -128,7 +128,7 @@ class Hotels
 		}
          echo "<script>var title = 'Hotel listing page'</script>";
 
-        $title = "Hotels Result";
+        $title = "Hotels in " .$city;
         $body = HotelList;
         include "app/views/main.php";
 
@@ -202,7 +202,7 @@ class Hotels
        //	print_r ($arr);
         $hotel = $arr;
 
-        $title = "Hotels Result";
+        $title = $hotel->response->company_name;
         $body = HotelDetails;
         include "app/views/main.php";
 	}

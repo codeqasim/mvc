@@ -44,12 +44,14 @@
     include('app/controller/Flights.php');
     include('app/controller/Cms.php');
     include('app/controller/Account.php');
+    include('app/controller/Main.php');
     include "app/views/header.php";
 
     $hotels = new Hotels();
     $flights = new Flights();
     $cms = new Cms();
     $account = new Account();
+    $main = new Main();
     function home()
     {
     $title = "Homepage";
@@ -64,12 +66,13 @@
     }
 
     if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
+    $lan_function = $url[0];
     /* routes */
     if     ($url[0] == 'search') $hotels->search();
-    elseif ($url[0] == 'hotels') $hotels->hotel_data();
+    elseif ($url[0] == 'hotels') $hotels->hotel_list();
     elseif ($url[0] == 'hotel') $hotels->hotel_detail();
     elseif ($url[0] == 'flights') $flights->index();
-
+    elseif ($url[0] == $lan_function) $main->index();
     /* CMS */ 
     elseif ($url[0] == 'cms') $cms->index();
     elseif ($url[0] == 'policy') $cms->policy();
@@ -78,6 +81,7 @@
     elseif ($url[0] == 'contact') $cms->contact();
     elseif ($url[0] == 'about') $cms->about();
     elseif ($url[0] == 'login') $account->index();
+    
     else page404();
     }
 

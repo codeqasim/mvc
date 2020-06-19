@@ -1,10 +1,22 @@
 <?php
+session_start();
 include "app/config.php";
 include "app/functions.php";
-$i18n->setForcedLang('en');
+
+// if (!empty($_GET['url'])) {
+//    $url = explode('/', $_GET['url']);
+//    $lang = $url[0];
+//        // Set Language variable
+//     if(isset($lang) && !empty($lang)){
+//      $_SESSION['mylang'] = $lang;
+//      // session_destroy();
+//     }
+// }
+echo $_SESSION['mylans'];
+$i18n->setForcedLang($_SESSION['mylans']);
 $i18n->init();
 ?>
-
+    
 <!DOCTYPE html>
 <html lang="en" dir="#rtl">
 <head>
@@ -14,7 +26,7 @@ $i18n->init();
 
 <title><?=$title;?></title>
 <link rel="stylesheet" href="<?=$root.css;?>_style.css" />
-<!--<link rel="stylesheet" href="<?=$root;?>assets/css/_rtl.css" />-->
+<!-- <link rel='stylesheet' href='<?=$root;?>assets/css/_rtl.css'/> -->
 <script> var baseurl = "<?=$root;?>"; </script>
 <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 <script src="<?=$root.js;?>jquery.min.js"></script>

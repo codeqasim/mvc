@@ -5,7 +5,7 @@ class Hotels
 	
 	function __construct()
 	{
-
+ 
 	}
 
     function index()
@@ -14,7 +14,7 @@ class Hotels
 		echo "Hotels Listing Page";
 	}
 
-	function hotel_data()
+	function hotel_list()
 	{
 
 		$url = explode('/', $_GET['url']);

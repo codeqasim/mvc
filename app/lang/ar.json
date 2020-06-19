@@ -2,9 +2,10 @@
 	"language_name": "Arabic",
 	"language_type": "RTL",
 	"country": "sa",
+	"lang_code": "ar",
 	
-	"login": "Login",
-	"signup": "Signup",
+	"login": "Dakhool",
+	"signup": "Tasjeel",
 	"agents": "Agents",
 	"category": {
 		"somethingother": "Something other..."

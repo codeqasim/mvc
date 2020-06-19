@@ -4,19 +4,19 @@
 	"country": "sa",
 	"lang_code": "ar",
 	
-	"login": "????? ??????",
-	"signup": "???",
-	"agents": "?????",
-	"hero1": "???? ????? ?????? ????? ??",
-	"hero2": "???? ??????? ?????? ??????? ????? ???????",
+	"login": "تسجيل الدخول",
+	"signup": "سجل",
+	"agents": "عملاء",
+	"hero1": "رفيق السفر الجديد الخاص بك",
+	"hero2": "احجز الفنادق ورحلات الطيران بأفضل الأسعار",
 
 	"hotels": {
-		"hotels": "???????",
-	    "hotel": "??????",
-	    "rooms": "???",
-	    "featured_hotels": "????? ?????",
-	    "featured_hotels_t1": "Choose from the best featured hotels worldwide offering the best price. Book your trip now!",
-	    "featured_hotels_t2": "Find the best featured hotels around the world with us"
+		"hotels": "الفنادق",
+	    "hotel": "الفندق",
+	    "rooms": "غرف",
+	    "featured_hotels": "فنادق مميزة",
+	    "featured_hotels_t1": "اختر من بين أفضل الفنادق المميزة حول العالم التي تقدم أفضل الأسعار. احجز رحلتك الآن!",
+	    "featured_hotels_t2": "اعثر معنا على أفضل الفنادق المميزة حول العالم"
 	},
 
 	"flights": {

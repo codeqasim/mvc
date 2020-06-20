@@ -1,5 +1,5 @@
 <style>body{background-color:#f2f6fb;}</style>
-<div class="about-us">
+<div class="cms">
   <div class="crumb">
     <div class="container">
       <ul>
@@ -17,10 +17,10 @@
       </div>
     </div>
   </div>
-  <section class="section-about">
+  <section class="section">
     <div class="container">
       <div class="banner">
-        <img alt=""  src="assets/img/banner.png">
+        <img alt="" src="assets/img/banner.png">
       </div>
       <div class="row mb-20 row-rtl">
         <div class="c6">

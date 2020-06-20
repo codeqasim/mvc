@@ -68,8 +68,7 @@
 
 
 
-    elseif ($url[1] == 'hotels') $main->hotel_list();
-    elseif ($url[1] == 'hotel') $main->hotel_detail();
+
 
 
     elseif ($url[0] == 'home') $main->index();
@@ -79,6 +78,9 @@
     elseif ($url[0] == 'contact') $main->contact();
     elseif ($url[0] == 'about') $main->about();
     elseif ($url[0] == 'login') $main->index();
+
+    elseif ($url[1] == 'hotels') $main->hotel_list();
+    elseif ($url[1] == 'hotel') $main->hotel_detail();
 
     else page404();
     }

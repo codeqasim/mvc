@@ -1,6 +1,6 @@
 <div class="nav c10 p0 flex hide-m mobnav animated fadeInLeft hide row-rtl">
     <div class="items-center">
-        <div class="menu row-rtl" id="sidebar">
+        <div class="menu row-rtl">
             <a href="<?=$root?>about"><i class="mdi mdi-home"></i> <span>About</span></a>
             <a href="<?=$root;?>hotels" class="active"> <i class="mdi mdi-hotel"></i> <span>Hotels</span></a>
             <a href="<?=$root;?>flights" class=""> <i class="mdi mdi-airplane"></i> <span>Flights</span></a>
@@ -20,8 +20,21 @@
                 <li><a href="<?=$root;?>"><i class="flag gb"></i> <strong>POUND</strong> British Pound</a></li>
                 <li><a href="<?=$root;?>"><i class="flag in"></i> <strong>INR</strong> Indian Rupees</a></li>
             </ul>
+
+            <form method='post' action='' id='form_lang' style="display:inline">
+            <select name='lang' onchange='changeLang();' style="height: 40px; padding: 5px 10px; text-align: left; min-width: 115px; border-radius: 4px; border: 1px solid #c2c5d9;">
+            <?php foreach($fils_data as $item):?>
+            <?php if($_SESSION['session_lang'] == $item->lang_code){?>
+            <option value='<?=$_SESSION['session_lang']?>' selected><?=$item->language_name?></option>
+            <?php }else{ ?>
+            <option value='<?=$item->lang_code?>'><?=$item->language_name?></option>
+            <?php } ?>
+            <?php endforeach;?>
+            </select>
+            </form>
+
             </li>
-            <li class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
+            <li  style="display:none" class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
 
             <?php
             $dir    = 'app/lang';

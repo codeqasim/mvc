@@ -2,7 +2,6 @@
 include "app/config.php";
 include "app/functions.php";
 ?>
-    
 <!DOCTYPE html>
 <html lang="en" dir="#rtl">
 <head>
@@ -17,7 +16,6 @@ include "app/functions.php";
 <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 <script src="<?=$root.js;?>jquery.min.js"></script>
 <script src="<?=$root.js;?>isotope.min.js"></script>
-
 
 <script>
 var app = {
@@ -73,24 +71,4 @@ var i18n = {
     </nav>
 </header>
 
-            
-
-
-<form method='post' action='' id='form_lang'>
-    <select name='lang' onchange='changeLang();'>
-        <?php foreach($fils_data as $item):?>
-        <?php if($_SESSION['session_lang'] == $item->lang_code){?>
-        <option value='<?=$_SESSION['session_lang']?>' selected><?=$item->language_name?></option>
-        <?php }else{ ?>
-        <option value='<?=$item->lang_code?>'><?=$item->language_name?></option>
-        <?php } ?>
-        <?php endforeach;?>
-    </select>
-</form>
-
-
-    <script>
-    function changeLang(){
-    document.getElementById('form_lang').submit();
-    }
-    </script>
+<script>function changeLang(){ document.getElementById('form_lang').submit(); }</script>

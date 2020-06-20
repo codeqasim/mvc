@@ -32,7 +32,7 @@ a:visited{text-decoration:none;outline:0;box-shadow:none}
 img {max-width: 100%;height: auto;}
 ul{list-style-type: none; }
 .lazy { background: #eee }
-
+[hide]{display:none}
 ::-moz-selection { background: transparent; } ::selection { background: transparent; }
 
 .animate{animation-fill-mode:both;animation-duration:.5s}

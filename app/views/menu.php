@@ -9,6 +9,11 @@
             <a href="<?=$root;?>cars" class=""> <i class="mdi mdi-car"></i> <span>Cars</span></a>
         </div>
     </div>
+
+
+
+
+
     <div class="nav-right">
         <ul>
             <li class="dropdown_show"><a href="usd"><strong>USD</strong></a>
@@ -21,20 +26,10 @@
                 <li><a href="<?=$root;?>"><i class="flag in"></i> <strong>INR</strong> Indian Rupees</a></li>
             </ul>
 
-            <form method='post' action='' id='form_lang' style="display:inline">
-            <select name='lang' onchange='changeLang();' style="height: 40px; padding: 5px 10px; text-align: left; min-width: 115px; border-radius: 4px; border: 1px solid #c2c5d9;">
-            <?php foreach($fils_data as $item):?>
-            <?php if($_SESSION['session_lang'] == $item->lang_code){?>
-            <option value='<?=$_SESSION['session_lang']?>' selected><?=$item->language_name?></option>
-            <?php }else{ ?>
-            <option value='<?=$item->lang_code?>'><?=$item->language_name?></option>
-            <?php } ?>
-            <?php endforeach;?>
-            </select>
-            </form>
+
 
             </li>
-            <li  style="display:none" class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
+            <li class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
 
             <?php
             $dir    = 'app/lang';
@@ -49,12 +44,15 @@
               $string = file_get_contents("app/lang/$value");
               array_push ($fils_data,json_decode($string));
             }?>
-            
-            <ul class="dropdown">
+
+            <!--<ul class="dropdown">
             <?php foreach($fils_data as $item):?>
             <li><a href="<?=$root;?><?=$item->lang_code?>"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></a></li>
             <?php endforeach; ?>
-            </ul>
+            </ul>-->
+
+            
+
 
             </li>
             <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=T::login; ?></strong></a></li>

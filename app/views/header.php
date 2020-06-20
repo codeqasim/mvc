@@ -69,6 +69,24 @@ var i18n = {
             <?php include 'menu.php'; ?>
         </div>
     </nav>
+
+
 </header>
 
-<script>function changeLang(){ document.getElementById('form_lang').submit(); }</script>
+
+
+
+
+<!--<form method='post' action='' id='form_lang' style="display:inline">
+<select name='lang' onchange='changeLang();' style="height: 40px; padding: 5px 10px; text-align: left; min-width: 115px; border-radius: 4px; border: 1px solid #c2c5d9;">
+<?php foreach($fils_data as $item):?>
+<?php if($_SESSION['session_lang'] == $item->lang_code){?>
+<option value='<?=$_SESSION['session_lang']?>' selected><?=$item->language_name?></option>
+<?php }else{ ?>
+<option value='<?=$item->lang_code?>'><?=$item->language_name?></option>
+<?php } ?>
+<?php endforeach;?>
+</select>
+</form>
+<script>function changeLang(){ document.getElementById('form_lang').submit(); }</script>-->
+

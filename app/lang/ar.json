@@ -20,19 +20,19 @@
 	},
 
 	"flights": {
-		"flights": "flights",
-	    "flight": "flight",
-	    "airline": "airline",
-	    "featured_flights": "Top Flight Destinations",
-	    "featured_flights_t1": "Get the best flight deal for top airlines with more than 500 airlines"
+		"flights": "الرحلات الجوية",
+	    "flight": "طيران",
+	    "airline": "شركة طيران",
+	    "featured_flights": "أفضل وجهات الطيران",
+	    "featured_flights_t1": "احصل على أفضل صفقة طيران لأفضل شركات الطيران مع أكثر من 500 شركة طيران"
 	},
 
 	"cms": {
-		"about": "About Us",
-	    "careers": "Careers",
-	    "policy": "Policy",
-	    "contact": "Contact Us",
-	    "faqs": "FAQs"
+		"about": "معلومات عنا",
+	    "careers": "وظائف",
+	    "policy": "سياسات",
+	    "contact": "اتصل بنا",
+	    "faqs": "الأسئلة الشائعة"
 	}
 
 

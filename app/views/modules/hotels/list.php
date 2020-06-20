@@ -298,7 +298,7 @@
                               <!--<span class="price-before">250</span>
                                 <span class="currency-before-discount">USD</span>-->
                             </span>
-                            <strong><?= $list->price ;?></strong> <span>USD</span>
+                            <strong><?= $list->price ;?></strong> <span><?=$currceny?></span>
                           </h5>
                         </div>
                         <div class="text-center mt-10">

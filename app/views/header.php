@@ -2,30 +2,31 @@
 include "app/config.php";
 include "app/functions.php";
 
- 
+
 // if(!empty($_SESSION['session_lang'])) {
 //     print_r($_SESSION['session_lang']);
 //     $i18n->setForcedLang($_SESSION['session_lang']);
 //     $i18n->init();
 // }else{
-//     print_r('you dont have any session data'); 
+//     print_r('you dont have any session data');
 //     // $i18n->setForcedLang($_SESSION['session_lang']);
 //     // $i18n->init();
 // }
 
-// Set Language variable
-if(isset($_POST['test']) && !empty($_POST['test'])){
- $_SESSION['ftest'] = $_POST['test'];
 
- if(isset($_SESSION['ftest']) && $_SESSION['ftest'] != $_POST['test']){
+// Set Language variable
+if(isset($_POST['lang']) && !empty($_POST['lang'])){
+ $_SESSION['session_lang'] = $_POST['lang'];
+
+ if(isset($_SESSION['session_lang']) && $_SESSION['session_lang'] != $_POST['lang']){
   echo "<script type='text/javascript'> location.reload(); </script>";
  }
 }
 
 // Include Language file
-if(isset($_SESSION['ftest'])){
- //   print_r($_SESSION['ftest']);
-    $i18n->setForcedLang($_SESSION['ftest']);
+if(isset($_SESSION['session_lang'])){
+ //   print_r($_SESSION['session_lang']);
+    $i18n->setForcedLang($_SESSION['session_lang']);
     $i18n->init();
 }else{
 // echo "empty";
@@ -109,10 +110,10 @@ var i18n = {
 
 
 <form method='post' action='' id='form_lang'>
-    <select name='test' onchange='changeLang();'>
+    <select name='lang' onchange='changeLang();'>
         <?php foreach($fils_data as $item):?>
-        <?php if($_SESSION['ftest'] == $item->lang_code){?>
-        <option value='<?=$_SESSION['ftest']?>' selected><?=$item->language_name?></option>
+        <?php if($_SESSION['session_lang'] == $item->lang_code){?>
+        <option value='<?=$_SESSION['session_lang']?>' selected><?=$item->language_name?></option>
         <?php }else{ ?>
         <option value='<?=$item->lang_code?>'><?=$item->language_name?></option>
         <?php } ?>

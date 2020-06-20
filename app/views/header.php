@@ -13,25 +13,23 @@ include "app/functions.php";
 //     // $i18n->init();
 // }
 
-session_start();
-
 // Set Language variable
-if(isset($_GET['test']) && !empty($_GET['test'])){
- $_SESSION['ftest'] = $_GET['test'];
+if(isset($_POST['test']) && !empty($_POST['test'])){
+ $_SESSION['ftest'] = $_POST['test'];
 
- if(isset($_SESSION['ftest']) && $_SESSION['ftest'] != $_GET['test']){
+ if(isset($_SESSION['ftest']) && $_SESSION['ftest'] != $_POST['test']){
   echo "<script type='text/javascript'> location.reload(); </script>";
  }
 }
 
 // Include Language file
 if(isset($_SESSION['ftest'])){
-    print_r($_SESSION['ftest']);
+ //   print_r($_SESSION['ftest']);
     $i18n->setForcedLang($_SESSION['ftest']);
     $i18n->init();
 }else{
- echo "empty";
-    $i18n->setForcedLang('ar');
+// echo "empty";
+//    $i18n->setForcedLang('ar');
     $i18n->init();
 }
 
@@ -50,8 +48,6 @@ if(isset($_SESSION['ftest'])){
 <script> var baseurl = "<?=$root;?>"; </script>
 <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 <script src="<?=$root.js;?>jquery.min.js"></script>
-<script src="<?=$root.js;?>ajax.js"></script>
-<script src="<?=$root.js;?>pjax.min.js"></script>
 <script src="<?=$root.js;?>isotope.min.js"></script>
 
 
@@ -112,7 +108,7 @@ var i18n = {
             
 
 
-<form method='get' action='' id='form_lang'>
+<form method='post' action='' id='form_lang'>
     <select name='test' onchange='changeLang();'>
         <?php foreach($fils_data as $item):?>
         <?php if($_SESSION['ftest'] == $item->lang_code){?>

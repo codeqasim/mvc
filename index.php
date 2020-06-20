@@ -41,32 +41,13 @@
 
     include('app/controller/Hotels.php');
     include('app/controller/Flights.php');
-    include('app/controller/Cms.php');
     include('app/controller/Account.php');
-    // include('app/controller/Main.php');
+    include('app/controller/Main.php');
 
-    
 
-    $hotels = new Hotels();
     $flights = new Flights();
-    $cms = new Cms();
     $account = new Account();
-    // $main = new Main();
-
-        function home()
-    {
- 
-        // $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        // $base_explode = explode('/', $base_url);
-        // $lang_val = $base_url;
-        // $_SESSION['session_lang'];
-        // return $_SESSION['session_lang'];
-        $title = "Homepage";
-        $body = "app/views/home.php";
-        include "app/views/main.php";
-
-
-    }
+    $main = new Main();
 
     function page404()
     { $title = "page not found!"; include "app/views/404.php"; }
@@ -77,23 +58,31 @@
 
     if (isset($_GET['url'])) {  $url = explode('/', $_GET['url']);
     $lan_function = $url[0];
+
+
     /* routes */
     if     ($url[0] == 'search') $hotels->search();
-    elseif ($url[0] == 'hotels') $hotels->hotel_list();
-    elseif ($url[0] == 'hotel') $hotels->hotel_detail();
     elseif ($url[0] == 'flights') $flights->index();
     // elseif ($url[0] == $lan_function) $main->index();
     /* CMS */
-    elseif ($url[0] == 'cms') $cms->index();
-    elseif ($url[0] == 'policy') $cms->policy();
-    elseif ($url[0] == 'faqs') $cms->faqs();
-    elseif ($url[0] == 'careers') $cms->careers();
-    elseif ($url[0] == 'contact') $cms->contact();
-    elseif ($url[0] == 'about') $cms->about();
-    elseif ($url[0] == 'login') $account->index();
-    
+
+
+
+    elseif ($url[1] == 'hotels') $main->hotel_list();
+    elseif ($url[1] == 'hotel') $main->hotel_detail();
+
+
+    elseif ($url[0] == 'home') $main->index();
+    elseif ($url[0] == 'policy') $main->policy();
+    elseif ($url[0] == 'faqs') $main->faqs();
+    elseif ($url[0] == 'careers') $main->careers();
+    elseif ($url[0] == 'contact') $main->contact();
+    elseif ($url[0] == 'about') $main->about();
+    elseif ($url[0] == 'login') $main->index();
+
     else page404();
     }
 
-    else
-    { home(); }
+    else {
+     $main->index();
+    }

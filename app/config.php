@@ -40,10 +40,7 @@ define('Ota', "172a7bc0-d892-11e9-ad7d-8d041c8c7592");
 define('HotelsList', HOTELS_API_ENDPOINT."hotels/search");
 define('HotelsDetail', HOTELS_API_ENDPOINT."hotels/details");
 
-define('views', "app/views/");
-define('HotelsViews', "app/views/modules/hotels/");
-define('css', "assets/css/");
-define('js', "assets/js/");
+
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $database);

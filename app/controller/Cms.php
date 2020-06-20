@@ -1,21 +1,19 @@
 <?php
 
+
+
+
 class Cms
 {
 	
 	function __construct(){
 	}
-	
+
 	function index(){
 		echo 'index';
 	}
 
-    function about()
-    {
-        $title = "About Us";
-        $body = "app/views/modules/cms/about.php";
-        include "app/views/main.php";
-    }
+    
 
     function careers()
     {

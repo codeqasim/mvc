@@ -1,13 +1,13 @@
 <style>body{background-color:#f2f6fb;}</style>
+<div class="crumb">
+<div class="container">
+  <ul>
+    <li class="breadcrumb-item"><a href="home.php">home</a></li>
+    <li class="breadcrumb-item active">about us</li>
+  </ul>
+</div>
+</div>
 <div class="cms">
-  <div class="crumb">
-    <div class="container">
-      <ul>
-        <li class="breadcrumb-item"><a href="home.php">home</a></li>
-        <li class="breadcrumb-item active">about us</li>
-      </ul>
-    </div>
-  </div>
   <div class="container">
     <div class="row">
       <div class="c12">

@@ -3,7 +3,8 @@
 	"language_type": "LTR",
 	"country": "us",
 	"lang_code": "en",
-	
+
+	"home": "Home",
 	"login": "Login",
 	"signup": "Signup",
 	"agents": "Agents",

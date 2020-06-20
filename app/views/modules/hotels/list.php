@@ -302,7 +302,7 @@
                           </h5>
                         </div>
                         <div class="text-center mt-10">
-                          <form method="GET" action="<?=root;?>hotel/en/usd/<?= $list->id ;?>/<?php echo (str_replace(' ', '-', strtolower($list->company_name))); ?>/06/21/2020/06/28/2020/2/1">
+                          <form target="self" method="GET" action="<?=$root;?>en/hotel/<?=$list->id ;?>/<?php echo (str_replace(' ', '-', strtolower($list->company_name))); ?>/06/21/2020/06/28/2020/2/1">
                             <button class="btn prime-o hide-m w100" href="hotels/details">Details </button>
                           </form>
                         </div>

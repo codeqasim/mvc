@@ -86,7 +86,7 @@
     </div>
 
     <input type="hidden" class="form-control" name="language" id="language" value="<?=$_SESSION['session_lang'];?>">
-    <input type="hidden" class="form-control" name="currceny" id="currceny" value="USD">
+    <input type="hidden" class="form-control" name="currceny" id="currceny" value="usd">
     <input type="hidden" class="form-control" name="pagination" id="pagination"value="1">
 
     </form>

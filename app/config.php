@@ -1,5 +1,5 @@
 <?php
-      
+
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
@@ -7,6 +7,26 @@ $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 // require 'lib/compress/compress.php';
 require 'lib/i18n/i18n.class.php';
 $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
+
+// Set Language variable
+if(isset($_POST['lang']) && !empty($_POST['lang'])){
+ $_SESSION['session_lang'] = $_POST['lang'];
+
+ if(isset($_SESSION['session_lang']) && $_SESSION['session_lang'] != $_POST['lang']){
+  echo "<script type='text/javascript'> location.reload(); </script>";
+ }
+}
+
+// Include Language file
+if(isset($_SESSION['session_lang'])){
+ //   print_r($_SESSION['session_lang']);
+    $i18n->setForcedLang($_SESSION['session_lang']);
+    $i18n->init();
+}else{
+    $_SESSION['session_lang'] = 'en';
+    $i18n->setForcedLang('en');
+    $i18n->init();
+}
 
 // function dd
 function dd($data) {
@@ -39,8 +59,6 @@ define('HOTELS_API_ENDPOINT', "https://bookingengine.co/api/");
 define('Ota', "172a7bc0-d892-11e9-ad7d-8d041c8c7592");
 define('HotelsList', HOTELS_API_ENDPOINT."hotels/search");
 define('HotelsDetail', HOTELS_API_ENDPOINT."hotels/details");
-
-
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $database);

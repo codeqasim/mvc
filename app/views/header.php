@@ -1,39 +1,6 @@
 <?php
 include "app/config.php";
 include "app/functions.php";
-
-
-// if(!empty($_SESSION['session_lang'])) {
-//     print_r($_SESSION['session_lang']);
-//     $i18n->setForcedLang($_SESSION['session_lang']);
-//     $i18n->init();
-// }else{
-//     print_r('you dont have any session data');
-//     // $i18n->setForcedLang($_SESSION['session_lang']);
-//     // $i18n->init();
-// }
-
-
-// Set Language variable
-if(isset($_POST['lang']) && !empty($_POST['lang'])){
- $_SESSION['session_lang'] = $_POST['lang'];
-
- if(isset($_SESSION['session_lang']) && $_SESSION['session_lang'] != $_POST['lang']){
-  echo "<script type='text/javascript'> location.reload(); </script>";
- }
-}
-
-// Include Language file
-if(isset($_SESSION['session_lang'])){
- //   print_r($_SESSION['session_lang']);
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
-}else{
-// echo "empty";
-//    $i18n->setForcedLang('ar');
-    $i18n->init();
-}
-
 ?>
     
 <!DOCTYPE html>

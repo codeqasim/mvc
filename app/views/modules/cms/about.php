@@ -1,7 +1,7 @@
 <style>body{background-color:#f2f6fb;}</style>
 <div class="about-us">
-  <div class="breadcrumb-bg">
-    <div class="container h-100">
+  <div class="crumb">
+    <div class="container">
       <ul>
         <li class="breadcrumb-item"><a href="home.php">home</a></li>
         <li class="breadcrumb-item active">about us</li>

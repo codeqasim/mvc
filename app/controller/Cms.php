@@ -12,7 +12,9 @@ class Cms
 
     function about()
     {
-    include "app/views/modules/cms/about.php";
+        $title = "About Us";
+        $body = "app/views/modules/cms/about.php";
+        include "app/views/main.php";
     }
 
     function careers()

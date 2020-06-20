@@ -35,6 +35,43 @@ ul{list-style-type: none; }
 
 ::-moz-selection { background: transparent; } ::selection { background: transparent; }
 
+.animate{animation-fill-mode:both;animation-duration:.5s}
+.animate-reverse{animation-direction:reverse}
+.animate-fast{animation-duration:.3s}
+.animate-no-delay{animation-delay:0s!important}
+.animate-delay-1{animation-delay:.5s}
+.animate-delay-2{animation-delay:1s}
+.animate-delay-3{animation-delay:1.5s}
+.animate-delay-4{animation-delay:2s}
+.sr .card,.sr .list-item,.sr .sr-item,.sr .item{visibility:hidden}
+@keyframes slideInLeft{from{transform:translate3d(-75%,0,0)}
+to{transform:translate3d(0,0,0)}
+}.slideInLeft{animation-name:slideInLeft}
+@keyframes slideInRight{from{transform:translate3d(75%,0,0)}
+to{transform:translate3d(0,0,0)}
+}.slideInRight{animation-name:slideInRight}
+@keyframes slideInUp{from{transform:translate3d(0,75%,0)}
+to{transform:translate3d(0,0,0)}
+}.slideInUp{animation-name:slideInUp}
+@keyframes slideInDown{from{transform:translate3d(0,-75%,0)}
+to{transform:translate3d(0,0,0)}
+}.slideInDown{animation-name:slideInDown}
+@keyframes fadeIn{from{opacity:0}
+to{opacity:1}
+}.fadeIn{animation-name:fadeIn}
+@keyframes fadeInLeft{from{opacity:0;transform:translate3d(-75%,0,0)}
+to{opacity:1;transform:none}
+}.fadeInLeft{animation-name:fadeInLeft}
+@keyframes fadeInRight{from{opacity:0;transform:translate3d(75%,0,0)}
+to{opacity:1;transform:none}
+}.fadeInRight{animation-name:fadeInRight}
+@keyframes fadeInUp{from{opacity:0;transform:translate3d(0,75%,0)}
+to{opacity:1;transform:none}
+}.fadeInUp{animation-name:fadeInUp}
+@keyframes fadeInDown{from{opacity:0;transform:translate3d(0,-75%,0)}
+to{opacity:1;transform:none}
+}
+
 .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 @media(min-width:576px){.container{max-width:540px}
 }@media(min-width:768px){.container{max-width:720px}

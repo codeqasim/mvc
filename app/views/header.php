@@ -50,7 +50,10 @@ if(isset($_SESSION['ftest'])){
 <script> var baseurl = "<?=$root;?>"; </script>
 <link rel="shortcut icon" href="<?=$root;?>assets/img/logo.png">
 <script src="<?=$root.js;?>jquery.min.js"></script>
+<script src="<?=$root.js;?>ajax.js"></script>
+<script src="<?=$root.js;?>pjax.min.js"></script>
 <script src="<?=$root.js;?>isotope.min.js"></script>
+
 
 <script>
 var app = {
@@ -85,7 +88,7 @@ var i18n = {
 
 <header class="sticky">
     <nav>
-        <div class="container flex flex-content-between row-rtl" >
+        <div class="container flex flex-content-between row-rtl">
             <div class="c2 c-sm-2 p0 rtl-align-right mx-auto">
                 <div class="logo">
                     <a href="<?=$root;?>">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * 
  */
@@ -13,24 +13,12 @@ class Main
 
 	function index()
 	{
-
+ 
         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-
-        if (!empty($base_url)){
-
-        $url = explode('/', $_GET['url']);
-        $lang_val = $url[0];
-        $_SESSION['session_lang'] = $lang_val;
-        $lang = $_SESSION['session_lang'];
-
-        }else {
-
-         echo "hello";
-
-        }
-
-
-
+        $base_explode = explode('/', $base_url);
+        // $lang_val = $base_url;
+        $_SESSION['session_lang'];
+        // return $_SESSION['session_lang'];
         $title = "Homepage";
         $body = "app/views/home.php";
         include "app/views/main.php";

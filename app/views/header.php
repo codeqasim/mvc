@@ -2,21 +2,39 @@
 include "app/config.php";
 include "app/functions.php";
 
-// if (!empty($_GET['url'])) {
-//    $url = explode('/', $_GET['url']);
-//    $lang = $url[0];
-//        // Set Language variable
-//     if(isset($lang) && !empty($lang)){
-//      $_SESSION['mylang'] = $lang;
-//      // session_destroy();
-//     }
+ 
+// if(!empty($_SESSION['session_lang'])) {
+//     print_r($_SESSION['session_lang']);
+//     $i18n->setForcedLang($_SESSION['session_lang']);
+//     $i18n->init();
+// }else{
+//     print_r('you dont have any session data'); 
+//     // $i18n->setForcedLang($_SESSION['session_lang']);
+//     // $i18n->init();
 // }
 
 session_start();
-echo $lang;
 
-$i18n->setForcedLang($lang);
-$i18n->init();
+// Set Language variable
+if(isset($_GET['test']) && !empty($_GET['test'])){
+ $_SESSION['ftest'] = $_GET['test'];
+
+ if(isset($_SESSION['ftest']) && $_SESSION['ftest'] != $_GET['test']){
+  echo "<script type='text/javascript'> location.reload(); </script>";
+ }
+}
+
+// Include Language file
+if(isset($_SESSION['ftest'])){
+    print_r($_SESSION['ftest']);
+    $i18n->setForcedLang($_SESSION['ftest']);
+    $i18n->init();
+}else{
+ echo "empty";
+    $i18n->setForcedLang('ar');
+    $i18n->init();
+}
+
 ?>
     
 <!DOCTYPE html>
@@ -87,3 +105,25 @@ var i18n = {
         </div>
     </nav>
 </header>
+
+            
+
+
+<form method='get' action='' id='form_lang'>
+    <select name='test' onchange='changeLang();'>
+        <?php foreach($fils_data as $item):?>
+        <?php if($_SESSION['ftest'] == $item->lang_code){?>
+        <option value='<?=$_SESSION['ftest']?>' selected><?=$item->language_name?></option>
+        <?php }else{ ?>
+        <option value='<?=$item->lang_code?>'><?=$item->language_name?></option>
+        <?php } ?>
+        <?php endforeach;?>
+    </select>
+</form>
+
+
+    <script>
+    function changeLang(){
+    document.getElementById('form_lang').submit();
+    }
+    </script>

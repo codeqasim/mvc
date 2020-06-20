@@ -58,8 +58,9 @@ class Main
 			echo ("<script>location.href='$homepage'</script>");
 		}
 
-        $lang = $url[1];
-        $currceny = $url[2];
+
+        $lang = $url[0];
+        $currceny = $url[1];
         $city = $url[3];
         $checkin = $url[4];
         $checkout = $url[5];
@@ -73,7 +74,7 @@ class Main
 			'children'=>$children,
 			'currceny_code'=>$currceny
 		);
-
+          
 	   $this->apiurl = API_ENDPOINT.'Travelhopehotels/list?appKey='.API_KEYS;
 		$curl = curl_init($this->apiurl);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);

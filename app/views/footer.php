@@ -144,11 +144,11 @@ $(document).ready(function(){
   var currceny = $('#currceny').val(); 
   var pagination = $('#pagination').val(); 
   var adults = $('#adults').val(); 
-  var child = $('#childs').val(); 
+  var child = $('#childs').val();
   var room = $('#room').val();
   var city_trims = city.split(',').slice(0, 1).join(' ').split(' ').join('-').replace('%40', '@');
-  var actionURL = language+ '/hotels/';
-  var finelURL = actionURL + currceny+'/'+city_trims+'/'+ checkin+'/'+checkout+'/'+adults+'/'+child;
+  var actionURL = language +'/'+ currceny +'/hotels/';
+  var finelURL = actionURL + city_trims+'/'+ checkin+'/'+checkout+'/'+adults+'/'+child;
   // alert(city_trims);
   window.location.href = finelURL;
 

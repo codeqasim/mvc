@@ -66,11 +66,6 @@
     // elseif ($url[0] == $lan_function) $main->index();
     /* CMS */
 
-
-
-
-
-
     elseif ($url[0] == 'home') $main->index();
     elseif ($url[0] == 'policy') $main->policy();
     elseif ($url[0] == 'faqs') $main->faqs();
@@ -81,6 +76,7 @@
 
     elseif ($url[1] == 'hotels') $main->hotel_list();
     elseif ($url[1] == 'hotel') $main->hotel_detail();
+
 
     else page404();
     }

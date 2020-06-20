@@ -75,7 +75,7 @@
     elseif ($url[0] == 'login') $main->index();
 
     elseif ($url[2] == 'hotels') $main->hotel_list();
-    elseif ($url[1] == 'hotel') $main->hotel_detail();
+    elseif ($url[2] == 'hotel') $main->hotel_detail();
 
 
     else page404();

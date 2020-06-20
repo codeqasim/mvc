@@ -86,7 +86,6 @@ class Main
 		$response = curl_exec($curl);
 		curl_close($curl);
 		$arr = json_decode($response);
-
 		if (empty($arr->response->HotelListResponse)) {
 		$listrating = [];
     	foreach ($arr->response as $list) {
@@ -132,6 +131,8 @@ class Main
 
 	}
 
+
+
 	if (empty($arr->response->HotelListResponse)) {
 			$listdata = $arr;
 			$totalhotel = count($listdata->response);
@@ -154,11 +155,11 @@ class Main
 		if (empty($_POST['id'])) {
 			$url = explode('/', $_GET['url']);
         	$currceny = $url[1];
-        	$id = $url[2];
-        	$checkin = $url[3].'/'.$url[4].'/'.$url[5];
-        	$checkout = $url[6].'/'.$url[7].'/'.$url[8];
-        	$adults = $url[9];
-        	$children = $url[10];
+        	$id = $url[3];
+        	$checkin = str_replace('-',' /',$url[5]);
+            $checkout = str_replace('-',' /',$url[6]);
+        	$adults = $url[7];
+        	$children = $url[8];
 
         	$data = array(
 			'currceny '=>$currceny,
@@ -166,6 +167,7 @@ class Main
 			'checkout'=> $checkout,
 			'hotel_id'=> $id,
 			'custom_payload'=>'{"vendor": 3}'
+
 		);
 		// echo "<pre>";
 		// print_r($data);

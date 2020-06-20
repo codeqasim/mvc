@@ -74,6 +74,61 @@ var i18n = {
 </header>
 
 
+<?PHP
+
+// Function to get the client IP address
+function get_client_ip() {
+    $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+       $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
+
+?>
+
+<?php echo $_SERVER['REMOTE_ADDR']; ?>
+
+
+<li class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
+
+        <?php
+        $dir    = 'app/lang';
+        $files = scandir($dir,1);
+        $data=array();
+        for ($i=0; $i < count($files)-2; $i++) {
+        array_push ($data,$files[$i]);
+        }
+        $fils_data = array();
+        foreach ($data as $value )
+        {
+        $string = file_get_contents("app/lang/$value");
+        array_push ($fils_data,json_decode($string));
+        }?>
+
+            <ul class="dropdown">
+            <?php $count = 0; foreach($fils_data as $item):?>
+            <form method='post' name="langformform_lang<?=$count;?>" action='' id='form_lang<?=$count;?>'>
+            <li  onclick="langformform_lang<?=$count;?>.submit();" ><a  href="#"><i class="flag <?=$item->country?>"></i> <?=$item->language_name?></a></li>
+            <input type="hidden" name="lang" value="<?=$item->lang_code?>" />
+            </form>
+            <script>function changeLang(){ document.getElementById('form_lang<?=$count;?>').submit(); }</script>
+            <?php $count++; endforeach; ?>
+            </ul>
+
+
+            </li>
 
 
 

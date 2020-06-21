@@ -71,6 +71,7 @@ $details = json_decode(file_get_contents($geo));
 //$geo_url = "http://ip-api.com/json/";
 // $geo_url = "https://api.ipdata.co/?api-key=test/";
 // $geo_url = "https://geolocation-db.com/jsonp";
+// get response http://api.ipstack.com/110.38.8.53?access_key=7f51f6157497018e41465e3d87e86f60
 define('user_city', $details->city);
 define('user_country', $details->country_name);
 define('user_ip', $details->ip);

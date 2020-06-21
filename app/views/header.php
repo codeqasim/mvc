@@ -21,6 +21,7 @@ include "app/functions.php";
 var app = {
     url:'<?=$root;?>',
     url_root:'<?=$root;?>',
+    user_ip:'<?=user_ip;?>',
     booking_decimals:0,
     thousand_separator:'.',
     decimal_separator:',',

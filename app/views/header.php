@@ -19,8 +19,7 @@ include "app/functions.php";
 
 <script>
 var app = {
-    url:'<?=$root;?>',
-    url_root:'<?=$root;?>',
+    root:'<?=$root;?>',
     user_ip:'<?=user_ip;?>',
     user_city:'<?=user_city;?>',
     user_country:'<?=user_country;?>',

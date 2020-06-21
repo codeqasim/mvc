@@ -41,8 +41,35 @@ $API_ENDPOINT = "https://www.phptravels.net/api/";
 $API_KEYS = "phptravels";
 
 /* GEO LOCATION PROVIDER */
-$geo_url = "http://ip-api.com/json/";
-$details = json_decode(file_get_contents($geo_url));
+
+
+// Function to get the client IP address
+$ip = call_user_func(function(){
+    $ipaddress = '';
+    if (getenv('HTTP_CLIENT_IP'))
+        $ipaddress = getenv('HTTP_CLIENT_IP');
+    else if(getenv('HTTP_X_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+    else if(getenv('HTTP_X_FORWARDED'))
+        $ipaddress = getenv('HTTP_X_FORWARDED');
+    else if(getenv('HTTP_FORWARDED_FOR'))
+        $ipaddress = getenv('HTTP_FORWARDED_FOR');
+    else if(getenv('HTTP_FORWARDED'))
+       $ipaddress = getenv('HTTP_FORWARDED');
+    else if(getenv('REMOTE_ADDR'))
+        $ipaddress = getenv('REMOTE_ADDR');
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+});
+
+
+
+$geo_url = "http://api.ipstack.com/";
+$geo = $geo_url.$ip."?access_key=7f51f6157497018e41465e3d87e86f60";
+// echo $geo;
+
+//$geo_url = "http://ip-api.com/json/";
 // $geo_url = "https://api.ipdata.co/?api-key=test/";
 // $geo_url = "https://geolocation-db.com/jsonp";
 

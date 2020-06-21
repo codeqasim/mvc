@@ -3,6 +3,8 @@
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
+session_start();
+
 // included libs
 // require 'lib/compress/compress.php';
 require 'lib/i18n/i18n.class.php';

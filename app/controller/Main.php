@@ -14,10 +14,6 @@ define('root', $root);
 define('HotelList', 'app/views/modules/hotels/list.php');
 define('HotelDetails', 'app/views/modules/hotels/details.php');
 
-
-
-session_start();
-
 class Main
 {
 	

@@ -64,15 +64,23 @@ $ip = call_user_func(function(){
 });
 
 
-// geo api 
+// geo api
 $geo_url = "http://api.ipstack.com/";
 $geo = $geo_url.$ip."?access_key=7f51f6157497018e41465e3d87e86f60";
 $details = json_decode(file_get_contents($geo));
 //$geo_url = "http://ip-api.com/json/";
 // $geo_url = "https://api.ipdata.co/?api-key=test/";
 // $geo_url = "https://geolocation-db.com/jsonp";
-define('city', $details->city);
-define('country', $details->country_name);
+define('user_city', $details->city);
+define('user_country', $details->country_name);
+define('user_ip', $details->ip);
+define('user_country_code', $details->country_code);
+define('user_latitude', $details->latitude);
+define('user_longitude', $details->longitude);
+define('user_calling_code', $details->location->calling_code);
+
+echo user_ip;
+echo user_calling_code;
 
 // $servername = "localhost:3307";
 // $username = "root";

@@ -7,7 +7,7 @@
                     <span class="input-label"><i class="mdi mdi-hotel"></i> City Name</span>
                     <div class="input-items">
                         <select id="city" name="city" class="form-control" required>
-                        <option value="<?=city?>"> <?=city?>, <?=country?></option>
+                        <option value="<?=user_city?>"> <?=user_city?>, <?=user_country?></option>
                         </select>
                        <!--<input autocomplete="off" type="search" placeholder="city" id="city" name="city" value="lahore" class="city"/>-->
                     </div>

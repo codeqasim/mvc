@@ -72,6 +72,7 @@ $details = json_decode(file_get_contents($geo));
 // $geo_url = "https://api.ipdata.co/?api-key=test/";
 // $geo_url = "https://geolocation-db.com/jsonp";
 // get response http://api.ipstack.com/110.38.8.53?access_key=7f51f6157497018e41465e3d87e86f60
+// locations resp https://yasen.hotellook.com/autocomplete?lang=en-US&limit=10&term=lah
 define('user_city', $details->city);
 define('user_country', $details->country_name);
 define('user_ip', $details->ip);

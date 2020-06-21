@@ -78,7 +78,7 @@ define('user_country_code', $details->country_code);
 define('user_latitude', $details->latitude);
 define('user_longitude', $details->longitude);
 define('user_calling_code', $details->location->calling_code);
-define('user_language_code', $details->location->languages->code[0]);
+define('user_language_code', $details->location->languages[1]);
 
 echo user_ip;
 echo user_calling_code;

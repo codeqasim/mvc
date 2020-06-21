@@ -44,7 +44,6 @@ $API_KEYS = "phptravels";
 
 /* GEO LOCATION PROVIDER */
 
-
 // Function to get the client IP address
 $ip = call_user_func(function(){
     $ipaddress = '';
@@ -65,7 +64,6 @@ $ip = call_user_func(function(){
     return $ipaddress;
 });
 
-
 // geo api
 $geo_url = "http://api.ipstack.com/";
 $geo = $geo_url.$ip."?access_key=7f51f6157497018e41465e3d87e86f60";
@@ -81,18 +79,10 @@ define('user_calling_code', $details->location->calling_code);
 define('user_latitude', $details->latitude);
 define('user_longitude', $details->longitude);
 
-echo user_calling_code;
-
 // $servername = "localhost:3307";
 // $username = "root";
 // $password = "";
 // $database = "app";
-
-// hotels api
-define('HOTELS_API_ENDPOINT', "https://bookingengine.co/api/");
-define('Ota', "172a7bc0-d892-11e9-ad7d-8d041c8c7592");
-define('HotelsList', HOTELS_API_ENDPOINT."hotels/search");
-define('HotelsDetail', HOTELS_API_ENDPOINT."hotels/details");
 
 // Create connection
 // $conn = new mysqli($servername, $username, $password, $database);

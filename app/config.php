@@ -80,7 +80,6 @@ define('user_longitude', $details->longitude);
 define('user_calling_code', $details->location->calling_code);
 
 echo user_calling_code;
-echo user_language_code;
 
 // $servername = "localhost:3307";
 // $username = "root";

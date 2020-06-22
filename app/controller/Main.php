@@ -132,8 +132,6 @@ class Main
 
 	}
 
-
-
 	if (empty($arr->response->HotelListResponse)) {
 			$listdata = $arr;
 			$totalhotel = count($listdata->response);
@@ -168,7 +166,7 @@ class Main
         $hotels = '
         <script>
         var $hotels = $("#hotels"),
-        handlebarsTemplate = $("#handlebars-template").html(),
+        handlebarsTemplate = $("#handlebars-hotels").html(),
         templateCompile = Handlebars.compile(handlebarsTemplate),
         data = {
         "hotels" :
@@ -177,6 +175,7 @@ class Main
         $hotels.html(templateCompile(data));
         </script>
         ';
+
 
 
         $title = "Hotels in " .$city;

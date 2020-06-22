@@ -260,11 +260,11 @@
                           <h6 class="title"><a target="_blank" href="{{link}}"><strong>{{name}}</strong></a></h6>
                           <div class="rating mb-10 mt-10">
 
-                               {{rating}}
 
-                                {{#each rating}}
-                                  <span class="icon mdi mdi-star"></span>
-                                {{/each}}
+
+                               <span class="stars star{{rating}}"></span>
+
+
 
                           </div>
                           <small class="text-muted"><strong>{{address}}</strong></small><br>

@@ -1,7 +1,7 @@
 <div class="nav c10 p0 flex hide-m mobnav animated fadeInLeft hide row-rtl">
     <div class="items-center">
         <div class="menu row-rtl">
-            <a href="<?=$root?>about"><i class="mdi mdi-home"></i> <span>About</span></a>
+            <a class="hover" href="<?=$root?>about"><i class="mdi mdi-home"></i> <span>About</span></a>
             <a href="<?=$root;?>hotels" class="active"> <i class="mdi mdi-hotel"></i> <span>Hotels</span></a>
             <a href="<?=$root;?>flights" class=""> <i class="mdi mdi-airplane"></i> <span>Flights</span></a>
             <a href="<?=$root;?>tours" class=""> <i class="mdi mdi-case"></i> <span>Tours</span></a>

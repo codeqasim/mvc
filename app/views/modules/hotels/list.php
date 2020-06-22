@@ -51,7 +51,7 @@
                 <button id="clear-filters">Clear Filter</button>
               </div>
             </div>
-            <input type="text" placeholder="Search for hotel name" id="searchlist"/>
+            <input type="text" placeholder="Search for hotel name" id="search"/>
             <div class="filter-section mt-30 pb-10">
               <div class="filter-header">
                 <h5>Price</h5>
@@ -242,7 +242,7 @@
         <script type="text/handlebars-template" id="handlebars-hotels">
         {{#hotels}}
 
-         <div class="row row-rtl s{{rating}} product-block item">
+         <div class="row row-rtl s{{rating}} product-block item hotelslist" style="position:relative !important">
             <div class="c12">
               <div class="list-wrapper">
                 <div class="row row-rtl">
@@ -488,4 +488,19 @@
   }, 1);
   });
 </script>
+
+<script>
+$(document).ready(function(){
+  $("#search").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".hotelslist").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+<style>
+.hotelslist{position:relative !importanat}
+</style>
 

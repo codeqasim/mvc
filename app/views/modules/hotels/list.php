@@ -4,13 +4,13 @@
 
 <script type="text/handlebars-template" id="handlebars-template">
 
-  {{#employees}}
+  {{#hotels}}
   <ul>
     <li><strong>{{name}}</strong><br>
-    {{title}}<br>
-    {{skills}}</li>
+    {{id}}<br>
+    {{address}}</li>
   </ul>
-  {{/employees}}
+  {{/hotels}}
 
 </script>
 

@@ -56,6 +56,23 @@
               <div class="filter-header">
                 <h5>Price</h5>
                 <br>
+
+                <div class="row">
+            <div class="c12">
+                <div class="bootstrap-slider">
+                    <span class="filter-label">Weight Range: <span class="filter-selection"></span></span>
+                    <b class="filter-min">40</b> <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight"> <b class="filter-max">150</b>
+                </div>
+            </div>
+            <div class="c12">
+                <div class="bootstrap-slider">
+                    <span class="filter-label">Height Range: <span class="filter-selection"></span> </span>
+                    <b>140</b><input id="filter-height" type="text" class="bootstrap-slider" value="" data-slider-step="1" data-filter-group="height"> <b>220</b>
+                </div>
+            </div>
+        </div>
+
+        
                 <div class="row">
                   <div class="c12">
                     <div id="slider-range"></div>
@@ -289,20 +306,7 @@
                 </div>
             </div>
         </div>
-        <div class="sliders row">
-            <div class="col-sm-4">
-                <div class="bootstrap-slider">
-                    <span class="filter-label">Weight Range: <span class="filter-selection"></span></span>
-                    <b class="filter-min">40</b> <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight"> <b class="filter-max">150</b>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="bootstrap-slider">
-                    <span class="filter-label">Height Range: <span class="filter-selection"></span> </span>
-                    <b>140</b><input id="filter-height" type="text" class="bootstrap-slider" value="" data-slider-step="1" data-filter-group="height"> <b>220</b>
-                </div>
-            </div>
-        </div>
+
         </div>
 
 
@@ -546,7 +550,7 @@ $(document).ready(function(){
 </script>
 
 <script>
-  $(".filter-item,.pager").click(function() {
+  $(".filter-section .btn").click(function() {
   $('html, body').animate({
   scrollTop: $("#listing").offset().top
   }, 1);

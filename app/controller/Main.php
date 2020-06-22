@@ -143,8 +143,11 @@ class Main
 			$totalempty = '0';
 			$cityname = $url[3];
 		}
-        echo "<script>var title = 'Hotel listing page'</script>";
+
         $arr = [];
+        if(!empty($listdata)){
+
+        ;
         foreach($listdata->response as $a){
         $arr[] = array(
         'name' =>$a->company_name,
@@ -158,10 +161,11 @@ class Main
         'link'=> root.''.$lang .'/'.$currceny.'/hotel/'.$list->id .'/'.str_replace(' ', '-', strtolower($list->company_name)) .'/'.$checkin.'/'.$checkout."/".$adults."/".$children
         );
         }
+        }
 
 
         $hotels = '
-        <script>
+        <script> 
         var $hotels = $("#hotels"),
         handlebarsTemplate = $("#handlebars-template").html(),
         templateCompile = Handlebars.compile(handlebarsTemplate),

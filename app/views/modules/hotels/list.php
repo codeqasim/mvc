@@ -13,7 +13,7 @@
       <div class="row mb-20 row-rtl">
         <div class="c10">
           <div class="left-side-info rtl-align-right">
-            <span><strong><?= $list->company_name ;?>, Cairo, Egypt</strong></span>
+            <span><strong>Lahore, Cairo, Egypt</strong></span>
             <div>
               <p><strong>1 Night </strong>( 11 Feb , 2020 - 12 Feb , 2020 )</p>
               <p>1 Traveler , 1 Room</p>
@@ -235,8 +235,12 @@
         </div>
         <div id="products">
 
-         <span class="hotels_filer" id="hotels"></span>
+         <div id="hotels">
+         <div id="hotels_filer">
+         </div>
+         </div>
 
+        <?php if (empty($listempty)) {?>
         <script type="text/handlebars-template" id="handlebars-template">
         {{#hotels}}
 
@@ -255,9 +259,13 @@
                         <div class="detail">
                           <h6 class="title"><a target="_blank" href="{{link}}"><strong>{{name}}</strong></a></h6>
                           <div class="rating mb-10 mt-10">
-                            <?php for ($x = 1; $x <= $list->rating; $x++):?>
-                            <span class="icon mdi mdi-star"></span>
-                            <?php endfor; ?>
+
+                               {{rating}}
+
+                                {{#each rating}}
+                                  <span class="icon mdi mdi-star"></span>
+                                {{/each}}
+
                           </div>
                           <small class="text-muted"><strong>{{address}}</strong></small><br>
                           <small class="text-muted">{{desc}}</small>
@@ -307,6 +315,7 @@
 
         {{/hotels}}
         </script>
+        <?php }else{echo $listempty;} ?>
 
         </div>
         <br><br><br><br><br>
@@ -322,7 +331,7 @@
   var itemSelector = ".item";
   var $stars = $('.filter-stars');
   var $price = $('.filter-price');
-  var $container = $('.hotels_filer').isotope({ itemSelector: itemSelector });
+  var $container = $('#hotels_filer').isotope({ itemSelector: itemSelector });
 
   //Ascending order
   var responsiveIsotope = [ [480, 4] , [720, 6] ];

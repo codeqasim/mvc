@@ -47,6 +47,11 @@ class Main
     function hotel_list()
 	{
 
+
+
+
+
+
 		$url = explode('/', $_GET['url']);
 		$count = count($url);
         if ($count < 8) {
@@ -140,9 +145,38 @@ class Main
 		}
          echo "<script>var title = 'Hotel listing page'</script>";
 
+
+        $data1 = '
+        <script>
+var     $placeHolder = $("#placeholder"),
+		handlebarsTemplate = $("#handlebars-template").html(),
+		templateCompile = Handlebars.compile(handlebarsTemplate),
+		data = {
+			"hotels" : [
+            '.
+            $arr = [];
+                 foreach($listdata->response as $a){
+                       $name = $a->company_name;
+                       $address = $a->address;
+                       $id = $a->id;
+                       $arr[] = array('name' =>$name,'address'=>$address,'id'=>$id);
+                 }
+                 print_r(json_encode($arr));
+
+            ']
+		}
+
+		$placeHolder.html(templateCompile(data));
+</script>
+        ';
+
+
         $title = "Hotels in " .$city;
         $body = HotelList;
         include "app/views/main.php";
+
+
+
 
 	}
 

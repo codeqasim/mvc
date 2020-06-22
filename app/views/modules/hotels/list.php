@@ -1,111 +1,28 @@
-<div class="crumb">
-  <div class="container h-100">
-    <ul>
-      <li class="breadcrumb-item"><a href="<?=root;?>">Home</a></li>
-      <li class="breadcrumb-item"><a href="<?=$lang = $url[0];;?>"><?=$lang = $url[0];;?></a></li>
-      <li class="breadcrumb-item active"><?=$city = $url[3]; ?> </li>
-    </ul>
-  </div>
-</div>
-<div class="list-page" id="listing">
-  <div class="edit-search">
-    <div class="container">
-      <div class="row mb-20 row-rtl">
-        <div class="c10">
-          <div class="left-side-info rtl-align-right">
-            <span><strong><?= $list->company_name ;?>, Cairo, Egypt</strong></span>
-            <div>
-              <p><strong>1 Night </strong>( 11 Feb , 2020 - 12 Feb , 2020 )</p>
-              <p>1 Traveler , 1 Room</p>
-            </div>
-          </div>
-        </div>
-        <div class="c2 modify-search">
-          <div class="right-side-info">
-            <label for="edit" class="btn prime-outline w100">Edit</label>
-          </div>
-        </div>
-      </div>
-      <input id="edit" type="checkbox" hidden>
-      <div class="panel">
-        <div class="search-form">
-          <?php include 'search.php';?>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container" id="wrapper">
-    <div class="row row-rtl">
-      <div class="c3">
-        <aside>
-          <section class="" id="stuff-filters">
-            <!--<button id="show-map-data" class="map-view" style="background-image:url('<?php echo $theme_url;?>assets/img/map-filter.png');">
-              <span>Map View</span>
-              </button>-->
-            <div class="filter-section">
-              <div class="filter-header">
-                <h5>Filters</h5>
-              </div>
-              <div class="flex flex-content-between items-center pb-10 row-rtl">
-                <span>Make search easier</span>
-                <button id="clear-filters">Clear Filter</button>
-              </div>
-            </div>
-            <input type="text" placeholder="Search for hotel name" id="searchlist"/>
-            <div class="filter-section mt-30 pb-10">
-              <div class="filter-header">
-                <h5>Price</h5>
-                <br>
-                <div class="row">
-                  <div class="c12">
-                    <div id="slider-range"></div>
-                  </div>
-                </div>
-                <div class="row slider-labels">
-                  <div class="c6 caption">
-                    <strong>Min:</strong> <span id="slider-range-value1"></span>
-                  </div>
-                  <div class="c6 text-right caption">
-                    <strong>Max:</strong> <span id="slider-range-value2"></span>
-                  </div>
-                </div>
-                <input type="hidden" name="min-value" value="">
-                <input type="hidden" name="max-value" value="">
-              </div>
-              <script>
-                // Set visual min and max values and also update value hidden form inputs
-                  $(document).ready(function() {
-                    $('.noUi-handle').on('click', function() {
-                      $(this).width(50);
-                    });
-                    var rangeSlider = document.getElementById('slider-range');
-                    var moneyFormat = wNumb({
-                      decimals: 0,
-                      thousand: ',',
-                      prefix: 'USD '
-                    });
-                    noUiSlider.create(rangeSlider, {
-                      start: [450, 1500],
-                      step: 1,
-                      range: {
-                        'min': [20],
-                        'max': [2000]
-                      },
-                      format: moneyFormat,
-                      connect: true
-                    });
 
-                    // Set visual min and max values and also update value hidden form inputs
-                    rangeSlider.noUiSlider.on('update', function(values, handle) {
-                      document.getElementById('slider-range-value1').innerHTML = values[0];
-                      document.getElementById('slider-range-value2').innerHTML = values[1];
-                      document.getElementsByName('min-value').value = moneyFormat.from(
-                        values[0]);
-                      document.getElementsByName('max-value').value = moneyFormat.from(
-                        values[1]);
-                    });
-                  });
-              </script>
+
+<div id="placeholder"></div>
+
+<script type="text/handlebars-template" id="handlebars-template">
+
+  {{#employees}}
+  <ul>
+    <li><strong>{{name}}</strong><br>
+    {{title}}<br>
+    {{skills}}</li>
+  </ul>
+  {{/employees}}
+
+</script>
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js'></script>
+
+<?=$data1;?>
+
+
+
+
             </div>
             <div class="filter-section star-rating mt-30 pb-10">
               <div class="filter-header">

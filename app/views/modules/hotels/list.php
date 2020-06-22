@@ -1,28 +1,111 @@
+<div class="crumb">
+  <div class="container h-100">
+    <ul>
+      <li class="breadcrumb-item"><a href="<?=root;?>">Home</a></li>
+      <li class="breadcrumb-item"><a href="<?=$lang = $url[0];;?>"><?=$lang = $url[0];;?></a></li>
+      <li class="breadcrumb-item active"><?=$city = $url[3]; ?> </li>
+    </ul>
+  </div>
+</div>
+<div class="list-page" id="listing">
+  <div class="edit-search">
+    <div class="container">
+      <div class="row mb-20 row-rtl">
+        <div class="c10">
+          <div class="left-side-info rtl-align-right">
+            <span><strong><?= $list->company_name ;?>, Cairo, Egypt</strong></span>
+            <div>
+              <p><strong>1 Night </strong>( 11 Feb , 2020 - 12 Feb , 2020 )</p>
+              <p>1 Traveler , 1 Room</p>
+            </div>
+          </div>
+        </div>
+        <div class="c2 modify-search">
+          <div class="right-side-info">
+            <label for="edit" class="btn prime-outline w100">Edit</label>
+          </div>
+        </div>
+      </div>
+      <input id="edit" type="checkbox" hidden>
+      <div class="panel">
+        <div class="search-form">
+          <?php include 'search.php';?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="wrapper">
+    <div class="row row-rtl">
+      <div class="c3">
+        <aside>
+          <section class="" id="stuff-filters">
+            <!--<button id="show-map-data" class="map-view" style="background-image:url('<?php echo $theme_url;?>assets/img/map-filter.png');">
+              <span>Map View</span>
+              </button>-->
+            <div class="filter-section">
+              <div class="filter-header">
+                <h5>Filters</h5>
+              </div>
+              <div class="flex flex-content-between items-center pb-10 row-rtl">
+                <span>Make search easier</span>
+                <button id="clear-filters">Clear Filter</button>
+              </div>
+            </div>
+            <input type="text" placeholder="Search for hotel name" id="searchlist"/>
+            <div class="filter-section mt-30 pb-10">
+              <div class="filter-header">
+                <h5>Price</h5>
+                <br>
+                <div class="row">
+                  <div class="c12">
+                    <div id="slider-range"></div>
+                  </div>
+                </div>
+                <div class="row slider-labels">
+                  <div class="c6 caption">
+                    <strong>Min:</strong> <span id="slider-range-value1"></span>
+                  </div>
+                  <div class="c6 text-right caption">
+                    <strong>Max:</strong> <span id="slider-range-value2"></span>
+                  </div>
+                </div>
+                <input type="hidden" name="min-value" value="">
+                <input type="hidden" name="max-value" value="">
+              </div>
+              <script>
+                // Set visual min and max values and also update value hidden form inputs
+                  $(document).ready(function() {
+                    $('.noUi-handle').on('click', function() {
+                      $(this).width(50);
+                    });
+                    var rangeSlider = document.getElementById('slider-range');
+                    var moneyFormat = wNumb({
+                      decimals: 0,
+                      thousand: ',',
+                      prefix: 'USD '
+                    });
+                    noUiSlider.create(rangeSlider, {
+                      start: [450, 1500],
+                      step: 1,
+                      range: {
+                        'min': [20],
+                        'max': [2000]
+                      },
+                      format: moneyFormat,
+                      connect: true
+                    });
 
-
-<div id="placeholder"></div>
-
-<script type="text/handlebars-template" id="handlebars-template">
-
-  {{#hotels}}
-  <ul>
-    <li><strong>{{name}}</strong><br>
-    {{id}}<br>
-    {{address}}</li>
-  </ul>
-  {{/hotels}}
-
-</script>
-
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js'></script>
-
-<?=$data1;?>
-
-
-
-
+                    // Set visual min and max values and also update value hidden form inputs
+                    rangeSlider.noUiSlider.on('update', function(values, handle) {
+                      document.getElementById('slider-range-value1').innerHTML = values[0];
+                      document.getElementById('slider-range-value2').innerHTML = values[1];
+                      document.getElementsByName('min-value').value = moneyFormat.from(
+                        values[0]);
+                      document.getElementsByName('max-value').value = moneyFormat.from(
+                        values[1]);
+                    });
+                  });
+              </script>
             </div>
             <div class="filter-section star-rating mt-30 pb-10">
               <div class="filter-header">
@@ -151,42 +234,33 @@
           </div>
         </div>
         <div id="products">
-          <?php if (empty($listempty)) {?>
-          <?php foreach($listdata->response as $list){?>
-          <?php $y = $list->rating; $x = (int)$y; ?>
-          <?php $p = $list->price; ?>
-          <div class="row row-rtl s<?=$x;?> p<?= $p ;?> product-block item">
+
+         <span class="hotels_filer" id="hotels"></span>
+
+        <script type="text/handlebars-template" id="handlebars-template">
+        {{#hotels}}
+
+         <div class="row row-rtl s{{rating}} product-block item">
             <div class="c12">
               <div class="list-wrapper">
                 <div class="row row-rtl">
                   <div class="c-sm-5 c3 p-10">
-                    <a href="#">
-                    <img  class="main-img lazy" data-src="<?= $list->image ;?>" />
+                    <a href="{{link}}">
+                    <img  class="main-img lazy" data-src="{{image}}" />
                     </a>
-                    <!--<div class="gallery flex-content-between hide-m">
-                      <div class="gallery_img">
-                        <img  alt="Holiday Inn Citystars" src="<?php echo $theme_url;?>assets/img/hotel.jpg">
-                      </div>
-                      <div class="gallery_img">
-                        <img  alt="Holiday Inn Citystars" src="<?php echo $theme_url;?>assets/img/hotel.jpg">
-                      </div>
-                      <div class="gallery_img">
-                        <img  alt="Holiday Inn Citystars" src="<?php echo $theme_url;?>assets/img/hotel.jpg">
-                      </div>
-                      </div>-->
                   </div>
                   <div class="c-sm-7 c9">
                     <div class="row h-100 row-rtl">
                       <div class="c7 border-right rtl-align-right">
                         <div class="detail">
-                          <h6 class="title"><a target="_blank" href="#"><strong><?=$list->company_name;?></strong></a></h6>
+                          <h6 class="title"><a target="_blank" href="{{link}}"><strong>{{name}}</strong></a></h6>
                           <div class="rating mb-10 mt-10">
                             <?php for ($x = 1; $x <= $list->rating; $x++):?>
                             <span class="icon mdi mdi-star"></span>
                             <?php endfor; ?>
                           </div>
-                          <small class="text-muted"><strong><?= $list->address ;?></strong></small><br>
-                          <small class="text-muted"><?=substr($list->description,0,150);?></small>
+                          <small class="text-muted"><strong>{{address}}</strong></small><br>
+                          <small class="text-muted">{{desc}}</small>
                         </div>
                         <!--<div class="aminities mt-10 hide-m">
                           <span>&#10070;</span>
@@ -198,7 +272,7 @@
                       <div class="c5 p-10">
                         <div class="flex flex-content-between row-rtl">
                           <div class="trust-you">
-                            <p><?= $list->rating ;?></p>
+                            <p>{{rating}}</p>
                             <div class="vrified">
                               <span>Fabulous</span>
                             </div>
@@ -215,12 +289,12 @@
                               <!--<span class="price-before">250</span>
                                 <span class="currency-before-discount">USD</span>-->
                             </span>
-                            <strong><?= $list->price ;?></strong> <span><?=$currceny?></span>
+                            <strong>{{price}}</strong> <span>{{currency}}</span>
                           </h5>
                         </div>
                         <div class="text-center mt-10">
-                          <form target="self" method="POST" action="<?=$root.''.$lang .'/'.$currceny?>/hotel/<?=$list->id ;?>/<?php echo (str_replace(' ', '-', strtolower($list->company_name))); ?>/<?=$checkin."/".$checkout."/".$adults."/".$children?>">
-                            <button class="btn prime-o hide-m w100" href="hotels/details">Details </button>
+                          <form target="self" method="POST" action="">
+                            <button class="btn prime-o hide-m w100" href="{{link}}">Details </button>
                           </form>
                         </div>
                       </div>
@@ -230,8 +304,10 @@
               </div>
             </div>
           </div>
-          <?php } ?>
-          <?php }else{echo $listempty;} ?>
+
+        {{/hotels}}
+        </script>
+
         </div>
         <br><br><br><br><br>
        <p id="loading"></p>
@@ -246,7 +322,7 @@
   var itemSelector = ".item";
   var $stars = $('.filter-stars');
   var $price = $('.filter-price');
-  var $container = $('#products').isotope({ itemSelector: itemSelector });
+  var $container = $('.hotels_filer').isotope({ itemSelector: itemSelector });
 
   //Ascending order
   var responsiveIsotope = [ [480, 4] , [720, 6] ];
@@ -404,3 +480,6 @@
   }, 1);
   });
 </script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js'></script>
+<?=$hotels;?>

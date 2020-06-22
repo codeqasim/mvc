@@ -143,27 +143,34 @@ class Main
 			$totalempty = '0';
 			$cityname = $url[3];
 		}
-         echo "<script>var title = 'Hotel listing page'</script>";
-		 $arr = [];
-		 foreach($listdata->response as $a){
-			   $name = $a->company_name;
-			   $address = $a->address;
-			   $id = $a->id;
-			   $arr[] = array('name' =>$name,'address'=>$address,'id'=>$id);
-		 }
+        echo "<script>var title = 'Hotel listing page'</script>";
+        $arr = [];
+        foreach($listdata->response as $a){
+        $arr[] = array(
+        'name' =>$a->company_name,
+        'address'=> $a->address,
+        'image'=>$a->image,
+        'rating'=>$a->rating,
+        'price'=>$a->price,
+        'currency'=>$url[1],
+        'desc'=>substr($a->description,0,150),
+        'id'=>$a->id,
+        'link'=> root.''.$lang .'/'.$currceny.'/hotel/'.$list->id .'/'.str_replace(' ', '-', strtolower($list->company_name)) .'/'.$checkin.'/'.$checkout."/".$adults."/".$children
+        );
+        }
 
-        $data1 = '
+
+        $hotels = '
         <script>
-var     $placeHolder = $("#placeholder"),
-		handlebarsTemplate = $("#handlebars-template").html(),
-		templateCompile = Handlebars.compile(handlebarsTemplate),
-		data = {
-			"hotels" :
-            '.json_encode($arr).'
-		}
-
-		$placeHolder.html(templateCompile(data));
-</script>
+        var $hotels = $("#hotels"),
+        handlebarsTemplate = $("#handlebars-template").html(),
+        templateCompile = Handlebars.compile(handlebarsTemplate),
+        data = {
+        "hotels" :
+        '.json_encode($arr).'
+        }
+        $hotels.html(templateCompile(data));
+        </script>
         ';
 
 

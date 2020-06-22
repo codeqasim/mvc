@@ -158,6 +158,7 @@ class Main
         'currency'=>$url[1],
         'desc'=>substr($a->description,0,150),
         'id'=>$a->id,
+        'stars'=>(int)$a->rating,
         'link'=> root.''.$lang .'/'.$currceny.'/hotel/'.$list->id .'/'.str_replace(' ', '-', strtolower($list->company_name)) .'/'.$checkin.'/'.$checkout."/".$adults."/".$children
         );
         }
@@ -165,7 +166,7 @@ class Main
 
 
         $hotels = '
-        <script> 
+        <script>
         var $hotels = $("#hotels"),
         handlebarsTemplate = $("#handlebars-template").html(),
         templateCompile = Handlebars.compile(handlebarsTemplate),

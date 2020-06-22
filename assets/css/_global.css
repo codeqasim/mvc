@@ -35,17 +35,12 @@ ul{list-style-type: none; }
 [hide]{display:none}
 ::-moz-selection { background: transparent; } ::selection { background: transparent; }
 
-
 .star5:before{content: '\f27d \f27d \f27d \f27d \f27d';}
 .star4:before{content: '\f27d \f27d \f27d \f27d';}
 .star3:before{content: '\f27d \f27d \f27d';}
 .star2:before{content: '\f27d \f27d';}
 .star1:before{content: '\f27d';}
-.stars{
-color: rgb(255, 149, 0);
-font-size: 18px;
-display: inline-block; font: normal normal normal 14px/1 'Material Icons'; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-}
+.stars{ letter-spacing: 2px; color: rgb(255, 149, 0);font-size: 18px; display: inline-block; font: normal normal normal 14px/1 'Material Icons'; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .animate{animation-fill-mode:both;animation-duration:.5s}
 .animate-reverse{animation-direction:reverse}

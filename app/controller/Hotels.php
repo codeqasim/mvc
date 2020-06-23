@@ -21,7 +21,6 @@ class Hotels
 
 	function hotel_list()
 	{
-
 		$url = explode('/', $_GET['url']);
 		$count = count($url);
 		// echo $count;
@@ -131,7 +130,9 @@ class Hotels
 		}
          echo "<script>var title = 'Hotel listing page'</script>";
 
-        $title = "Hotels in " .$city;
+        $meta_title = "Hotels in " .$city;
+        $title = T::hotels_hotels;
+
         $body = HotelList;
         include "app/views/main.php";
 	}

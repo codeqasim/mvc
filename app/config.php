@@ -3,23 +3,6 @@
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
-// included libs
-// require 'lib/compress/compress.php';
-require 'lib/i18n/i18n.class.php';
-$i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
-
-// Set Language variable
-if(isset($_SESSION['session_lang'])){
-    // unset($_SESSION['session_lang']);
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
-}else{
-    session_start();
-    $_SESSION['session_lang'] = 'en';
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
-}
-
 // function dd
 function dd($data) {
 echo "<pre>";

@@ -9,6 +9,13 @@ include "app/functions.php";
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+<meta property="og:title" content="<?=$meta_title;?>"/>
+<meta property="og:site_name" content="<?=$meta_appname;?>"/>
+<meta property="og:description" content="<?=$meta_desc;?>"/>
+<meta property="og:image" content="<?=$meta_img;?>"/>
+<meta property="og:url" content="<?=$meta_url;?>"/>
+<meta property="og:publisher" content="<?=$author;?>"/>
+
 <title><?=$title;?></title>
 <link rel="stylesheet" href="<?=$root.css;?>_style.css" />
 <!-- <link rel='stylesheet' href='<?=$root;?>assets/css/_rtl.css'/> -->

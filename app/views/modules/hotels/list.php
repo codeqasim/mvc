@@ -61,18 +61,23 @@
             <div class="c12">
                 <div class="bootstrap-slider">
                     <span class="filter-label">Weight Range: <span class="filter-selection"></span></span>
-                    <b class="filter-min">40</b> <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight"> <b class="filter-max">150</b>
+                    <b class="filter-min">40</b>
+                    <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight">
+                    <b class="filter-max">150</b>
                 </div>
             </div>
             <div class="c12">
                 <div class="bootstrap-slider">
                     <span class="filter-label">Height Range: <span class="filter-selection"></span> </span>
-                    <b>140</b><input id="filter-height" type="text" class="bootstrap-slider" value="" data-slider-step="1" data-filter-group="height"> <b>220</b>
+                    <b>140</b>
+                    <input id="filter-height" type="text" class="bootstrap-slider" value="" data-slider-step="1" data-filter-group="height">
+                    <b>220</b>
                 </div>
             </div>
         </div>
 
-        
+        <br><br><br>
+
                 <div class="row">
                   <div class="c12">
                     <div id="slider-range"></div>
@@ -126,12 +131,12 @@
             </div>
             <div class="filter-section star-rating mt-30 pb-10">
               <div class="filter-header">
-                <h5>Star Rating</h5>
+                <h4>Star Rating</h4>
               </div>
               <!--<?php foreach($listdata->response as $list){?>
                 <label><input type="checkbox" value="<?= $list->rating ;?>" class="filter-item" /> <?= $list->rating ;?></label>&nbsp;&nbsp;
                 <?php } ?>-->
-              <div class="mt-30 row-rtl">
+              <div class="mt-10 row-rtl">
 
                 <div class="filters filter-section">
 
@@ -145,7 +150,7 @@
                 <label class="btn" for="5" data-filter=".s5"> <input type="radio" id="5" name="stars"/>
                 <span class="stars star5"></span>
                 <strong>
-                <?php if (empty($listempty)) { echo $five_stars; }else{echo'0';} ?>
+                <?php echo $five_stars; ?>
                 </strong>
                 </label>
 
@@ -180,7 +185,6 @@
                 <?php if (empty($listempty)) { echo $one_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
-
 
                 <div class="clear"></div>
               </div>
@@ -273,41 +277,7 @@
 
 
          <div class="filters filter-section">
-        <div class="row">
-
-
-            <div class="col-sm-4">
-                <span class="filter-label">price:</span>
-                <div class="btn-group" role="group" data-filter-group="size">
-                    <span class="btn btn-sm btn-default btn-filter is-checked" data-filter="">Any</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".small">Small</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".wide">Wide</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".big">Big</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".tall">Tall</span>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <span class="filter-label">Size:</span>
-                <div class="btn-group" role="group" data-filter-group="size">
-                    <span class="btn btn-sm btn-default btn-filter is-checked" data-filter="">Any</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".small">Small</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".wide">Wide</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".big">Big</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".tall">Tall</span>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <span class="filter-label">Shape:</span>
-                <div class="btn-group" role="group" data-filter-group="shape">
-                    <span class="btn btn-sm btn-default btn-filter is-checked" data-filter="">Any</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".round">Round</span>
-                    <span class="btn btn-sm btn-default btn-filter" data-filter=".square">Square</span>
-                </div>
-            </div>
-        </div>
-
-        </div>
+          </div>
 
 
 

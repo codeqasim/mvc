@@ -128,11 +128,11 @@ class Main
 		// $arrs = json_encode($listrating);
 		// $arrsdecode = json_decode($arrs);
 		// $obj_merged = (object) array_merge(
-  //       (array) $arrsdecode, (array) $arr);
-
+        // (array) $arrsdecode, (array) $arr);
 	}
 
-	if (empty($arr->response->HotelListResponse)) {
+
+      	if (empty($arr->response->HotelListResponse)) {
 			$listdata = $arr;
 			$totalhotel = count($listdata->response);
 			$cityname = $url[3];

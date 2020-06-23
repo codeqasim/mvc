@@ -1,4 +1,10 @@
 <?php
+
+require  "vendor/autoload.php";
+$whoops = new Whoops\Run();
+$whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
+$whoops->register();
+
 session_start();
 define('layout', "app/views/main.php");
 define('views', "app/views/");
@@ -63,8 +69,8 @@ class Main
 
     function login()
     {
-        $title = "login";
-        $meta_title = "login";
+        $title = "Login";
+        $meta_title = "Login";
         $meta_appname = "Booknow";
         $meta_desc = "";
         $meta_img = "";

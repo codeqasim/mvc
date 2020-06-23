@@ -7,6 +7,7 @@
     </ul>
   </div>
 </div>
+
 <div class="list-page" id="listing">
   <div class="edit-search">
     <div class="container">
@@ -39,9 +40,6 @@
       <div class="c3">
         <aside>
           <section class="" id="stuff-filters">
-            <!--<button id="show-map-data" class="map-view" style="background-image:url('<?php echo $theme_url;?>assets/img/map-filter.png');">
-              <span>Map View</span>
-              </button>-->
             <div class="filter-section">
               <div class="filter-header">
                 <h5>Filters</h5>

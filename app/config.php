@@ -3,30 +3,20 @@
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 
-session_start();
-
 // included libs
 // require 'lib/compress/compress.php';
 require 'lib/i18n/i18n.class.php';
 $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
 
 // Set Language variable
-if(isset($_POST['lang']) && !empty($_POST['lang'])){
- $_SESSION['session_lang'] = $_POST['lang'];
-
- if(isset($_SESSION['session_lang']) && $_SESSION['session_lang'] != $_POST['lang']){
-  echo "<script type='text/javascript'> location.reload(); </script>";
- }
-}
-
-// Include Language file
 if(isset($_SESSION['session_lang'])){
- //   print_r($_SESSION['session_lang']);
+    // unset($_SESSION['session_lang']);
     $i18n->setForcedLang($_SESSION['session_lang']);
     $i18n->init();
 }else{
+    session_start();
     $_SESSION['session_lang'] = 'en';
-    $i18n->setForcedLang('en');
+    $i18n->setForcedLang($_SESSION['session_lang']);
     $i18n->init();
 }
 

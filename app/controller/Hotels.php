@@ -1,89 +1,40 @@
 <?php
-session_start();
-define('layout', "app/views/main.php");
-define('views', "app/views/");
-define('breadcrumb', "app/views/partcials/breadcrumb.php");
-
-define('HotelsViews', "app/views/modules/hotels/");
-define('css', "assets/css/");
-define('js', "assets/js/");
-
 define('API_ENDPOINT', "https://www.phptravels.net/api/");
 define('API_KEYS', "phptravels");
 define('root', $root);
 define('HotelList', 'app/views/modules/hotels/list.php');
 define('HotelDetails', 'app/views/modules/hotels/details.php');
 
-class Main
+class Hotels
 {
-	
+
 	function __construct()
 	{
-		
+
 	}
 
-	function index()
+    function index()
 	{
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        if($_SESSION['session_lang'] == 'assets')
-        {$_SESSION['session_lang'] = 'en';}
-        $title = "Homepage";
-        $body = views."home.php";
-        include layout;
-	}  
+		$title = 'Search Hotels';
+		echo "Hotels Listing Page";
+	}
 
-    function lang_session()
-    {
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        $lang_val = $base_explode[2];
-        $test = 0;
-        if(!empty($_SESSION['session_lang']) && $_SESSION['session_lang'] == $lang_val)
-        {
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        echo '<script>window.location.href = "'.$base_url.'";</script>';
-
-        }elseif(isset($_POST['test']))
-        {
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        $lang_val = $base_explode[2];
-        $_SESSION['session_lang'] = $lang_val;
-        $test = $_POST['test'];
-        echo '<script>window.location.href = "'.$test.'";</script>';
-        }else
-        {
-        $test = $_POST['test'];
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        $lang_val = $base_explode[2];
-        $_SESSION['session_lang'] = $lang_val;
-        echo '<script>window.location.href = "'.$test.'";</script>';
-    }
-}
-
-    function about()
-    {
-        $title = "About Us";
-        $body = breadcrumb;
-        $bod = views."modules/cms/about.php";
-        include layout;
-    }
-
-    function hotel_list()
+	function hotel_list()
 	{
 
-        $url = explode('/', $_GET['url']);
+		$url = explode('/', $_GET['url']);
 		$count = count($url);
-        if ($count < 8) {
-			$homepage=root;
-			echo ("<script>location.href='$homepage'</script>");
-		}
+		// echo $count;
+		// exit();
+  //       if ($count < 8) {
+		// 	$homepage=root;
+		// 	echo ("<script>location.href='$homepage'</script>");
+		// }
 
-
-        $lang = $url[0];
-        $currceny = $url[1];
+		// print_r($url);
+		// exit();
+        $lang = $url[1];
+        $currceny = $url[2];
         $city = $url[3];
         $checkin = $url[4];
         $checkout = $url[5];
@@ -97,18 +48,33 @@ class Main
 			'children'=>$children,
 			'currceny_code'=>$currceny
 		);
-          
+
+		// print_r($data);
+		// exit();
+
+	// kvstore API url
+
 	   $this->apiurl = API_ENDPOINT.'Travelhopehotels/list?appKey='.API_KEYS;
+
+		// Initializes a new cURL session
 		$curl = curl_init($this->apiurl);
+		// Set the CURLOPT_RETURNTRANSFER option to true
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		// Set the CURLOPT_POST option to true for POST request
 		curl_setopt($curl, CURLOPT_POST, true);
+		// Set the request data as JSON using json_encode function
 		curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
+		// Set custom headers for RapidAPI Auth and Content-Type header
 		curl_setopt($curl, CURLOPT_HTTPHEADER, [
 		  'Content-Type: application/json'
 		]);
+		// Execute cURL request with all previous settings
 		$response = curl_exec($curl);
+		// Close cURL session
 		curl_close($curl);
+		// echo $response . PHP_EOL
 		$arr = json_decode($response);
+
 		if (empty($arr->response->HotelListResponse)) {
 		$listrating = [];
     	foreach ($arr->response as $list) {
@@ -150,11 +116,11 @@ class Main
 		// $arrs = json_encode($listrating);
 		// $arrsdecode = json_decode($arrs);
 		// $obj_merged = (object) array_merge(
-        // (array) $arrsdecode, (array) $arr);
+  //       (array) $arrsdecode, (array) $arr);
+
 	}
 
-
-      	if (empty($arr->response->HotelListResponse)) {
+	if (empty($arr->response->HotelListResponse)) {
 			$listdata = $arr;
 			$totalhotel = count($listdata->response);
 			$cityname = $url[3];
@@ -163,62 +129,24 @@ class Main
 			$totalempty = '0';
 			$cityname = $url[3];
 		}
-
-        $arr = [];
-        if(!empty($listdata)){
-
-        ;
-        foreach($listdata->response as $a){
-        $arr[] = array(
-        'name' =>$a->company_name,
-        'address'=> $a->address,
-        'image'=>$a->image,
-        'rating'=>$a->rating,
-        'price'=>$a->price,
-        'currency'=>$url[1],
-        'desc'=>substr($a->description,0,150),
-        'id'=>$a->id,
-        'stars'=>(int)$a->rating,
-        'link'=> root.''.$lang .'/'.$currceny.'/hotel/'.$list->id .'/'.str_replace(' ', '-', strtolower($list->company_name)) .'/'.$checkin.'/'.$checkout."/".$adults."/".$children
-        );
-        }
-        }
-
-
-        $hotels = '
-        <script>
-        var $hotels = $("#hotels"),
-        handlebarsTemplate = $("#handlebars-hotels").html(),
-        templateCompile = Handlebars.compile(handlebarsTemplate),
-        data = {
-        "hotels" :
-        '.json_encode($arr).'
-        }
-        $hotels.html(templateCompile(data));
-        </script>
-        ';
-
-
+         echo "<script>var title = 'Hotel listing page'</script>";
 
         $title = "Hotels in " .$city;
         $body = HotelList;
         include "app/views/main.php";
-
-
-
-
 	}
 
-    function hotel_detail(){
+	function hotel_detail(){
 
 		if (empty($_POST['id'])) {
 			$url = explode('/', $_GET['url']);
-        	$currceny = $url[1];
+        	$lang = $url[1];
+        	$currceny = $url[2];
         	$id = $url[3];
-        	$checkin = str_replace('-',' /',$url[5]);
-            $checkout = str_replace('-',' /',$url[6]);
-        	$adults = $url[7];
-        	$children = $url[8];
+        	$checkin = $url[5].'/'.$url[6].'/'.$url[7];
+        	$checkout = $url[8].'/'.$url[9].'/'.$url[10];
+        	$adults = $url[11];
+        	$children = $url[12];
 
         	$data = array(
 			'currceny '=>$currceny,
@@ -226,7 +154,6 @@ class Main
 			'checkout'=> $checkout,
 			'hotel_id'=> $id,
 			'custom_payload'=>'{"vendor": 3}'
-
 		);
 		// echo "<pre>";
 		// print_r($data);
@@ -281,6 +208,6 @@ class Main
         $body = HotelDetails;
         include "app/views/main.php";
 	}
-
-
 }
+
+?>

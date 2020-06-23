@@ -1,3 +1,21 @@
+<?php
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+    $link = "https";
+else
+    $link = "http";
+
+// Here append the common URL characters.
+$link .= "://";
+ 
+// Append the host(domain name, ip) to the URL.
+$link .= $_SERVER['HTTP_HOST'];
+
+// Append the requested resource location to the URL
+$link .= $_SERVER['REQUEST_URI'];
+
+$base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+$base_explode = explode('/', $base_url);
+?>
 <div class="nav c10 p0 flex hide-m mobnav animated fadeInLeft hide row-rtl">
     <div class="items-center">
         <div class="menu row-rtl">
@@ -23,10 +41,13 @@
             </ul>
 
             </li>
-            <li class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
-
+            <li class="dropdown_show">
+                <form method="post" action="<?=$root;?>en/">
+                    <input type="hidden" name="test" value="<?=str_replace($base_explode[2],'en',$link)?>">
+                    <button  class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></button>
+                </form>
             <?php
-            $dir    = 'app/lang';
+            $dir   = 'app/lang';
             $files = scandir($dir,1); 
             $data=array();
             for ($i=0; $i < count($files)-2; $i++) { 
@@ -38,13 +59,19 @@
               $string = file_get_contents("app/lang/$value");
               array_push ($fils_data,json_decode($string));
             }?>
-
-            <!--<ul class="dropdown">
-            <?php foreach($fils_data as $item):?>
-            <li><a href="<?=$root;?><?=$item->lang_code?>"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></a></li>
+            
+            <ul class="dropdown">
+            <?php
+            foreach($fils_data as $item):?>
+            <li>
+                <form method="post" action="<?=$root ."".$item->lang_code;?>/">
+                    <input type="hidden" name="test" value="<?=str_replace($base_explode[2],$item->lang_code,$link)?>">
+                    <input type="hidden" name="testss" value="<?=$base_explode[2]?>">
+                    <button  class="languages"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></button>
+                </form>
+                </li>
             <?php endforeach; ?>
-            </ul>-->
-
+            </ul>
             </li>
             <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=T::login; ?></strong></a></li>
         </ul>

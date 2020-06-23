@@ -60,19 +60,17 @@
 
 
     /* routes */
-    if     ($url[0] == 'search') $hotels->search();
+    if($url[0] <> $_SESSION['session_lang']) $main->lang_session();
     elseif ($url[0] == 'flights') $flights->index();
     // elseif ($url[0] == $lan_function) $main->index();
     /* CMS */
-
-    elseif ($url[0] == 'home') $main->index();
+    elseif($url[0] == 'search') $hotels->search();
     elseif ($url[0] == 'policy') $main->policy();
     elseif ($url[0] == 'faqs') $main->faqs();
     elseif ($url[0] == 'careers') $main->careers();
     elseif ($url[0] == 'contact') $main->contact();
     elseif ($url[0] == 'about') $main->about();
     elseif ($url[0] == 'login') $main->index();
-
     elseif ($url[2] == 'hotels') $main->hotel_list();
     elseif ($url[2] == 'hotel') $main->hotel_detail();
 

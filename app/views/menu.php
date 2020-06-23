@@ -1,7 +1,7 @@
 <div class="nav c10 p0 flex hide-m mobnav animated fadeInLeft hide row-rtl">
     <div class="items-center">
         <div class="menu row-rtl">
-            <a class="hover" href="<?=$root?>about"><i class="mdi mdi-home"></i> <span>About</span></a>
+            <a href="<?=$root?>"><i class="mdi mdi-home"></i> <span>Home</span></a>
             <a href="<?=$root;?>hotels" class="active"> <i class="mdi mdi-hotel"></i> <span>Hotels</span></a>
             <a href="<?=$root;?>flights" class=""> <i class="mdi mdi-airplane"></i> <span>Flights</span></a>
             <a href="<?=$root;?>tours" class=""> <i class="mdi mdi-case"></i> <span>Tours</span></a>
@@ -9,10 +9,6 @@
             <a href="<?=$root;?>cars" class=""> <i class="mdi mdi-car"></i> <span>Cars</span></a>
         </div>
     </div>
-
-
-
-
 
     <div class="nav-right">
         <ul>
@@ -25,8 +21,6 @@
                 <li><a href="<?=$root;?>"><i class="flag gb"></i> <strong>POUND</strong> British Pound</a></li>
                 <li><a href="<?=$root;?>"><i class="flag in"></i> <strong>INR</strong> Indian Rupees</a></li>
             </ul>
-
-
 
             </li>
             <li class="dropdown_show"><a href="<?=$root;?>" class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></a>
@@ -50,9 +44,6 @@
             <li><a href="<?=$root;?><?=$item->lang_code?>"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></a></li>
             <?php endforeach; ?>
             </ul>-->
-
-            
-
 
             </li>
             <li><a href="<?=$root;?>login"><i class="icon mdi mdi-face"></i> <strong><?=T::login; ?></strong></a></li>

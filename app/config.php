@@ -60,7 +60,7 @@ $ip = call_user_func(function(){
     else if(getenv('REMOTE_ADDR'))
         $ipaddress = getenv('REMOTE_ADDR');
     else
-        $ipaddress = 'UNKNOWN';
+        $ipaddress = 'lahore';
     return $ipaddress;
 });
 

@@ -56,31 +56,27 @@
               <div class="filter-header">
                 <h4>Price</h4>
                 <div class="row mt-10">
-            <div class="c12">
-
-               <div class="bootstrap-slider">
-                    <div class="filter-label text-center" style="margin-top:-32px;margin-bottom:30px"><span class="filter-selection"></span></div>
-                    <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight">
-                    <div class="clear"></div>
-                    <div class="row mt-10 slider_values">
-                    <div class="c6 text-left"><b>Min</b> USD 50</div>
-                    <div class="c6 text-right"><b>Max</b> USD 100</div>
+                  <div class="c12">
+                    <div class="bootstrap-slider">
+                      <div class="filter-label text-center" style="margin-top:-32px;margin-bottom:30px"><span class="filter-selection"></span></div>
+                      <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight">
+                      <div class="clear"></div>
+                      <div class="row mt-10 slider_values">
+                        <div class="c6 text-left"><b>Min</b> USD 50</div>
+                        <div class="c6 text-right"><b>Max</b> USD 100</div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="c12" style="display:none">
+                    <div class="bootstrap-slider">
+                      <span class="filter-label">Height Range: <span class="filter-selection"></span> </span>
+                      <b>140</b>
+                      <input id="filter-height" type="text" class="bootstrap-slider" value="" data-slider-step="1" data-filter-group="height">
+                      <b>220</b>
+                    </div>
+                  </div>
                 </div>
-
-            </div>
-            <div class="c12" style="display:none">
-                <div class="bootstrap-slider">
-                    <span class="filter-label">Height Range: <span class="filter-selection"></span> </span>
-                    <b>140</b>
-                    <input id="filter-height" type="text" class="bootstrap-slider" value="" data-slider-step="1" data-filter-group="height">
-                    <b>220</b>
-                </div>
-            </div>
-        </div>
-
-        </div>
-
+              </div>
             </div>
             <div class="filter-section star-rating mt-30 pb-10">
               <div class="filter-header">
@@ -90,53 +86,50 @@
                 <label><input type="checkbox" value="<?= $list->rating ;?>" class="filter-item" /> <?= $list->rating ;?></label>&nbsp;&nbsp;
                 <?php } ?>-->
               <div class="mt-10 row-rtl">
-
                 <div class="filters filter-section">
-
-                <label class="btn" for="0" data-filter=""> <input type="radio" id="0" name="stars"/>
-                All
-                <strong>
-                <?php  if (!empty($totalhotel)){echo $totalhotel; }else{echo $totalempty;}?>
-                </strong>
-                </label>
-                <label class="btn" for="5" data-filter=".s5"> <input type="radio" id="5" name="stars"/>
-                <span class="stars star5"></span>
-                <strong>
-                <?php if (empty($listempty)) { echo $five_stars; }else{echo'0';} ?>
-                </strong>
-                </label>
-                <div class="clear"></div>
-                <label class="btn" for="4" data-filter=".s4"> <input type="radio" id="4" name="stars"/>
-                <span class="stars star4"></span>
-                <strong>
-                <?php if (empty($listempty)) { echo $four_stars; }else{echo'0';} ?>
-                </strong>
-                </label>
-                <div class="clear"></div>
-                <label class="btn" for="3" data-filter=".s3"> <input type="radio" id="3" name="stars"/>
-                <span class="stars star3"></span>
-                <strong>
-                <?php if (empty($listempty)) { echo $three_stars; }else{echo'0';} ?>
-                </strong>
-                </label>
-                <div class="clear"></div>
-                <label class="btn" for="2" data-filter=".s2"> <input type="radio" id="2" name="stars"/>
-                <span class="stars star2"></span>
-                <strong>
-                <?php if (empty($listempty)) { echo $two_stars; }else{echo'0';} ?>
-                </strong>
-                </label>
-                <div class="clear"></div>
-                <label class="btn" for="1" data-filter=".s1"> <input type="radio" id="1" name="stars"/>
-                <span class="stars star1"></span>
-                <strong>
-                <?php if (empty($listempty)) { echo $one_stars; }else{echo'0';} ?>
-                </strong>
-                </label>
-                <div class="clear"></div>
+                  <label class="btn" for="0" data-filter=""> <input type="radio" id="0" name="stars"/>
+                  All
+                  <strong>
+                  <?php  if (!empty($totalhotel)){echo $totalhotel; }else{echo $totalempty;}?>
+                  </strong>
+                  </label>
+                  <label class="btn" for="5" data-filter=".s5"> <input type="radio" id="5" name="stars"/>
+                  <span class="stars star5"></span>
+                  <strong>
+                  <?php if (empty($listempty)) { echo $five_stars; }else{echo'0';} ?>
+                  </strong>
+                  </label>
+                  <div class="clear"></div>
+                  <label class="btn" for="4" data-filter=".s4"> <input type="radio" id="4" name="stars"/>
+                  <span class="stars star4"></span>
+                  <strong>
+                  <?php if (empty($listempty)) { echo $four_stars; }else{echo'0';} ?>
+                  </strong>
+                  </label>
+                  <div class="clear"></div>
+                  <label class="btn" for="3" data-filter=".s3"> <input type="radio" id="3" name="stars"/>
+                  <span class="stars star3"></span>
+                  <strong>
+                  <?php if (empty($listempty)) { echo $three_stars; }else{echo'0';} ?>
+                  </strong>
+                  </label>
+                  <div class="clear"></div>
+                  <label class="btn" for="2" data-filter=".s2"> <input type="radio" id="2" name="stars"/>
+                  <span class="stars star2"></span>
+                  <strong>
+                  <?php if (empty($listempty)) { echo $two_stars; }else{echo'0';} ?>
+                  </strong>
+                  </label>
+                  <div class="clear"></div>
+                  <label class="btn" for="1" data-filter=".s1"> <input type="radio" id="1" name="stars"/>
+                  <span class="stars star1"></span>
+                  <strong>
+                  <?php if (empty($listempty)) { echo $one_stars; }else{echo'0';} ?>
+                  </strong>
+                  </label>
+                  <div class="clear"></div>
+                </div>
               </div>
-              </div>
-
             </div>
             <div class="clear"></div>
             <div class="filter-section chain-hotel pb-10">
@@ -220,106 +213,84 @@
           </div>
         </div>
         <div id="products">
-
-
-
-         <div class="filters filter-section">
+          <div class="filters filter-section">
           </div>
+          <div id="hotels"></div>
+          <?php if (empty($listempty)) {?>
+          <script type="text/handlebars-template" id="handlebars-hotels">
+            {{#hotels}}
 
-
-
-
-
-         <div id="hotels"></div>
-
-        <?php if (empty($listempty)) {?>
-        <script type="text/handlebars-template" id="handlebars-hotels">
-        {{#hotels}}
-
-         <div class="row row-rtl s{{rating}} product-block item hotelslist {{price}} small round red" data-height="100" data-weight="{{price}}">
-            <div class="c12">
-              <div class="list-wrapper">
-                <div class="row row-rtl">
-                  <div class="c-sm-5 c3 p-10">
-                    <a href="{{link}}">
-                    <img  class="main-img lazy" data-src="{{image}}" />
-                    </a>
-                  </div>
-                  <div class="c-sm-7 c9">
-                    <div class="row h-100 row-rtl">
-                      <div class="c7 border-right rtl-align-right">
-                        <div class="detail">
-                          <h6 class="title"><a href="{{link}}"><strong>{{name}}</strong></a></h6>
-                          <div class="rating mb-10 mt-10">
-                          <span class="stars star{{stars}}"></span>
-                          </div>
-                          <small class="text-muted"><strong>{{address}}</strong></small><br>
-                          <small class="text-muted">{{desc}}</small>
-                        </div>
-                        <!--<div class="aminities mt-10 hide-m">
-                          <span>&#10070;</span>
-                          <span>&#10070;</span>
-                          <span>&#10070;</span>
-                          <span>&#10070;</span>
-                          </div>-->
+             <div class="row row-rtl s{{rating}} product-block item hotelslist {{price}} small round red" data-height="100" data-weight="{{price}}">
+                <div class="c12">
+                  <div class="list-wrapper">
+                    <div class="row row-rtl">
+                      <div class="c-sm-5 c3 p-10">
+                        <a href="{{link}}">
+                        <img  class="main-img lazy" data-src="{{image}}" />
+                        </a>
                       </div>
-                      <div class="c5 p-10">
-                        <div class="flex flex-content-between row-rtl">
-                          <div class="trust-you">
-                            <p>{{rating}}</p>
-                            <div class="vrified">
-                              <span>Fabulous</span>
+                      <div class="c-sm-7 c9">
+                        <div class="row h-100 row-rtl">
+                          <div class="c7 border-right rtl-align-right">
+                            <div class="detail">
+                              <h6 class="title"><a href="{{link}}"><strong>{{name}}</strong></a></h6>
+                              <div class="rating mb-10 mt-10">
+                              <span class="stars star{{stars}}"></span>
+                              </div>
+                              <small class="text-muted"><strong>{{address}}</strong></small><br>
+                              <small class="text-muted">{{desc}}</small>
+                            </div>
+                            <!--<div class="aminities mt-10 hide-m">
+                              <span>&#10070;</span>
+                              <span>&#10070;</span>
+                              <span>&#10070;</span>
+                              <span>&#10070;</span>
+                              </div>-->
+                          </div>
+                          <div class="c5 p-10">
+                            <div class="flex flex-content-between row-rtl">
+                              <div class="trust-you">
+                                <p>{{rating}}</p>
+                                <div class="vrified">
+                                  <span>Fabulous</span>
+                                </div>
+                              </div>
+                              <div class="social_share social-containerer">
+                                <span class="share icon-share hide-m">&#9737;</span>
+                              </div>
+                            </div>
+                            <span class="discount-precentage">Save 10 %</span>
+                            <div class="total-price">
+                              <span class="title hide-m">Total price for 1 <span>nights</span></span>
+                              <h5 class="total-price-value">
+                                <span class="total-price-value-before-discount">
+                                  <!--<span class="price-before">250</span>
+                                    <span class="currency-before-discount">USD</span>-->
+                                </span>
+                                <strong>{{price}}</strong> <span>{{currency}}</span>
+                              </h5>
+                            </div>
+                            <div class="text-center mt-10">
+                             <a class="btn prime-o hide-m w100" href="{{link}}">Details</a>
                             </div>
                           </div>
-                          <div class="social_share social-containerer">
-                            <span class="share icon-share hide-m">&#9737;</span>
-                          </div>
-                        </div>
-                        <span class="discount-precentage">Save 10 %</span>
-                        <div class="total-price">
-                          <span class="title hide-m">Total price for 1 <span>nights</span></span>
-                          <h5 class="total-price-value">
-                            <span class="total-price-value-before-discount">
-                              <!--<span class="price-before">250</span>
-                                <span class="currency-before-discount">USD</span>-->
-                            </span>
-                            <strong>{{price}}</strong> <span>{{currency}}</span>
-                          </h5>
-                        </div>
-                        <div class="text-center mt-10">
-                         <a class="btn prime-o hide-m w100" href="{{link}}">Details</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-        {{/hotels}}
-        </script>
-        <?php }else{echo $listempty;} ?>
-
+            {{/hotels}}
+          </script>
+          <?php }else{echo $listempty;} ?>
         </div>
         <br><br><br><br><br>
-       <p id="loading"></p>
+        <p id="loading"></p>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
 
@@ -356,12 +327,10 @@ $(document).ready( function() {
     }
   });
 
-
   // Initialise Sliders
   // Set min/max range on sliders as well as default values
   var $heightSlider = $('#filter-height').slider({ tooltip_split: true, min: 130,  max: 220, range: true, value: [150, 180] });
   var $weightSlider = $('#filter-weight').slider({ tooltip_split: true, min: 40,  max: 150, range: true, value: [50, 90] });
-
 
   function updateRangeSlider(slider, slideEvt) {
     console.log('Current slider:' + slider);
@@ -400,7 +369,6 @@ $(document).ready( function() {
     updateRangeSlider($this, slideEvt);
   });
 
-
   // Look inside element with .filters class for any clicks on elements with .btn
   $('.filters').on( 'click', '.btn', function() {
     var $this = $(this);
@@ -416,7 +384,6 @@ $(document).ready( function() {
     // Trigger isotope again to refresh layout
     $grid.isotope();
   });
-
 
   // change is-checked class on btn-filter to toggle which one is active
   $('.btn-group').each( function( i, buttonGroup ) {
@@ -438,11 +405,7 @@ function concatValues( obj ) {
   return value;
 }
 
-
 </script>
-
-
-
 
 <script>document.getElementById("loading").innerHTML = '<div class="plane-loader"> <div class="cloud cloud1"></div> <div class="cloud cloud4"></div> <div class="cloud cloud3"></div> <div class="plane"></div> <div class="cloud cloud2"></div> <div class="steam steam1"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> <div class="steam steam2"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> <div class="steam steam3"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> <div class="steam steam4"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> </div>';</script>
 

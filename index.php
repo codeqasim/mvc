@@ -76,10 +76,18 @@
     elseif ($url[0] == 'careers') $main->careers();
     elseif ($url[0] == 'contact') $main->contact();
     elseif ($url[0] == 'about') $main->about();
+<<<<<<< HEAD
     elseif ($url[0] == 'login') $main->login();
+=======
+
+    elseif ($url[0] == 'login') $main->login();
+
+
+>>>>>>> d5ad83e25e865d5c326ffa46b1e5a46c86f9e683
     elseif ($url[2] == 'hotels') $main->hotel_list();
     elseif ($url[2] == 'hotel') $main->hotel_detail();
     
+
 
 
     else page404();

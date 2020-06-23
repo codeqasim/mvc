@@ -22,14 +22,14 @@ $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
 
 // Set Language variable
 if(isset($_SESSION['session_lang'])){
-    // unset($_SESSION['session_lang']);
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
+// unset($_SESSION['session_lang']);
+$i18n->setForcedLang($_SESSION['session_lang']);
+$i18n->init();
 }else{
-    session_start();
-    $_SESSION['session_lang'] = 'en';
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
+session_start();
+$_SESSION['session_lang'] = 'en';
+$i18n->setForcedLang($_SESSION['session_lang']);
+$i18n->init();
 }
 
 class Main
@@ -62,19 +62,34 @@ class Main
 	}
 
     function login()
+<<<<<<< HEAD
     {
         $title = "login";
         $meta_title = "login";
+=======
+	{
+
+        // meta
+        $title = "Homepage";
+        $meta_title = "Homepage";
+>>>>>>> d5ad83e25e865d5c326ffa46b1e5a46c86f9e683
         $meta_appname = "Booknow";
         $meta_desc = "";
         $meta_img = "";
         $meta_url = "";
         $meta_author = "";
         $meta = "1";
+<<<<<<< HEAD
         // $body = breadcrumb;
         $body = views."accounts/account.php";
         include layout;
     }
+=======
+
+        $body = views."accounts/login.php";
+        include layout;
+	}
+>>>>>>> d5ad83e25e865d5c326ffa46b1e5a46c86f9e683
 
     function about()
     {

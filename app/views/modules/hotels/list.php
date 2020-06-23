@@ -66,7 +66,7 @@
                     <b class="filter-max">150</b>
                 </div>
             </div>
-            <div class="c12">
+            <div class="c12" style="display:none">
                 <div class="bootstrap-slider">
                     <span class="filter-label">Height Range: <span class="filter-selection"></span> </span>
                     <b>140</b>
@@ -289,7 +289,7 @@
         <script type="text/handlebars-template" id="handlebars-hotels">
         {{#hotels}}
 
-         <div class="row row-rtl s{{rating}} product-block item hotelslist {{price}} small round red" data-height="" data-weight="{{price}}">
+         <div class="row row-rtl s{{rating}} product-block item hotelslist {{price}} small round red" data-height="100" data-weight="{{price}}">
             <div class="c12">
               <div class="list-wrapper">
                 <div class="row row-rtl">

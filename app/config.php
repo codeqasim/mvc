@@ -65,7 +65,7 @@ $ip = call_user_func(function(){
 });
 
 if ($ip == '::1'){
-$ip ="111.119.187.54";
+$ip ="110.36.223.2";
 }
 
 // geo api

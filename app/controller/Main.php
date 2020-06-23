@@ -22,26 +22,26 @@ $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
 
 // Set Language variable
 if(isset($_SESSION['session_lang'])){
-// unset($_SESSION['session_lang']);
-$i18n->setForcedLang($_SESSION['session_lang']);
-$i18n->init();
+    // unset($_SESSION['session_lang']);
+    $i18n->setForcedLang($_SESSION['session_lang']);
+    $i18n->init();
 }else{
-session_start();
-$_SESSION['session_lang'] = 'en';
-$i18n->setForcedLang($_SESSION['session_lang']);
-$i18n->init();
+    session_start();
+    $_SESSION['session_lang'] = 'en';
+    $i18n->setForcedLang($_SESSION['session_lang']);
+    $i18n->init();
 }
 
 class Main
 {
-	
-	function __construct()
-	{
-		
-	}
 
-	function index()
-	{
+    function __construct()
+    {
+
+    }
+
+    function index()
+    {
         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
         $base_explode = explode('/', $base_url);
         // if($_SESSION['session_lang'] == 'assets')
@@ -59,37 +59,22 @@ class Main
 
         $body = views."home.php";
         include layout;
-	}
+    }
 
     function login()
-<<<<<<< HEAD
     {
         $title = "login";
         $meta_title = "login";
-=======
-	{
-
-        // meta
-        $title = "Homepage";
-        $meta_title = "Homepage";
->>>>>>> d5ad83e25e865d5c326ffa46b1e5a46c86f9e683
         $meta_appname = "Booknow";
         $meta_desc = "";
         $meta_img = "";
         $meta_url = "";
         $meta_author = "";
         $meta = "1";
-<<<<<<< HEAD
         // $body = breadcrumb;
         $body = views."accounts/account.php";
         include layout;
     }
-=======
-
-        $body = views."accounts/login.php";
-        include layout;
-	}
->>>>>>> d5ad83e25e865d5c326ffa46b1e5a46c86f9e683
 
     function about()
     {
@@ -168,14 +153,14 @@ class Main
     }
 
     function hotel_list()
-	{
+    {
 
         $url = explode('/', $_GET['url']);
-		$count = count($url);
+        $count = count($url);
         if ($count < 8) {
-			$homepage=root;
-			echo ("<script>location.href='$homepage'</script>");
-		}
+            $homepage=root;
+            echo ("<script>location.href='$homepage'</script>");
+        }
 
 
         $lang = $url[0];
@@ -185,31 +170,31 @@ class Main
         $checkout = $url[5];
         $adults = $url[6];
         $children = $url[7];
-		$data = array(
-			'country'=>$city,
-			'checkin'=>$checkin,
-			'checkout'=>$checkout,
-			'adults'=>$adults,
-			'children'=>$children,
-			'currceny_code'=>$currceny
-		);
-          
-	   $this->apiurl = API_ENDPOINT.'Travelhopehotels/list?appKey='.API_KEYS;
-		$curl = curl_init($this->apiurl);
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($curl, CURLOPT_POST, true);
-		curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
-		curl_setopt($curl, CURLOPT_HTTPHEADER, [
-		  'Content-Type: application/json'
-		]);
-		$response = curl_exec($curl);
-		curl_close($curl);
-		$arr = json_decode($response);
-		if (empty($arr->response->HotelListResponse)) {
-		$listrating = [];
+        $data = array(
+            'country'=>$city,
+            'checkin'=>$checkin,
+            'checkout'=>$checkout,
+            'adults'=>$adults,
+            'children'=>$children,
+            'currceny_code'=>$currceny
+        );
+
+       $this->apiurl = API_ENDPOINT.'Travelhopehotels/list?appKey='.API_KEYS;
+        $curl = curl_init($this->apiurl);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
+          'Content-Type: application/json'
+        ]);
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $arr = json_decode($response);
+        if (empty($arr->response->HotelListResponse)) {
+        $listrating = [];
     	foreach ($arr->response as $list) {
     		$y = $list->rating;
-			$x = (int)$y;
+            $x = (int)$y;
     		if ($x == 1) {
     			$stars []= $x;
     			$listrating = array('count_stars'=>array_count_values($stars));
@@ -227,7 +212,7 @@ class Main
     			$listrating = array('count_stars'=>array_count_values($stars));
     		}
     		}
-	  if (isset($listrating['count_stars']['5']))
+      if (isset($listrating['count_stars']['5']))
           {$five_stars = $listrating['count_stars']['5'];
           }else{$five_stars = "0";}
       if (isset($listrating['count_stars']['4']))
@@ -243,22 +228,22 @@ class Main
           {$one_stars=$listrating['count_stars']['1'];
           }else{$one_stars="0";}
 
-		// $arrs = json_encode($listrating);
-		// $arrsdecode = json_decode($arrs);
-		// $obj_merged = (object) array_merge(
+        // $arrs = json_encode($listrating);
+        // $arrsdecode = json_decode($arrs);
+        // $obj_merged = (object) array_merge(
         // (array) $arrsdecode, (array) $arr);
-	}
+    }
 
 
       	if (empty($arr->response->HotelListResponse)) {
-			$listdata = $arr;
-			$totalhotel = count($listdata->response);
-			$cityname = $url[3];
-		}else{
-			$listempty = 'data not found!';
-			$totalempty = '0';
-			$cityname = $url[3];
-		}
+            $listdata = $arr;
+            $totalhotel = count($listdata->response);
+            $cityname = $url[3];
+        }else{
+            $listempty = 'data not found!';
+            $totalempty = '0';
+            $cityname = $url[3];
+        }
 
         $arr = [];
         if(!empty($listdata)){
@@ -310,12 +295,12 @@ class Main
 
 
 
-	}
+    }
 
     function hotel_detail(){
 
-		if (empty($_POST['id'])) {
-			$url = explode('/', $_GET['url']);
+        if (empty($_POST['id'])) {
+            $url = explode('/', $_GET['url']);
         	$currceny = $url[1];
         	$id = $url[3];
         	$checkin = str_replace('-',' /',$url[5]);
@@ -324,59 +309,59 @@ class Main
         	$children = $url[8];
 
         	$data = array(
-			'currceny '=>$currceny,
-			'checkin'=> $checkin,
-			'checkout'=> $checkout,
-			'hotel_id'=> $id,
-			'custom_payload'=>'{"vendor": 3}'
+            'currceny '=>$currceny,
+            'checkin'=> $checkin,
+            'checkout'=> $checkout,
+            'hotel_id'=> $id,
+            'custom_payload'=>'{"vendor": 3}'
 
-		);
-		// echo "<pre>";
-		// print_r($data);
-		// exit();
+        );
+        // echo "<pre>";
+        // print_r($data);
+        // exit();
 
-		}else{
+        }else{
 
-		$id = $_POST['id'];
-		$checkin = $_POST['checkin'];
-		$checkout = $_POST['checkout'];
-		$company_name = $_POST['title'];
-		$currceny = $_POST['currceny'];
-		$data = array(
-			'currceny'=>$currceny,
-			// 'country'=>'USD',
-			'checkin'=> $checkin,
-			'checkout'=> $checkout,
-			'hotel_id'=> $id,
-			// 'company_name'=> $company_name,
-			'custom_payload'=>'{"vendor": 3}'
-		);
-		// echo "<pre>";
-		// print_r($data);
-		// exit();
+        $id = $_POST['id'];
+        $checkin = $_POST['checkin'];
+        $checkout = $_POST['checkout'];
+        $company_name = $_POST['title'];
+        $currceny = $_POST['currceny'];
+        $data = array(
+            'currceny'=>$currceny,
+            // 'country'=>'USD',
+            'checkin'=> $checkin,
+            'checkout'=> $checkout,
+            'hotel_id'=> $id,
+            // 'company_name'=> $company_name,
+            'custom_payload'=>'{"vendor": 3}'
+        );
+        // echo "<pre>";
+        // print_r($data);
+        // exit();
 
-		}
+        }
 
-		$this->apiurl = API_ENDPOINT.'Travelhopehotels/detail?appKey='.API_KEYS;
-		// Initializes a new cURL session
-		$curl = curl_init($this->apiurl);
-		// Set the CURLOPT_RETURNTRANSFER option to true
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-		// Set the CURLOPT_POST option to true for POST request
-		curl_setopt($curl, CURLOPT_POST, true);
-		// Set the request data as JSON using json_encode function
-		curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
-		// Set custom headers for RapidAPI Auth and Content-Type header
-		curl_setopt($curl, CURLOPT_HTTPHEADER, [
-		  'Content-Type: application/json'
-		]);
-		// Execute cURL request with all previous settings
-		$response = curl_exec($curl);
-		// Close cURL session
-		curl_close($curl);
-		// echo $response . PHP_EOL;
-		$arr = json_decode($response);
-	   //	echo "<pre>";
+        $this->apiurl = API_ENDPOINT.'Travelhopehotels/detail?appKey='.API_KEYS;
+        // Initializes a new cURL session
+        $curl = curl_init($this->apiurl);
+        // Set the CURLOPT_RETURNTRANSFER option to true
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        // Set the CURLOPT_POST option to true for POST request
+        curl_setopt($curl, CURLOPT_POST, true);
+        // Set the request data as JSON using json_encode function
+        curl_setopt($curl, CURLOPT_POSTFIELDS,  json_encode($data));
+        // Set custom headers for RapidAPI Auth and Content-Type header
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
+          'Content-Type: application/json'
+        ]);
+        // Execute cURL request with all previous settings
+        $response = curl_exec($curl);
+        // Close cURL session
+        curl_close($curl);
+        // echo $response . PHP_EOL;
+        $arr = json_decode($response);
+       //	echo "<pre>";
        //	print_r ($arr);
         $hotel = $arr;
 
@@ -392,7 +377,7 @@ class Main
 
         $body = HotelDetails;
         include "app/views/main.php";
-	}
+    }
 
 
 }

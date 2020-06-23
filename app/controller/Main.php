@@ -67,7 +67,7 @@ class Main
         // Append the requested resource location to the URL
         $link .= $_SERVER['REQUEST_URI'];
         $base_explode = explode('/', $base_url);
-        $lang_val = $_SESSION['session_lang'];
+        $lang_val = $base_explode[2];
         $_SESSION['session_lang'] = $lang_val;
         echo '<script>window.location.href = "'.$link.'";</script>';
     }

@@ -57,11 +57,20 @@ $ip = call_user_func(function(){
 if ($ip == '::1'){
 $ip ="110.36.223.2";
 }
-
-// geo api
+if (!empty($_SESSION['ip_data'])) {
+define('user_city', $_SESSION['ip_data']->city);
+define('user_country', $_SESSION['ip_data']->country_name);
+define('user_ip', $_SESSION['ip_data']->ip);
+define('user_country_code', $_SESSION['ip_data']->country_code);
+define('user_calling_code', $_SESSION['ip_data']->location->calling_code);
+define('user_latitude', $_SESSION['ip_data']->latitude);
+define('user_longitude', $_SESSION['ip_data']->longitude);
+}else{
+    // geo api
 $geo_url = "http://api.ipstack.com/";
 $geo = $geo_url.$ip."?access_key=7f51f6157497018e41465e3d87e86f60";
 $details = json_decode(file_get_contents($geo));
+$_SESSION['ip_data'] = $details;
 //$geo_url = "http://ip-api.com/json/";
 // $geo_url = "https://api.ipdata.co/?api-key=test/";
 // $geo_url = "https://geolocation-db.com/jsonp";
@@ -74,6 +83,7 @@ define('user_country_code', $details->country_code);
 define('user_calling_code', $details->location->calling_code);
 define('user_latitude', $details->latitude);
 define('user_longitude', $details->longitude);
+}
 
 // $servername = "localhost:3307";
 // $username = "root";

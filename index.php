@@ -60,7 +60,7 @@
 
 
     /* routes */
-    if($url[0] <> $_SESSION['session_lang']) $main->lang_session();
+    if($url[0]!= $_SESSION['session_lang']) $main->lang_session();
     elseif ($url[0] == 'flights') $flights->index();
     // elseif ($url[0] == $lan_function) $main->index();
     /* CMS */

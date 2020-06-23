@@ -289,7 +289,7 @@
         <script type="text/handlebars-template" id="handlebars-hotels">
         {{#hotels}}
 
-         <div class="row row-rtl s{{rating}} product-block item hotelslist {{price}} small round red" data-height="{{price}}" data-weight="75">
+         <div class="row row-rtl s{{rating}} product-block item hotelslist {{price}} small round red" data-height="" data-weight="{{price}}">
             <div class="c12">
               <div class="list-wrapper">
                 <div class="row row-rtl">

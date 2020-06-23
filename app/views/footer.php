@@ -224,7 +224,7 @@ $(document).ready(function(){
     // type: 'ajax',
     // method: 'get',
     // async: false,
-    // url: '<?php echo base_url() ?>Flights/flight',
+    // url: '',
     // data:{
     //     origin_res1:origin_res1,
     //     origin_res2:origin_res2,

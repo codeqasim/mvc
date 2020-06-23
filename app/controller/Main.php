@@ -78,14 +78,14 @@ class Main
         $meta_author = "";
         $meta = "1";
         // $body = breadcrumb;
-        $body = views."accounts/account.php";
+        $body = views."accounts/login.php";
         include layout;
     }
 
     function about()
     {
         // meta
-        $title = "about";
+        $title = T::hotels_hotels;
         $meta_title = "about";
         $meta_appname = "Booknow";
         $meta_desc = "";

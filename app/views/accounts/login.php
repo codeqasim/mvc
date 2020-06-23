@@ -1,7 +1,29 @@
-<?php echo "<script>document.title = '".$title."';</script>"; ?>
 <style> body{background-color: #f2f6fb;"}</style>
+
+<script>
+
+
+ $('.hotels_active').addClass('active');
+
+
+
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+
+
+
+$(function() {
+
+    $('a[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+
+});
+});
+</script>
+
 <div class="account">
-  <div class="contain">
+  <div class="container">
     <div class="row row-rtl">
       <div class="c7 rtl-align-right">
         <h1>Travel is now easier</h1>
@@ -20,9 +42,7 @@
         <div class="account-tab">
           <ul class="flex mb-30 tabs-btn flex-content-center">
             <li>
-              <label for="singin" class="active">
-                sign in
-              </label>
+              <label for="singin" class="active btn xl"> Sign in</label>
             </li>
             <li>
               <label  for="registar"> sign up</label>
@@ -141,7 +161,7 @@ tabs.forEach(tab =>{
     activeTab[i].classList.remove("active");
   }
   this.classList.add("active");
-  
+
   })
 })
 </script>

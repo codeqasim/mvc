@@ -38,10 +38,8 @@ $base_explode = explode('/', $base_url);
 
             </li>
             <li class="dropdown_show">
-                <form method="post" action="<?=$root;?>en/">
-                    <input type="hidden" name="test" value="<?=str_replace($base_explode[2],'en',$link)?>">
-                    <button  class="languages"><i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span></button>
-                </form>
+                    <i class="flag us"></i> ENGLISH <span class="arrow-down">&#10094;</span>
+                </li>
             <?php
             $dir   = 'app/lang';
             $files = scandir($dir,1); 
@@ -60,11 +58,7 @@ $base_explode = explode('/', $base_url);
             <?php
             foreach($fils_data as $item):?>
             <li>
-                <form method="post" action="<?=$root ."".$item->lang_code;?>/">
-                    <input type="hidden" name="test" value="<?=str_replace($base_explode[2],$item->lang_code,$link)?>">
-                    <input type="hidden" name="testss" value="<?=$base_explode[2]?>">
-                    <button  class="languages"><i class="flag <?=$item->country?>"></i>  <?=$item->language_name?></button>
-                </form>
+                <i class="flag <?=$item->country?>"></i>  <?=$item->language_name?>
                 </li>
             <?php endforeach; ?>
             </ul>

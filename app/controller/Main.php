@@ -228,6 +228,7 @@ class Main
 
         $title = "Hotels in" .$city;
         $meta_title = "Hotels in" .$city;
+        $meta_status = "0";
         $body = HotelList;
         include "app/views/main.php";
 
@@ -303,7 +304,7 @@ class Main
 	   //	echo "<pre>";
        //	print_r ($arr);
         $hotel = $arr;
-
+                        
         $title = $hotel->response->company_name;
         $body = HotelDetails;
         include "app/views/main.php";

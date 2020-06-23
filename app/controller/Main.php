@@ -22,14 +22,14 @@ $i18n = new i18n('app/lang/{LANGUAGE}.json', 'app/cache/', 'en');
 
 // Set Language variable
 if(isset($_SESSION['session_lang'])){
-    // unset($_SESSION['session_lang']);
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
+// unset($_SESSION['session_lang']);
+$i18n->setForcedLang($_SESSION['session_lang']);
+$i18n->init();
 }else{
-    session_start();
-    $_SESSION['session_lang'] = 'en';
-    $i18n->setForcedLang($_SESSION['session_lang']);
-    $i18n->init();
+session_start();
+$_SESSION['session_lang'] = 'en';
+$i18n->setForcedLang($_SESSION['session_lang']);
+$i18n->init();
 }
 
 class Main
@@ -59,47 +59,24 @@ class Main
 
         $body = views."home.php";
         include layout;
-	}  
+	}
 
-    function lang_session()
-    {
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        $lang_val = $base_explode[2];
-        $test = 0;
-        if(!empty($_SESSION['session_lang']) && $_SESSION['session_lang'] == $lang_val)
-        {
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        echo '<script>window.location.href = "'.$base_url.'";</script>';
+    function login()
+	{
 
-        }elseif(isset($_POST['test']))
-        {
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        $lang_val = $base_explode[2];
-        $_SESSION['session_lang'] = $lang_val;
-        $test = $_POST['test'];
-        echo '<script>window.location.href = "'.$test.'";</script>';
-        }else
-        {
-        // $test = $_POST['test'];
-        $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-        $link = "https";
-        else
-        $link = "http";
-        // Here append the common URL characters.
-        $link .= "://";
-        // Append the host(domain name, ip) to the URL.
-        $link .= $_SERVER['HTTP_HOST'];
-        // Append the requested resource location to the URL
-        $link .= $_SERVER['REQUEST_URI'];
-        $base_explode = explode('/', $base_url);
-        $lang_val = $base_explode[2];
-        $_SESSION['session_lang'] = $lang_val;
-        echo '<script>window.location.href = "'.$link.'";</script>';
-    }
-}
+        // meta
+        $title = "Homepage";
+        $meta_title = "Homepage";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+
+        $body = views."accounts/login.php";
+        include layout;
+	}
 
     function about()
     {

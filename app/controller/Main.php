@@ -44,8 +44,8 @@ class Main
 	{
         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
         $base_explode = explode('/', $base_url);
-        if($_SESSION['session_lang'] == 'assets')
-        {$_SESSION['session_lang'] = 'en';}
+        // if($_SESSION['session_lang'] == 'assets')
+        // {$_SESSION['session_lang'] = 'en';}
 
         // meta
         $title = "Homepage";
@@ -59,62 +59,96 @@ class Main
 
         $body = views."home.php";
         include layout;
-	}  
+	}
 
-//     function lang_session()
-//     {
-//         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-//         $base_explode = explode('/', $base_url);
-//         $lang_val = $base_explode[2];
-//         $test = 0;
-//         if(!empty($_SESSION['session_lang']) && $_SESSION['session_lang'] == $lang_val)
-//         {
-//         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-//         echo '<script>window.location.href = "'.$base_url.'";</script>';
-
-//         }elseif(isset($_POST['test']))
-//         {
-//         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-//         $base_explode = explode('/', $base_url);
-//         $lang_val = $base_explode[2];
-//         $_SESSION['session_lang'] = $lang_val;
-//         $test = $_POST['test'];
-//         echo '<script>window.location.href = "'.$test.'";</script>';
-//         }else
-//         {
-//         // $test = $_POST['test'];
-//         $base_url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-//         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-//         $link = "https";
-//         else
-//         $link = "http";
-//         // Here append the common URL characters.
-//         $link .= "://";
-//         // Append the host(domain name, ip) to the URL.
-//         $link .= $_SERVER['HTTP_HOST'];
-//         // Append the requested resource location to the URL
-//         $link .= $_SERVER['REQUEST_URI'];
-//         $base_explode = explode('/', $base_url);
-//         $lang_val = $base_explode[2];
-//         $_SESSION['session_lang'] = $lang_val;
-//         echo '<script>window.location.href = "'.$link.'";</script>';
-//     }
-// }
-
-    function about()
+    function login()
     {
-        // meta
-        $title = "Homepage";
-        $meta_title = "Homepage";
+        $title = "login";
+        $meta_title = "login";
         $meta_appname = "Booknow";
         $meta_desc = "";
         $meta_img = "";
         $meta_url = "";
         $meta_author = "";
         $meta = "1";
+        // $body = breadcrumb;
+        $body = views."accounts/account.php";
+        include layout;
+    }
 
-        $body = breadcrumb;
-        $bod = views."modules/cms/about.php";
+    function about()
+    {
+        // meta
+        $title = "about";
+        $meta_title = "about";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+        // $body = breadcrumb;
+        $body = views."modules/cms/about.php";
+        include layout;
+    }
+
+        function careers()
+    {
+                // meta
+        $title = "careers";
+        $meta_title = "careers";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+        $body = views."modules/cms/careers.php";
+        include layout;
+    }
+
+    function contact()
+    {
+        // meta
+        $title = "careers";
+        $meta_title = "careers";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+        $body = views."modules/cms/contact.php";
+        include layout;
+    }
+
+    function faqs()
+    {
+                // meta
+        $title = "faqs";
+        $meta_title = "faqs";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+        $body = views."modules/cms/faqs.php";
+        include layout;
+    }
+
+    function policy()
+    {
+            // meta
+        $title = "policy";
+        $meta_title = "policy";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+        $body = views."modules/cms/policy.php";
         include layout;
     }
 
@@ -246,8 +280,8 @@ class Main
         ';
 
         // meta
-        $title = "Hotels in".$city;
-        $meta_title = "Hotels in".$city;
+        $title = "Hotels in ".$city;
+        $meta_title = "Hotels in ".$city;
         $meta_appname = "Booknow";
         $meta_desc = "";
         $meta_img = "";

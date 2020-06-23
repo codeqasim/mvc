@@ -1,8 +1,8 @@
     <?php
-    // require __DIR__ . "/vendor/autoload.php";
-    // $whoops = new Whoops\Run();
-    // $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
-    // $whoops->register();
+    require __DIR__ . "/vendor/autoload.php";
+    $whoops = new Whoops\Run();
+    $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
+    $whoops->register();
     ?>
 
     <?php
@@ -67,8 +67,7 @@
 
 
     /* routes */
-    if($url[0]!= $_SESSION['session_lang']) $main->lang_session();
-    elseif ($url[0] == 'flights') $flights->index();
+    if ($url[0] == 'flights') $flights->index();
     // elseif ($url[0] == $lan_function) $main->index();
     /* CMS */
     elseif($url[0] == 'search') $hotels->search();
@@ -77,9 +76,10 @@
     elseif ($url[0] == 'careers') $main->careers();
     elseif ($url[0] == 'contact') $main->contact();
     elseif ($url[0] == 'about') $main->about();
-    elseif ($url[0] == 'login') $main->index();
+    elseif ($url[0] == 'login') $main->login();
     elseif ($url[2] == 'hotels') $main->hotel_list();
     elseif ($url[2] == 'hotel') $main->hotel_detail();
+    
 
 
     else page404();

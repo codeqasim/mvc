@@ -64,6 +64,10 @@ $ip = call_user_func(function(){
     return $ipaddress;
 });
 
+if ($ip == '::1'){
+$ip ="111.119.187.54";
+}
+
 // geo api
 $geo_url = "http://api.ipstack.com/";
 $geo = $geo_url.$ip."?access_key=7f51f6157497018e41465e3d87e86f60";

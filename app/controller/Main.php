@@ -46,7 +46,17 @@ class Main
         $base_explode = explode('/', $base_url);
         if($_SESSION['session_lang'] == 'assets')
         {$_SESSION['session_lang'] = 'en';}
+
+        // meta
         $title = "Homepage";
+        $meta_title = "Homepage";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+
         $body = views."home.php";
         include layout;
 	}  
@@ -93,7 +103,16 @@ class Main
 
     function about()
     {
-        $title = "About Us";
+        // meta
+        $title = "Homepage";
+        $meta_title = "Homepage";
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+
         $body = breadcrumb;
         $bod = views."modules/cms/about.php";
         include layout;
@@ -226,9 +245,16 @@ class Main
         </script>
         ';
 
-        $title = "Hotels in" .$city;
-        $meta_title = "Hotels in" .$city;
-        $meta_status = "0";
+        // meta
+        $title = "Hotels in".$city;
+        $meta_title = "Hotels in".$city;
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+
         $body = HotelList;
         include "app/views/main.php";
 
@@ -304,8 +330,17 @@ class Main
 	   //	echo "<pre>";
        //	print_r ($arr);
         $hotel = $arr;
-                        
+
+        // meta
         $title = $hotel->response->company_name;
+        $meta_title = $hotel->response->company_name;
+        $meta_appname = "Booknow";
+        $meta_desc = "";
+        $meta_img = "";
+        $meta_url = "";
+        $meta_author = "";
+        $meta = "1";
+
         $body = HotelDetails;
         include "app/views/main.php";
 	}

@@ -14,7 +14,7 @@ include "app/functions.php";
 <meta property="og:description" content="<?=$meta_desc;?>"/>
 <meta property="og:image" content="<?=$meta_img;?>"/>
 <meta property="og:url" content="<?=$meta_url;?>"/>
-<meta property="og:publisher" content="<?=$author;?>"/>
+<meta property="og:publisher" content="<?=$meta_author;?>"/>
 
 <title><?=$title;?></title>
 <link rel="stylesheet" href="<?=$root.css;?>_style.css" />

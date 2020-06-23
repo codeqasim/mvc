@@ -1,4 +1,11 @@
     <?php
+    require __DIR__ . "/vendor/autoload.php";
+    $whoops = new Whoops\Run();
+    $whoops->pushHandler(new Whoops\Handler\PrettyPageHandler());
+    $whoops->register();
+    ?>
+
+    <?php
     // All rights reserved by PHPTRAVELS 2020 www.phptravels.com
     ?>
 

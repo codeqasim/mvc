@@ -54,17 +54,20 @@
             <input type="text" placeholder="Search for hotel name" id="search"/>
             <div class="filter-section mt-30 pb-10">
               <div class="filter-header">
-                <h5>Price</h5>
-                <br>
-
-                <div class="row">
+                <h4>Price</h4>
+                <div class="row mt-10">
             <div class="c12">
-                <div class="bootstrap-slider">
-                    <span class="filter-label">Weight Range: <span class="filter-selection"></span></span>
-                    <b class="filter-min">40</b>
+
+               <div class="bootstrap-slider">
+                    <div class="filter-label text-center" style="margin-top:-32px;margin-bottom:30px"><span class="filter-selection"></span></div>
                     <input id="filter-weight" type="text" class="bootstrap-slider" value="" data-filter-group="weight">
-                    <b class="filter-max">150</b>
+                    <div class="clear"></div>
+                    <div class="row mt-10 slider_values">
+                    <div class="c6 text-left"><b>Min</b> USD 50</div>
+                    <div class="c6 text-right"><b>Max</b> USD 100</div>
+                    </div>
                 </div>
+
             </div>
             <div class="c12" style="display:none">
                 <div class="bootstrap-slider">
@@ -76,58 +79,8 @@
             </div>
         </div>
 
-        <br><br><br>
+        </div>
 
-                <div class="row">
-                  <div class="c12">
-                    <div id="slider-range"></div>
-                  </div>
-                </div>
-                <div class="row slider-labels">
-                  <div class="c6 caption">
-                    <strong>Min:</strong> <span id="slider-range-value1"></span>
-                  </div>
-                  <div class="c6 text-right caption">
-                    <strong>Max:</strong> <span id="slider-range-value2"></span>
-                  </div>
-                </div>
-                <input type="hidden" name="min-value" value="">
-                <input type="hidden" name="max-value" value="">
-              </div>
-              <script>
-                // Set visual min and max values and also update value hidden form inputs
-                  $(document).ready(function() {
-                    $('.noUi-handle').on('click', function() {
-                      $(this).width(50);
-                    });
-                    var rangeSlider = document.getElementById('slider-range');
-                    var moneyFormat = wNumb({
-                      decimals: 0,
-                      thousand: ',',
-                      prefix: 'USD '
-                    });
-                    noUiSlider.create(rangeSlider, {
-                      start: [450, 1500],
-                      step: 1,
-                      range: {
-                        'min': [20],
-                        'max': [2000]
-                      },
-                      format: moneyFormat,
-                      connect: true
-                    });
-
-                    // Set visual min and max values and also update value hidden form inputs
-                    rangeSlider.noUiSlider.on('update', function(values, handle) {
-                      document.getElementById('slider-range-value1').innerHTML = values[0];
-                      document.getElementById('slider-range-value2').innerHTML = values[1];
-                      document.getElementsByName('min-value').value = moneyFormat.from(
-                        values[0]);
-                      document.getElementsByName('max-value').value = moneyFormat.from(
-                        values[1]);
-                    });
-                  });
-              </script>
             </div>
             <div class="filter-section star-rating mt-30 pb-10">
               <div class="filter-header">
@@ -146,14 +99,12 @@
                 <?php  if (!empty($totalhotel)){echo $totalhotel; }else{echo $totalempty;}?>
                 </strong>
                 </label>
-
                 <label class="btn" for="5" data-filter=".s5"> <input type="radio" id="5" name="stars"/>
                 <span class="stars star5"></span>
                 <strong>
-                <?php echo $five_stars; ?>
+                <?php if (empty($listempty)) { echo $five_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
-
                 <div class="clear"></div>
                 <label class="btn" for="4" data-filter=".s4"> <input type="radio" id="4" name="stars"/>
                 <span class="stars star4"></span>
@@ -161,7 +112,6 @@
                 <?php if (empty($listempty)) { echo $four_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
-
                 <div class="clear"></div>
                 <label class="btn" for="3" data-filter=".s3"> <input type="radio" id="3" name="stars"/>
                 <span class="stars star3"></span>
@@ -169,7 +119,6 @@
                 <?php if (empty($listempty)) { echo $three_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
-
                 <div class="clear"></div>
                 <label class="btn" for="2" data-filter=".s2"> <input type="radio" id="2" name="stars"/>
                 <span class="stars star2"></span>
@@ -177,7 +126,6 @@
                 <?php if (empty($listempty)) { echo $two_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
-
                 <div class="clear"></div>
                 <label class="btn" for="1" data-filter=".s1"> <input type="radio" id="1" name="stars"/>
                 <span class="stars star1"></span>
@@ -185,7 +133,6 @@
                 <?php if (empty($listempty)) { echo $one_stars; }else{echo'0';} ?>
                 </strong>
                 </label>
-
                 <div class="clear"></div>
               </div>
               </div>
@@ -302,7 +249,7 @@
                     <div class="row h-100 row-rtl">
                       <div class="c7 border-right rtl-align-right">
                         <div class="detail">
-                          <h6 class="title"><a target="_blank" href="{{link}}"><strong>{{name}}</strong></a></h6>
+                          <h6 class="title"><a href="{{link}}"><strong>{{name}}</strong></a></h6>
                           <div class="rating mb-10 mt-10">
                           <span class="stars star{{stars}}"></span>
                           </div>
@@ -340,9 +287,7 @@
                           </h5>
                         </div>
                         <div class="text-center mt-10">
-                          <form target="self" method="POST" action="">
-                            <button class="btn prime-o hide-m w100" href="{{link}}">Details </button>
-                          </form>
+                         <a class="btn prime-o hide-m w100" href="{{link}}">Details</a>
                         </div>
                       </div>
                     </div>
@@ -498,15 +443,12 @@ function concatValues( obj ) {
 
 
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.2.0/bootstrap-slider.js'></script>
-<link rel="stylesheet" href="https://seiyria.com/bootstrap-slider/css/bootstrap-slider.css" />
 
 <script>document.getElementById("loading").innerHTML = '<div class="plane-loader"> <div class="cloud cloud1"></div> <div class="cloud cloud4"></div> <div class="cloud cloud3"></div> <div class="plane"></div> <div class="cloud cloud2"></div> <div class="steam steam1"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> <div class="steam steam2"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> <div class="steam steam3"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> <div class="steam steam4"> <div class="c1"></div> <div class="c2"></div> <div class="c3"></div> <div class="c4"></div> <div class="c5"></div> <div class="c6"></div> <div class="c7"></div> <div class="c8"></div> <div class="c9"></div> <div class="c10"></div> </div> </div>';</script>
 
-<script src='<?=root.js;?>handlebars.min.js'></script>
+<script src="<?=root.js;?>bootstrap-slider.min.js"></script>
+<script src="<?=root.js;?>handlebars.min.js"></script>
 <?=$hotels;?>
-
-
 
 <script>
 $(document).ready(function(){
@@ -526,4 +468,3 @@ $(document).ready(function(){
   }, 1);
   });
 </script>
-
